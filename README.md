@@ -1,4 +1,4 @@
-# take back the hill
+# Take Back the Hill
 
 Two parts:
 

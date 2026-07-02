@@ -201,7 +201,7 @@
       const m = id ? list.find((x) => x.bioguide_id === id) : null;
       if (!m) { setNotFound(); return; }
       const r = roleLine(m);
-      document.title = `take back the hill — Town Hall: ${r.prefix} ${m.full_name}`;
+      document.title = `Take Back the Hill — Town Hall: ${r.prefix} ${m.full_name}`;
       if (nameEl) nameEl.textContent = `${r.prefix} ${m.full_name}`;
       if (roleEl) roleEl.innerHTML = `<span class="party-dot ${m.party || "I"}">${PARTY_NAME[m.party] || "Independent"} · ${escapeHtml(r.place)}</span>`;
       if (phEl) { phEl.innerHTML = escapeHtml(initials(m.full_name)) + (m.photo_url ? `<img class="avatar-img" src="${escapeHtml(m.photo_url)}" alt="" loading="lazy" onerror="this.remove()">` : ""); phEl.className = `bp-ph ${partyClass(m.party)}`; }
