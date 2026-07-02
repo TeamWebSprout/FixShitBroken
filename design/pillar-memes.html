@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1440" />
+<title>fixshitbroken — Politics is a joke</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+.hero-pillar { padding: 48px 64px 32px; }
+.hero-pillar-head { display: flex; justify-content: space-between; align-items: end; gap: 40px; }
+.hero-pillar-head .left { max-width: 700px; }
+.hero-pillar-head h1 { font-size: 64px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.035em; line-height: 1; margin-bottom: 18px; }
+.hero-pillar-head h1 .accent { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--brown-600); }
+.hero-pillar-head p { font-size: 17px; color: var(--brown-600); line-height: 1.55; }
+.submit-btn { background: var(--rust); color: var(--cream-50); padding: 16px 28px; border-radius: 999px; font-size: 15px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 8px 20px -6px rgba(164,69,44,0.4); }
+
+/* HALL OF FAME */
+.fame-section { padding: 24px 64px; }
+.fame-band { background: var(--brown-900); border-radius: 24px; padding: 28px 32px; color: var(--cream-50); display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 24px; align-items: center; }
+.fame-title h2 { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 6px; }
+.fame-title h2 .accent { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--brown-300); }
+.fame-title .sub { font-size: 12px; color: var(--brown-300); }
+.fame-tile { background: var(--brown-800); border-radius: 14px; padding: 16px; }
+.fame-tile .rank { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 36px; color: var(--brown-300); line-height: 1; }
+.fame-tile .meme { font-size: 13px; color: var(--cream-100); font-weight: 700; margin: 10px 0; line-height: 1.35; }
+.fame-tile .stats { display: flex; justify-content: space-between; font-size: 11px; color: var(--brown-300); padding-top: 10px; border-top: 1px solid rgba(212,190,160,0.15); }
+.fame-tile .stats .v { color: var(--rust); font-weight: 800; }
+
+/* TABS */
+.feed-tabs { padding: 32px 64px 16px; display: flex; justify-content: space-between; align-items: center; }
+.tab-strip { display: flex; gap: 4px; background: var(--cream-50); border: 1px solid var(--cream-300); padding: 4px; border-radius: 999px; }
+.tab-strip .tab { font-size: 13px; color: var(--brown-500); font-weight: 600; padding: 10px 20px; border-radius: 999px; cursor: pointer; }
+.tab-strip .tab.active { background: var(--brown-900); color: var(--cream-100); }
+.feed-meta { font-size: 13px; color: var(--brown-500); }
+.feed-meta strong { color: var(--brown-900); font-weight: 800; }
+
+/* MEME GRID */
+.meme-grid { padding: 16px 64px 80px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.meme-tile { background: var(--white); border-radius: 18px; overflow: hidden; cursor: pointer; transition: all 0.2s; border: 1px solid transparent; box-shadow: 0 10px 24px -12px rgba(20,16,11,0.10); display: flex; flex-direction: column; }
+.meme-tile:hover { border-color: var(--cream-300); transform: translateY(-2px); }
+.meme-tile .canvas { aspect-ratio: 1; background: var(--cream-50); display: grid; place-items: center; padding: 18px; position: relative; }
+.meme-tile .canvas.rust { background: linear-gradient(135deg, #A4452C, #5B2C1C); }
+.meme-tile .canvas.dark { background: var(--brown-900); }
+.meme-tile .canvas.cream { background: var(--cream-200); }
+.meme-tile .canvas.brown { background: var(--brown-700); }
+.meme-tile .canvas.sage { background: linear-gradient(135deg, #4E6B3B, #2C3E20); }
+.meme-tile .text-big { font-size: 20px; font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; text-align: center; }
+.meme-tile .text-med { font-size: 14px; font-weight: 800; line-height: 1.3; text-align: center; }
+.meme-tile .text-small { font-size: 11px; font-weight: 600; opacity: 0.7; margin-top: 6px; text-align: center; }
+.meme-tile .canvas.rust .text-big, .meme-tile .canvas.dark .text-big, .meme-tile .canvas.brown .text-big, .meme-tile .canvas.sage .text-big { color: var(--cream-50); }
+.meme-tile .canvas.cream .text-big { color: var(--brown-900); }
+.meme-tile .canvas .quote-mark { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 64px; line-height: 0.5; opacity: 0.2; position: absolute; top: 24px; left: 18px; }
+.meme-tile .canvas .quote-mark.tr { left: auto; right: 18px; top: auto; bottom: 36px; transform: rotate(180deg); }
+.meme-tile .stack { display: flex; flex-direction: column; gap: 8px; align-items: center; text-align: center; }
+.meme-tile .row-text { display: flex; flex-direction: column; gap: 6px; padding: 14px; }
+.meme-tile .stat-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; border-top: 1px solid var(--cream-200); background: var(--white); }
+.meme-tile .stat-row .upvotes { display: flex; align-items: center; gap: 6px; font-weight: 800; color: var(--rust); font-size: 14px; }
+.meme-tile .stat-row .author { font-size: 11px; color: var(--brown-500); font-weight: 600; }
+.meme-tile .badge-top { position: absolute; top: 12px; right: 12px; background: var(--cream-50); color: var(--brown-900); padding: 4px 10px; border-radius: 999px; font-size: 10px; font-weight: 800; }
+
+/* SUBMIT CTA */
+.submit-cta { margin: 0 64px 64px; background: var(--cream-50); border: 2px dashed var(--brown-400); border-radius: 24px; padding: 40px; text-align: center; }
+.submit-cta h3 { font-size: 32px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.02em; margin-bottom: 10px; }
+.submit-cta h3 .accent { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--brown-600); }
+.submit-cta p { font-size: 14px; color: var(--brown-600); margin-bottom: 24px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.55; }
+.submit-cta .rules { display: flex; justify-content: center; gap: 28px; margin-bottom: 24px; font-size: 12px; color: var(--brown-500); }
+.submit-cta .rules .r { display: flex; align-items: center; gap: 6px; }
+.submit-cta .rules .check { color: var(--sage); font-weight: 800; }
+.submit-cta .rules .x { color: var(--rust); font-weight: 800; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="nav">
+    <a href="index.html" class="logo"><div class="logo-mark">F</div>fixshitbroken</a>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="pillar-will.html">Will of the people</a>
+      <a href="pillar-legislation.html">Legislation</a>
+      <a href="pillar-town-hall.html">Town hall</a>
+      <a href="pillar-memes.html" class="active">Memes</a>
+      <a href="why-we-exist.html">Why we exist</a>
+    </div>
+    <div class="nav-account"><div class="av">M</div></div>
+  </nav>
+
+  <section class="hero-pillar">
+    <div class="hero-pillar-head">
+      <div class="left">
+        <div class="eyebrow">Pillar four</div>
+        <h1>Politics is a <span class="accent">joke.</span></h1>
+        <p>The political class deserves all of it. New hall of fame every Monday at 9am Eastern. We punch up at the powerful, never down at voters. No party allegiance. No corporate handlers. Just the funniest stuff on the internet that week.</p>
+      </div>
+      <a href="#submit" class="submit-btn">+ Submit a meme</a>
+    </div>
+  </section>
+
+  <section class="fame-section">
+    <div class="fame-band">
+      <div class="fame-title">
+        <h2>This week's <span class="accent">hall of fame.</span></h2>
+        <div class="sub">★ Top 3 by upvotes · Refreshes Monday 9am ET</div>
+      </div>
+      <div class="fame-tile">
+        <div class="rank">01</div>
+        <div class="meme">"I haven't read the legislation. But I'm voting yes on it because my donors did read it."</div>
+        <div class="stats"><span>by @congresswatcher</span><span class="v">▲ 24.8k</span></div>
+      </div>
+      <div class="fame-tile">
+        <div class="rank">02</div>
+        <div class="meme">SUNDAY: Children are sacred ★ MONDAY: voted to cut their lunch funding</div>
+        <div class="stats"><span>by @hot_takes_only</span><span class="v">▲ 19.4k</span></div>
+      </div>
+      <div class="fame-tile">
+        <div class="rank">03</div>
+        <div class="meme">Bipartisan agreement that nothing should change for the people who funded them.</div>
+        <div class="stats"><span>by @civic_pessimist</span><span class="v">▲ 16.7k</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="feed-tabs">
+    <div class="tab-strip">
+      <div class="tab active">Top this week</div>
+      <div class="tab">New</div>
+      <div class="tab">All time</div>
+      <div class="tab">Most controversial</div>
+    </div>
+    <div class="feed-meta"><strong>1,847</strong> memes this week · <strong>483k</strong> upvotes cast</div>
+  </div>
+
+  <div class="meme-grid">
+
+    <div class="meme-tile">
+      <div class="canvas rust">
+        <div class="badge-top">#1 THIS WEEK</div>
+        <div class="text-big">"I haven't<br>read the<br>legislation."</div>
+        <div class="text-small">— every member of Congress, last Tuesday</div>
+      </div>
+      <div class="stat-row"><div class="upvotes">▲ 24.8k</div><div class="author">@congresswatcher</div></div>
+    </div>
+
+    <div class="meme-tile">
+      <div class="canvas dark">
+        <div class="quote-mark">"</div>
+        <div class="stack">
+          <div class="text-med" style="color:var(--brown-300)">SUNDAY MORNING:</div>
+          <div class="text-big">Children<br>are sacred.</div>
+          <div class="text-med" style="color:var(--rust); margin-top:14px;">MONDAY 3PM:</div>
+          <div class="text-med">cuts school lunch funding by 40%</div>
+        </div>
+      </div>
+      <div class="stat-row"><div class="upvotes">▲ 19.4k</div><div class="author">@hot_takes_only</div></div>
+    </div>
+
+    <div class="meme-tile">
+      <div class="canvas cream">
+        <div class="stack">
+          <div class="text-med" style="color:var(--brown-500); font-weight: 700;">BIPARTISAN AGREEMENT:</div>
+          <div class="text-big">Nothing should change<br>for the people<br>who funded them.</div>
+        </div>
+      </div>
+      <div class="stat-row"><div class="upvotes">▲ 16.7k</div><div class="author">@civic_pessimist</div></div>
+    </div>
+
+    <div class="meme-tile">
+      <div class="canvas brown">
+        <div class="stack">
+          <div class="text-big">"We need to<br>study this more."</div>
+          <div class="text-small">— Congressman, when asked about a 14-year-old crisis affecting his district</div>
+        </div>
+      </div>
+      <div class="stat-row"><div class="upvotes">▲ 14.2k</div><div class="author">@district_voter</div></div>
+    </div>
+
+    <div class="meme-tile">
+      <div class="canvas sage">
+        <div class="stack">
+          <div class="text-big">Things Congress<br>has time for:</div>
+          <div class="text-med" style="margin-top:14px;">✓ Naming a post office<br>✓ Sponsoring National Cheese Day<br>✗ Reading the legislation</div>
+        </div>
+      </div>
+      <div class="stat-row"><div class="upvotes">▲ 12.9k</div><div class="author">@policy_wonk_22</div></div>
+    </div>
+
+    <div class="meme-tile">
+      <div class="canvas cream">
+        <div class="stack">
+          <div class="text-med" style="color:var(--rust); font-weight:800;">SPOTTED IN THE WILD:</div>
+          <div class="text-big">A politician<br>actually<br>answering<br>the question.</div>
+          <div class="text-small" style="margin-top:8px;">(footage colorized for clarity)</div>
+        </div>
+      </div>
+      <div class="stat-row"><div class="upvotes">▲ 11.6k</div><div class="author">@town_hall_truther</div></div>
+    </div>
+
+    <div class="meme-tile">
+      <div class="canvas dark">
+        <div class="stack">
+          <div class="text-med" style="color:var(--brown-300);">PRESS RELEASE:</div>
+          <div class="text-big">"Fighting hard<br>for working<br>families."</div>
+          <div class="text-med" style="color:var(--rust); margin-top:12px;">VOTING RECORD:</div>
+          <div class="text-med">votes against working families 73% of the time</div>
+        </div>
+      </div>
+      <div class="stat-row"><div class="upvotes">▲ 10.4k</div><div class="author">@receipts_only</div></div>
+    </div>
+
+    <div class="meme-tile">
+      <div class="canvas rust">
+        <div class="stack">
+          <div class="text-big">"Read the<br>legislation!"</div>
+          <div class="text-small" style="margin-top:6px;">— same congressman who voted yes on a 1,400-page omnibus he received 9 minutes before the vote</div>
+        </div>
+      </div>
+      <div class="stat-row"><div class="upvotes">▲ 9.8k</div><div class="author">@floor_vote_watch</div></div>
+    </div>
+
+    <div class="meme-tile">
+      <div class="canvas brown">
+        <div class="stack">
+          <div class="text-med">Politician's pay since 2009:</div>
+          <div class="text-big" style="color:var(--sage-light)">+47%</div>
+          <div class="text-med" style="margin-top:14px;">Median wage since 2009:</div>
+          <div class="text-big" style="color:var(--rust)">+8%</div>
+        </div>
+      </div>
+      <div class="stat-row"><div class="upvotes">▲ 9.1k</div><div class="author">@boring_data</div></div>
+    </div>
+
+    <div class="meme-tile">
+      <div class="canvas cream">
+        <div class="stack">
+          <div class="text-med" style="color:var(--brown-500);">"BOTH SIDES":</div>
+          <div class="text-big">also voted yes<br>on the same<br>defense budget<br>increase.</div>
+        </div>
+      </div>
+      <div class="stat-row"><div class="upvotes">▲ 8.7k</div><div class="author">@same_thing_diff_jersey</div></div>
+    </div>
+
+    <div class="meme-tile">
+      <div class="canvas sage">
+        <div class="stack">
+          <div class="text-big">"My door is<br>always open."</div>
+          <div class="text-small" style="margin-top:8px;">— Congressman who hasn't held a public town hall in 28 months</div>
+        </div>
+      </div>
+      <div class="stat-row"><div class="upvotes">▲ 7.9k</div><div class="author">@where_are_you</div></div>
+    </div>
+
+    <div class="meme-tile">
+      <div class="canvas dark">
+        <div class="stack">
+          <div class="text-med" style="color:var(--brown-300)">CAMPAIGN ADS:</div>
+          <div class="text-big">"I'll never take<br>PAC money."</div>
+          <div class="text-med" style="color:var(--rust); margin-top:14px;">FEC FILINGS:</div>
+          <div class="text-big">$4.2M from PACs</div>
+        </div>
+      </div>
+      <div class="stat-row"><div class="upvotes">▲ 7.2k</div><div class="author">@following_the_money</div></div>
+    </div>
+
+  </div>
+
+  <div class="submit-cta" id="submit">
+    <h3>Got something <span class="accent">funnier?</span></h3>
+    <p>Submissions are reviewed by the community. Top of the feed by Monday. Hall of fame is real. No prize money, but real congressional staffers do see these.</p>
+    <div class="rules">
+      <div class="r"><span class="check">✓</span> Punch up</div>
+      <div class="r"><span class="check">✓</span> Both parties fair game</div>
+      <div class="r"><span class="check">✓</span> Receipts welcome</div>
+      <div class="r"><span class="x">✗</span> No targeting voters</div>
+      <div class="r"><span class="x">✗</span> No slurs</div>
+    </div>
+    <a href="#" class="btn-primary">+ Submit your meme →</a>
+  </div>
+
+  <footer>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="logo"><div class="logo-mark">F</div>fixshitbroken</a>
+        <div class="tag-text">Built by citizens, for citizens. 100% public data. No PAC money. No lobbyist hands on the wheel.</div>
+      </div>
+      <div class="foot-col"><h5>The four pillars</h5><ul><li>Will of the People</li><li>Legislation for Dummies</li><li>Town Hall</li><li>Politics is a Joke</li></ul></div>
+      <div class="foot-col"><h5>Tools</h5><ul><li>Find your reps</li><li>Browse legislation</li><li>Voter registration</li><li>Browser extension</li></ul></div>
+      <div class="foot-col"><h5>About</h5><ul><li>Why we exist</li><li>Data sources</li><li>Methodology</li><li>Press kit</li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 fixshitbroken · A civic accountability project</div>
+      <div>Privacy · Terms · Contact</div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

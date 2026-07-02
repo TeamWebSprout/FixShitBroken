@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * fixshitbroken design system
+ * --------------------------------------------------------------------------
+ * RECONSTRUCTED from TECHNICAL_PLAN.md section 3.5 (the original shared.css was
+ * not in the handoff). Tokens: rust + sage accents, a warm brown ramp, an
+ * Instrument Serif / sans interplay, hand-tuned card shadows, and a score-ring.
+ * When the real shared.css surfaces, replace the :root block + component layer
+ * below with it; tailwind.config.ts already points at these variable names.
+ */
+
+:root {
+  /* Accent + neutrals */
+  --rust: #b4532a;
+  --rust-deep: #8f3f1f;
+  --sage: #7c8c6b;
+  --sage-deep: #5e6e4f;
+  --cream: #f7f1e6;
+  --paper: #fbf7ef;
+  --ink: #2a2018;
+
+  /* Warm brown ramp (editorial neutral scale) */
+  --brown-50: #f4ede1;
+  --brown-100: #e9ddc9;
+  --brown-200: #d8c6a7;
+  --brown-300: #c2a982;
+  --brown-400: #a98a5e;
+  --brown-500: #8c6f47;
+  --brown-600: #6f5736;
+  --brown-700: #54422a;
+  --brown-800: #3a2e1e;
+  --brown-900: #241c12;
+
+  /* Party colors (muted to match the editorial palette, not cable-news bright) */
+  --party-dem: #3a6b8c;
+  --party-rep: #a8462f;
+  --party-ind: #6b6b6b;
+
+  /* Type */
+  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Shape */
+  --radius-card: 14px;
+  --shadow-card: 0 1px 2px rgba(58, 46, 30, 0.06), 0 4px 14px rgba(58, 46, 30, 0.08);
+  --shadow-card-hover: 0 2px 4px rgba(58, 46, 30, 0.1), 0 10px 28px rgba(58, 46, 30, 0.14);
+}
+
+@layer base {
+  html {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: 0.005em;
+    line-height: 1.05;
+  }
+
+  /* The serif's italic is part of the editorial voice — used for emphasis,
+     pull quotes, and the wordmark. */
+  .serif-italic {
+    font-family: var(--font-serif);
+    font-style: italic;
+  }
+
+  a { color: inherit; text-decoration: none; }
+}
+
+@layer components {
+  /* --- Layout shell --- */
+  .site-wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+  /* --- Representative card (the 535 directory) --- */
+  .rep-card {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    background: var(--paper);
+    border: 1px solid var(--brown-100);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    padding: 14px 16px;
+    transition: box-shadow 160ms ease, transform 160ms ease;
+  }
+  .rep-card:hover { box-shadow: var(--shadow-card-hover); transform: translateY(-1px); }
+  .rep-card__photo {
+    width: 56px; height: 56px; border-radius: 50%;
+    object-fit: cover; flex: none;
+    background: var(--brown-100);
+    border: 2px solid var(--brown-50);
+  }
+  .rep-card__name { font-family: var(--font-serif); font-size: 1.2rem; line-height: 1.1; }
+  .rep-card__meta { font-size: 0.82rem; color: var(--brown-500); }
+
+  /* Party chip */
+  .party-chip {
+    display: inline-block; font-size: 0.7rem; font-weight: 600;
+    padding: 1px 7px; border-radius: 999px; color: #fff; letter-spacing: 0.03em;
+  }
+  .party-chip--D { background: var(--party-dem); }
+  .party-chip--R { background: var(--party-rep); }
+  .party-chip--I { background: var(--party-ind); }
+
+  /* --- Legislation card (the feed) --- */
+  .legis-card {
+    background: var(--paper);
+    border: 1px solid var(--brown-100);
+    border-left: 4px solid var(--rust);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    padding: 18px 20px;
+  }
+  .legis-card__tag {
+    font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--rust-deep);
+  }
+  .legis-card__title { font-family: var(--font-serif); font-size: 1.45rem; margin: 4px 0 8px; }
+
+  /* --- Score ring (The Receipts / Pulse supplement) ---
+     Rendered as inline SVG; this styles the wrapper + label. respondent_n is
+     ALWAYS shown next to it (see TECHNICAL_PLAN.md section 2). */
+  .score-ring { position: relative; width: 92px; height: 92px; }
+  .score-ring__track { fill: none; stroke: var(--brown-100); stroke-width: 8; }
+  .score-ring__value { fill: none; stroke: var(--sage); stroke-width: 8; stroke-linecap: round;
+    transform: rotate(-90deg); transform-origin: 50% 50%; transition: stroke-dashoffset 600ms ease; }
+  .score-ring__num {
+    position: absolute; inset: 0; display: grid; place-items: center;
+    font-family: var(--font-serif); font-size: 1.6rem; color: var(--ink);
+  }
+  .score-ring__n { font-size: 0.72rem; color: var(--brown-500); text-align: center; margin-top: 2px; }
+}

@@ -1,0 +1,68 @@
+{
+  "M001224": {
+    "cycles": [
+      {
+        "year": "2026",
+        "status": "On the Ballot general",
+        "contributions": 1385301,
+        "expenditures": 1131997,
+        "cashOnHand": 634251,
+        "fromIndividuals": 507215,
+        "individualItemized": 350489,
+        "individualUnitemized": 156726,
+        "fromPacs": 613650,
+        "fromParty": 0
+      },
+      {
+        "year": "2024",
+        "status": "Won general",
+        "contributions": 1084377,
+        "expenditures": 822175,
+        "cashOnHand": 380946,
+        "fromIndividuals": 323316,
+        "individualItemized": 295349,
+        "individualUnitemized": 27967,
+        "fromPacs": 355200,
+        "fromParty": 0
+      },
+      {
+        "year": "2022",
+        "status": "Won general",
+        "contributions": 1051039,
+        "expenditures": 932295,
+        "cashOnHand": 118744,
+        "fromIndividuals": 717620,
+        "individualItemized": 692647,
+        "individualUnitemized": 24973,
+        "fromPacs": 204253,
+        "fromParty": 0
+      }
+    ],
+    "totalContributions": 3520717,
+    "totalExpenditures": 2886467,
+    "source": "Federal Election Commission (OpenFEC), per-cycle filings",
+    "coverageThrough": "2026-03-31"
+  },
+  "C001098": {
+    "cycles": [
+      {
+        "year": "2024",
+        "office": "U.S. Senate Texas",
+        "status": "Won general",
+        "contributions": 107113866,
+        "expenditures": 105485117
+      },
+      {
+        "year": "2018",
+        "office": "U.S. Senate Texas",
+        "status": "Won general",
+        "contributions": 45668718,
+        "expenditures": 45990176
+      }
+    ],
+    "totalContributions": 152782583,
+    "totalExpenditures": 151475293,
+    "source": "FEC / OpenSecrets, via Ballotpedia",
+    "sourceUrl": "https://ballotpedia.org/Ted_Cruz"
+  }
+}

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1440" />
+<title>fixshitbroken — Get started</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+.onboard-bar { display: flex; align-items: center; justify-content: space-between; padding: 22px 64px; }
+.onboard-bar .back { font-size: 13px; color: var(--brown-500); text-decoration: none; font-weight: 600; }
+.step-pill { display: inline-flex; align-items: center; gap: 6px; background: var(--cream-50); padding: 6px 14px; border-radius: 999px; border: 1px solid var(--cream-300); font-size: 12px; font-weight: 700; color: var(--brown-700); }
+.step-pill .num { color: var(--rust); }
+
+.screen { padding: 32px 64px 100px; min-height: 900px; position: relative; }
+.screen-1 { background: var(--cream-100); }
+.screen-2 { background: var(--cream-50); border-top: 1px solid var(--cream-300); border-bottom: 1px solid var(--cream-300); }
+.screen-3 { background: var(--cream-100); }
+
+.screen-head { text-align: center; max-width: 720px; margin: 0 auto 48px; }
+.screen-head h1 { font-size: 56px; font-weight: 800; color: var(--brown-900); line-height: 1; letter-spacing: -0.035em; margin-bottom: 16px; }
+.screen-head h1 .accent { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--brown-600); }
+.screen-head p { font-size: 17px; color: var(--brown-600); line-height: 1.55; }
+
+.flow-divider { text-align: center; padding: 36px 0 12px; position: relative; }
+.flow-divider .arrow { display: inline-grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--brown-900); color: var(--cream-50); font-size: 18px; font-weight: 800; }
+
+/* ---- STEP 1: MAP ---- */
+.map-wrap { max-width: 880px; margin: 0 auto; background: var(--white); border-radius: 28px; padding: 36px; box-shadow: 0 24px 60px -16px rgba(20,16,11,0.12); }
+.map-legend { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.map-legend-left { display: flex; align-items: center; gap: 14px; font-size: 13px; color: var(--brown-600); }
+.legend-swatch { display: inline-flex; align-items: center; gap: 6px; }
+.legend-swatch .sw { width: 12px; height: 12px; border-radius: 3px; }
+.legend-swatch .sw.default { background: var(--cream-200); }
+.legend-swatch .sw.hover { background: var(--brown-700); }
+.legend-swatch .sw.selected { background: var(--rust); }
+
+.us-map { display: grid; grid-template-columns: repeat(12, 1fr); gap: 5px; }
+.state {
+  aspect-ratio: 1;
+  background: var(--cream-50);
+  border: 1px solid var(--cream-300);
+  border-radius: 6px;
+  display: grid; place-items: center;
+  font-weight: 800; font-size: 12px;
+  color: var(--brown-700);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.state.hover-demo { background: var(--brown-700); color: var(--cream-50); border-color: var(--brown-900); }
+.state.selected { background: var(--rust); color: var(--cream-50); border-color: var(--rust); }
+
+.map-foot { display: flex; justify-content: space-between; align-items: center; margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--cream-200); font-size: 13px; }
+.map-foot .selected-info { display: flex; align-items: center; gap: 10px; color: var(--brown-700); font-weight: 600; }
+.map-foot .selected-info .badge { background: var(--rust); color: var(--cream-50); padding: 4px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; }
+
+/* ---- STEP 2: PREVIEW ---- */
+.preview-wrap { max-width: 980px; margin: 0 auto; }
+.state-badge { display: inline-flex; align-items: center; gap: 10px; background: var(--brown-900); color: var(--cream-50); padding: 10px 20px; border-radius: 999px; font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 24px; }
+.state-badge .star { color: var(--brown-300); }
+
+.senators-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+.sen-card { background: var(--white); border-radius: 24px; padding: 28px; box-shadow: 0 16px 40px -12px rgba(20,16,11,0.12); }
+.sen-head { display: flex; gap: 16px; align-items: center; margin-bottom: 20px; }
+.sen-photo { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; color: var(--cream-100); font-weight: 800; font-size: 20px; flex-shrink: 0; }
+.sen-photo.d { background: linear-gradient(135deg, #5B7AA0, #2C4060); }
+.sen-photo.r { background: linear-gradient(135deg, #A4452C, #5B2C1C); }
+.sen-name { font-size: 20px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.01em; }
+.sen-role { font-size: 13px; color: var(--brown-500); margin-top: 2px; }
+.sen-tenure { display: inline-block; background: var(--cream-100); padding: 3px 10px; border-radius: 999px; font-size: 11px; color: var(--brown-700); font-weight: 600; margin-top: 6px; }
+.sen-score-row { display: flex; align-items: center; gap: 18px; background: var(--cream-50); border-radius: 14px; padding: 16px; }
+.sen-score-big { font-size: 36px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.03em; line-height: 1; }
+.sen-score-big.bad { color: var(--rust); }
+.sen-score-big.good { color: var(--sage); }
+.sen-score-meta h5 { font-size: 11px; color: var(--brown-500); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 3px; }
+.sen-score-meta .lbl { font-size: 13px; color: var(--brown-800); font-weight: 600; }
+.sen-recent { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--cream-200); }
+.sen-recent h5 { font-size: 11px; color: var(--brown-500); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 8px; }
+.sen-recent .row { display: flex; justify-content: space-between; align-items: center; padding: 4px 0; font-size: 12px; }
+.sen-recent .row .t { color: var(--brown-800); font-weight: 600; }
+
+.house-band { background: var(--white); border-radius: 20px; padding: 22px 28px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 12px 28px -10px rgba(20,16,11,0.08); margin-bottom: 32px; }
+.house-band .left { display: flex; align-items: center; gap: 14px; }
+.house-band .ic { width: 44px; height: 44px; border-radius: 12px; background: var(--brown-900); color: var(--cream-100); display: grid; place-items: center; font-weight: 900; font-size: 16px; }
+.house-band .ttl { font-size: 16px; font-weight: 800; color: var(--brown-900); }
+.house-band .sub { font-size: 12px; color: var(--brown-500); margin-top: 2px; }
+.house-band .arrow { color: var(--brown-500); }
+
+.confirm-cta { text-align: center; }
+.confirm-cta .btn-primary { font-size: 16px; padding: 18px 32px; }
+.confirm-cta .skip { display: block; margin-top: 14px; font-size: 13px; color: var(--brown-500); text-decoration: none; }
+
+/* ---- STEP 3: SIGNUP ---- */
+.signup-wrap { max-width: 480px; margin: 0 auto; }
+.signup-card { background: var(--white); border-radius: 28px; padding: 36px; box-shadow: 0 24px 60px -16px rgba(20,16,11,0.16); }
+.signup-card label { display: block; font-size: 12px; color: var(--brown-500); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 8px; margin-top: 18px; }
+.signup-card label:first-of-type { margin-top: 0; }
+.signup-card .check-row { display: flex; gap: 10px; align-items: flex-start; padding: 14px 0; }
+.signup-card .check-row .box { width: 20px; height: 20px; border-radius: 6px; border: 1.5px solid var(--cream-300); background: var(--white); display: grid; place-items: center; flex-shrink: 0; margin-top: 1px; }
+.signup-card .check-row.checked .box { background: var(--brown-900); border-color: var(--brown-900); color: var(--cream-50); }
+.signup-card .check-row .txt { font-size: 13px; color: var(--brown-700); line-height: 1.5; }
+.signup-card .btn-primary { width: 100%; justify-content: center; padding: 18px; font-size: 16px; margin-top: 14px; }
+.signup-card .small { text-align: center; font-size: 12px; color: var(--brown-500); margin-top: 14px; }
+
+.unlock-list { margin-top: 32px; padding: 22px 24px; background: var(--brown-900); color: var(--cream-100); border-radius: 20px; }
+.unlock-list h5 { font-size: 11px; color: var(--brown-300); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; margin-bottom: 14px; }
+.unlock-list .row { display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; font-size: 13px; line-height: 1.5; }
+.unlock-list .row .dot { width: 18px; height: 18px; border-radius: 50%; background: var(--brown-300); color: var(--brown-900); display: grid; place-items: center; flex-shrink: 0; margin-top: 1px; font-size: 11px; font-weight: 900; }
+
+.signin-link { text-align: center; margin-top: 24px; font-size: 13px; color: var(--brown-600); }
+.signin-link a { color: var(--brown-900); font-weight: 700; text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ============ SCREEN 1: PICK YOUR STATE ============ -->
+  <div class="onboard-bar">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">F</div>
+      fixshitbroken
+    </a>
+    <div class="step-pill"><span class="num">●</span> Step 1 of 3</div>
+  </div>
+
+  <section class="screen screen-1">
+    <div class="screen-head">
+      <h1>Find your <span class="accent">senators.</span></h1>
+      <p>Click your state. We'll show you the two senators voting for you in Washington, plus everyone in your state's House delegation.</p>
+    </div>
+
+    <div class="map-wrap">
+      <div class="map-legend">
+        <div class="map-legend-left">
+          <div class="legend-swatch"><span class="sw default"></span>50 states</div>
+          <div class="legend-swatch"><span class="sw selected"></span>Selected</div>
+        </div>
+        <div style="font-size:12px; color:var(--brown-500); font-weight:600;">Or use the <a href="#" style="color:var(--brown-900); text-decoration:underline;">dropdown ↓</a></div>
+      </div>
+
+      <div class="us-map">
+        <div class="state" style="grid-column:12; grid-row:1;">ME</div>
+        <div class="state" style="grid-column:10; grid-row:2;">VT</div>
+        <div class="state" style="grid-column:11; grid-row:2;">NH</div>
+        <div class="state" style="grid-column:1; grid-row:3;">WA</div>
+        <div class="state" style="grid-column:8; grid-row:3;">MI</div>
+        <div class="state" style="grid-column:11; grid-row:3;">MA</div>
+        <div class="state" style="grid-column:12; grid-row:3;">RI</div>
+        <div class="state" style="grid-column:1; grid-row:4;">OR</div>
+        <div class="state" style="grid-column:2; grid-row:4;">ID</div>
+        <div class="state" style="grid-column:3; grid-row:4;">MT</div>
+        <div class="state" style="grid-column:4; grid-row:4;">ND</div>
+        <div class="state" style="grid-column:5; grid-row:4;">MN</div>
+        <div class="state" style="grid-column:6; grid-row:4;">WI</div>
+        <div class="state" style="grid-column:10; grid-row:4;">NY</div>
+        <div class="state" style="grid-column:12; grid-row:4;">CT</div>
+        <div class="state" style="grid-column:1; grid-row:5;">NV</div>
+        <div class="state" style="grid-column:2; grid-row:5;">UT</div>
+        <div class="state" style="grid-column:3; grid-row:5;">WY</div>
+        <div class="state" style="grid-column:4; grid-row:5;">SD</div>
+        <div class="state" style="grid-column:5; grid-row:5;">IA</div>
+        <div class="state" style="grid-column:6; grid-row:5;">IL</div>
+        <div class="state" style="grid-column:7; grid-row:5;">IN</div>
+        <div class="state" style="grid-column:8; grid-row:5;">OH</div>
+        <div class="state" style="grid-column:9; grid-row:5;">PA</div>
+        <div class="state" style="grid-column:10; grid-row:5;">NJ</div>
+        <div class="state" style="grid-column:1; grid-row:6;">CA</div>
+        <div class="state" style="grid-column:2; grid-row:6;">AZ</div>
+        <div class="state" style="grid-column:3; grid-row:6;">CO</div>
+        <div class="state" style="grid-column:4; grid-row:6;">NE</div>
+        <div class="state" style="grid-column:5; grid-row:6;">MO</div>
+        <div class="state" style="grid-column:6; grid-row:6;">KY</div>
+        <div class="state" style="grid-column:7; grid-row:6;">WV</div>
+        <div class="state" style="grid-column:8; grid-row:6;">VA</div>
+        <div class="state" style="grid-column:9; grid-row:6;">MD</div>
+        <div class="state" style="grid-column:10; grid-row:6;">DE</div>
+        <div class="state" style="grid-column:2; grid-row:7;">NM</div>
+        <div class="state" style="grid-column:3; grid-row:7;">KS</div>
+        <div class="state" style="grid-column:4; grid-row:7;">OK</div>
+        <div class="state" style="grid-column:5; grid-row:7;">AR</div>
+        <div class="state" style="grid-column:6; grid-row:7;">TN</div>
+        <div class="state" style="grid-column:7; grid-row:7;">NC</div>
+        <div class="state" style="grid-column:8; grid-row:7;">SC</div>
+        <div class="state selected" style="grid-column:4; grid-row:8;">TX</div>
+        <div class="state" style="grid-column:5; grid-row:8;">LA</div>
+        <div class="state" style="grid-column:6; grid-row:8;">MS</div>
+        <div class="state" style="grid-column:7; grid-row:8;">AL</div>
+        <div class="state" style="grid-column:8; grid-row:8;">GA</div>
+        <div class="state" style="grid-column:9; grid-row:8;">FL</div>
+        <div class="state" style="grid-column:1; grid-row:9;">HI</div>
+        <div class="state" style="grid-column:2; grid-row:9;">AK</div>
+      </div>
+
+      <div class="map-foot">
+        <div class="selected-info">
+          <span class="badge">Selected</span>
+          <span>Texas · 2 senators · 38 representatives</span>
+        </div>
+        <a href="#" class="btn-primary">Continue →</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="flow-divider"><div class="arrow">↓</div></div>
+
+  <!-- ============ SCREEN 2: PREVIEW REPS ============ -->
+  <div class="onboard-bar">
+    <a href="#" class="back">← Back to map</a>
+    <a href="index.html" class="logo">
+      <div class="logo-mark">F</div>
+      fixshitbroken
+    </a>
+    <div class="step-pill"><span class="num">●●</span> Step 2 of 3</div>
+  </div>
+
+  <section class="screen screen-2">
+    <div class="screen-head">
+      <div class="state-badge"><span class="star">★</span> Texas</div>
+      <h1>Here are <span class="accent">your senators.</span></h1>
+      <p>Both of them. Their voting records, their alignment with Texas voters, and who's writing them checks. Look correct? Let's lock it in.</p>
+    </div>
+
+    <div class="preview-wrap">
+      <div class="senators-grid">
+
+        <div class="sen-card">
+          <div class="sen-head">
+            <div class="sen-photo r">JC</div>
+            <div>
+              <div class="sen-name">Sen. James Carlson</div>
+              <div class="sen-role"><span class="party-dot R">Republican · Texas</span></div>
+              <div class="sen-tenure">● In office since 2013</div>
+            </div>
+          </div>
+          <div class="sen-score-row">
+            <div class="sen-score-big bad">34%</div>
+            <div class="sen-score-meta">
+              <h5>Constituent alignment</h5>
+              <div class="lbl">Voted with Texas 121 of 358 times</div>
+            </div>
+          </div>
+          <div class="sen-recent">
+            <h5>Recent diverging votes</h5>
+            <div class="row"><span class="t">Childcare Tax Credit</span><span class="pill-vote no">NO · TX wanted YES</span></div>
+            <div class="row"><span class="t">Drug Pricing Reform</span><span class="pill-vote no">NO · TX wanted YES</span></div>
+            <div class="row"><span class="t">Infrastructure Repair</span><span class="pill-vote no">NO · TX wanted YES</span></div>
+          </div>
+        </div>
+
+        <div class="sen-card">
+          <div class="sen-head">
+            <div class="sen-photo r">MT</div>
+            <div>
+              <div class="sen-name">Sen. Maria Torres</div>
+              <div class="sen-role"><span class="party-dot R">Republican · Texas</span></div>
+              <div class="sen-tenure">● In office since 2019</div>
+            </div>
+          </div>
+          <div class="sen-score-row">
+            <div class="sen-score-big" style="color: var(--brown-500);">51%</div>
+            <div class="sen-score-meta">
+              <h5>Constituent alignment</h5>
+              <div class="lbl">Voted with Texas 154 of 302 times</div>
+            </div>
+          </div>
+          <div class="sen-recent">
+            <h5>Recent diverging votes</h5>
+            <div class="row"><span class="t">SNAP Eligibility Reform</span><span class="pill-vote no">YES · TX wanted NO</span></div>
+            <div class="row"><span class="t">Border Security Funds</span><span class="pill-vote yes">YES · TX agreed</span></div>
+            <div class="row"><span class="t">Energy Subsidy Bill</span><span class="pill-vote no">YES · TX wanted NO</span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="house-band">
+        <div class="left">
+          <div class="ic">38</div>
+          <div>
+            <div class="ttl">Your House delegation</div>
+            <div class="sub">38 representatives cover the 38 House districts in Texas</div>
+          </div>
+        </div>
+        <span class="arrow">→ See them all later</span>
+      </div>
+
+      <div class="confirm-cta">
+        <a href="#" class="btn-primary">Looks right — let's go →</a>
+        <a href="#" class="skip">Wait, I picked the wrong state →</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="flow-divider"><div class="arrow">↓</div></div>
+
+  <!-- ============ SCREEN 3: ACCOUNT CREATION ============ -->
+  <div class="onboard-bar">
+    <a href="#" class="back">← Back</a>
+    <a href="index.html" class="logo">
+      <div class="logo-mark">F</div>
+      fixshitbroken
+    </a>
+    <div class="step-pill"><span class="num">●●●</span> Step 3 of 3</div>
+  </div>
+
+  <section class="screen screen-3">
+    <div class="screen-head">
+      <h1>Make it <span class="accent">official.</span></h1>
+      <p>One email, one phone number. We verify you're a real human in Texas — not a bot, not a lobbyist, not someone in another state pretending to be your neighbor.</p>
+    </div>
+
+    <div class="signup-wrap">
+      <div class="signup-card">
+        <label>Your email</label>
+        <input class="input lg" type="email" placeholder="you@gmail.com" value="" />
+
+        <label>Your phone (for verification)</label>
+        <input class="input lg" type="tel" placeholder="(555) 123-4567" value="" />
+
+        <div class="check-row checked">
+          <div class="box">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="txt">Send me the weekly rundown — what your senators did this week, in 90 seconds.</div>
+        </div>
+        <div class="check-row checked">
+          <div class="box">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="txt">Alert me before key votes on legislation I've saved.</div>
+        </div>
+
+        <button class="btn-primary">Verify and finish →</button>
+        <div class="small">By signing up, you agree to our terms. We will never sell your data. We will never run ads. We will never take PAC money.</div>
+      </div>
+
+      <div class="unlock-list">
+        <h5>What you unlock when you verify</h5>
+        <div class="row"><div class="dot">✓</div><div>Vote in constituent polls on every piece of legislation — your vote counts toward your senator's Alignment Score</div></div>
+        <div class="row"><div class="dot">✓</div><div>Save legislation to your watchlist and get notified before the floor vote</div></div>
+        <div class="row"><div class="dot">✓</div><div>Post on your senators' Town Hall boards with a verified-constituent badge</div></div>
+        <div class="row"><div class="dot">✓</div><div>Submit memes and vote on the weekly hall of fame</div></div>
+      </div>
+
+      <div class="signin-link">Already a citizen here? <a href="#">Sign in →</a></div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

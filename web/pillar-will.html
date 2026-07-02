@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1440" />
+<title>fixshitbroken — Will of the people</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+.hero-pillar { padding: 48px 64px 32px; }
+.hero-pillar-head { display: flex; justify-content: space-between; align-items: end; gap: 40px; }
+.hero-pillar-head .left { max-width: 700px; }
+.hero-pillar-head h1 { font-size: 64px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.035em; line-height: 1; margin-bottom: 18px; }
+.hero-pillar-head h1 .accent { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--brown-600); }
+.hero-pillar-head p { font-size: 17px; color: var(--brown-600); line-height: 1.55; }
+.hero-stats { display: flex; gap: 28px; }
+.hero-stat { background: var(--white); border-radius: 16px; padding: 16px 22px; }
+.hero-stat .num { font-size: 28px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.02em; line-height: 1; }
+.hero-stat .lbl { font-size: 11px; color: var(--brown-500); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-top: 4px; }
+
+.leaderboards { padding: 32px 64px; }
+.lb-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.lb-card { border-radius: 22px; padding: 26px; }
+.lb-card.shame { background: var(--brown-900); color: var(--cream-50); }
+.lb-card.fame { background: var(--cream-50); border: 1px solid var(--cream-300); }
+.lb-head { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.lb-head .ic { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; font-weight: 900; font-size: 14px; }
+.lb-card.shame .lb-head .ic { background: var(--rust); color: var(--cream-50); }
+.lb-card.fame .lb-head .ic { background: var(--sage); color: var(--cream-50); }
+.lb-head .ttl { font-size: 17px; font-weight: 800; letter-spacing: -0.01em; }
+.lb-head .sub { font-size: 11px; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-top: 2px; }
+
+.lb-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; }
+.lb-row + .lb-row { border-top: 1px solid; }
+.lb-card.shame .lb-row + .lb-row { border-color: rgba(212,190,160,0.15); }
+.lb-card.fame .lb-row + .lb-row { border-color: var(--cream-200); }
+.lb-row .rank { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 24px; width: 28px; }
+.lb-card.shame .lb-row .rank { color: var(--brown-300); }
+.lb-card.fame .lb-row .rank { color: var(--brown-400); }
+.lb-row .ph { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; color: var(--cream-100); font-weight: 800; font-size: 12px; flex-shrink: 0; }
+.lb-row .ph.r { background: linear-gradient(135deg, #A4452C, #5B2C1C); }
+.lb-row .ph.d { background: linear-gradient(135deg, #5B7AA0, #2C4060); }
+.lb-row .info { flex: 1; min-width: 0; }
+.lb-row .nm { font-size: 14px; font-weight: 800; line-height: 1.2; }
+.lb-card.shame .lb-row .nm { color: var(--cream-50); }
+.lb-card.fame .lb-row .nm { color: var(--brown-900); }
+.lb-row .dst { font-size: 11px; opacity: 0.7; }
+.lb-row .scr { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; }
+.lb-card.shame .lb-row .scr { color: var(--rust); }
+.lb-card.fame .lb-row .scr { color: var(--sage); }
+.lb-empty { font-size: 13px; line-height: 1.6; opacity: 0.9; padding: 4px 0 2px; }
+
+/* DIRECTORY */
+.directory-section { padding: 40px 64px 80px; }
+.dir-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; gap: 20px; flex-wrap: wrap; }
+.dir-head h2 { font-size: 36px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.025em; }
+.dir-head h2 .accent { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--brown-600); }
+
+.filter-row { display: flex; gap: 12px; align-items: center; margin-bottom: 28px; flex-wrap: wrap; }
+.filter-pill { background: var(--white); border: 1px solid var(--cream-300); padding: 8px 16px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--brown-700); cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.filter-pill.active { background: var(--brown-900); color: var(--cream-100); border-color: var(--brown-900); }
+.filter-pill .x { font-size: 14px; opacity: 0.6; }
+.search-input { flex: 1; min-width: 200px; max-width: 320px; background: var(--white); border: 1px solid var(--cream-300); padding: 10px 16px; border-radius: 999px; font-size: 13px; font-family: inherit; color: var(--brown-800); outline: none; }
+.sort-by { display: inline-flex; align-items: center; gap: 8px; background: var(--white); border: 1px solid var(--cream-300); padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--brown-700); margin-left: auto; }
+.sort-by strong { font-weight: 800; color: var(--brown-900); }
+.state-select { background: var(--white); border: 1px solid var(--cream-300); padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--brown-700); font-family: inherit; cursor: pointer; outline: none; }
+.state-select:focus { border-color: var(--brown-400); }
+
+.rep-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.rep-tile { background: var(--white); border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 12px; cursor: pointer; transition: all 0.2s; border: 1px solid transparent; box-shadow: 0 8px 20px -10px rgba(20,16,11,0.08); }
+.rep-tile:hover { border-color: var(--cream-300); }
+.rep-tile-head { display: flex; gap: 12px; align-items: center; }
+.rep-tile-ph { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; color: var(--cream-100); font-weight: 800; font-size: 14px; flex-shrink: 0; }
+.rep-tile-ph.r { background: linear-gradient(135deg, #A4452C, #5B2C1C); }
+.rep-tile-ph.d { background: linear-gradient(135deg, #5B7AA0, #2C4060); }
+.rep-tile-ph.i { background: linear-gradient(135deg, #7A5839, #3D2C1C); }
+.rep-tile .nm { font-size: 14px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.01em; line-height: 1.2; }
+.rep-tile .role { font-size: 11px; color: var(--brown-500); margin-top: 3px; }
+.rep-tile .grade { display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--cream-200); }
+.rep-tile .grade .scr { font-size: 24px; font-weight: 800; letter-spacing: -0.025em; line-height: 1; }
+.rep-tile .grade .scr.bad { color: var(--rust); }
+.rep-tile .grade .scr.mid { color: var(--brown-500); }
+.rep-tile .grade .scr.good { color: var(--sage); }
+.rep-tile .grade .lbl { font-size: 10px; color: var(--brown-500); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; text-align: right; }
+
+.show-more { text-align: center; margin-top: 32px; }
+.show-more a { font-size: 14px; color: var(--brown-700); font-weight: 700; text-decoration: none; padding: 14px 28px; border: 1px solid var(--cream-300); border-radius: 999px; background: var(--white); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="nav">
+    <a href="index.html" class="logo"><div class="logo-mark">F</div>fixshitbroken</a>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="pillar-will.html" class="active">Will of the people</a>
+      <a href="pillar-legislation.html">Legislation</a>
+      <a href="pillar-town-hall.html">Town hall</a>
+      <a href="pillar-memes.html">Memes</a>
+      <a href="why-we-exist.html">Why we exist</a>
+    </div>
+    <div class="nav-account"><div class="av">M</div></div>
+  </nav>
+
+  <section class="hero-pillar">
+    <div class="hero-pillar-head">
+      <div class="left">
+        <div class="eyebrow">Pillar one</div>
+        <h1>Will of the <span class="accent">people.</span></h1>
+        <p>Every member of Congress, with the receipts: how they actually voted, who funds them, and where the official record shows it. Sourced and linkable — no spin, no invented scores.</p>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">537</div><div class="lbl">Members tracked</div></div>
+        <div class="hero-stat"><div class="num">56</div><div class="lbl">States &amp; territories</div></div>
+        <div class="hero-stat"><div class="num">100%</div><div class="lbl">Public data</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="leaderboards">
+    <div class="lb-grid">
+
+      <div class="lb-card shame">
+        <div class="lb-head">
+          <div class="ic">↓</div>
+          <div>
+            <div class="ttl">Hall of shame</div>
+            <div class="sub">Least aligned with their district · this quarter</div>
+          </div>
+        </div>
+        <div class="lb-empty">Rankings unlock with the data. This board will rank members by objective, sourced facts — missed-vote rate and voting record — once vote ingestion runs. We don't rank on a poll (it's gameable and unfair), and we never show a made-up number.</div>
+      </div>
+
+      <div class="lb-card fame">
+        <div class="lb-head">
+          <div class="ic">↑</div>
+          <div>
+            <div class="ttl" style="color:var(--brown-900)">Hall of honor</div>
+            <div class="sub" style="color:var(--brown-500)">Most aligned with their district · this quarter</div>
+          </div>
+        </div>
+        <div class="lb-empty">Recognition, earned by the record. This board will highlight members with the strongest attendance and most consistent voting once vote ingestion runs — drawn from the official record, never an invented score.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="directory-section">
+    <div class="dir-head">
+      <h2>The full <span class="accent">roll call.</span></h2>
+    </div>
+    <div class="filter-row" id="filter-row">
+      <input class="search-input" id="rep-search" placeholder="Search by name or state..." />
+      <select class="state-select" id="rep-state" aria-label="Filter by state"><option value="all">All states</option></select>
+      <div class="filter-pill active" data-filter="all">All members</div>
+      <div class="filter-pill" data-filter="senate">Senate only</div>
+      <div class="filter-pill" data-filter="house">House only</div>
+      <div class="filter-pill" data-filter="R">Republican</div>
+      <div class="filter-pill" data-filter="D">Democrat</div>
+      <div class="filter-pill" data-filter="I">Independent</div>
+      <div class="sort-by" id="rep-count">Sort by: <strong>State ↓</strong></div>
+    </div>
+
+    <div class="rep-grid" id="rep-grid">
+      <div style="grid-column:1/-1;padding:32px;text-align:center;color:var(--brown-500);font-size:14px;">Loading all 537 members…</div>
+    </div>
+
+    <div class="show-more" id="rep-showmore" style="display:none;"><a href="#">Preview data — drop the roster file in to load all members →</a></div>
+  </section>
+
+  <footer>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="logo"><div class="logo-mark">F</div>fixshitbroken</a>
+        <div class="tag-text">Built by citizens, for citizens. 100% public data. No PAC money. No lobbyist hands on the wheel.</div>
+      </div>
+      <div class="foot-col"><h5>The four pillars</h5><ul><li>Will of the People</li><li>Legislation for Dummies</li><li>Town Hall</li><li>Politics is a Joke</li></ul></div>
+      <div class="foot-col"><h5>Tools</h5><ul><li>Find your reps</li><li>Browse legislation</li><li>Voter registration</li><li>Browser extension</li></ul></div>
+      <div class="foot-col"><h5>About</h5><ul><li>Why we exist</li><li>Data sources</li><li>Methodology</li><li>Press kit</li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 fixshitbroken · A civic accountability project</div>
+      <div>Privacy · Terms · Contact</div>
+    </div>
+  </footer>
+
+</div>
+<script src="data/legislators-data.js"></script>
+<script src="js/directory.js" defer></script>
+</body>
+</html>

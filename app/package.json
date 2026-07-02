@@ -1,0 +1,38 @@
+{
+  "name": "fixshitbroken",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "ingest:legislators": "node worker/ingest-legislators.mjs",
+    "ingest:legislators:dry": "node worker/ingest-legislators.mjs --dry-run",
+    "generate:rep-pages": "node worker/generate-rep-pages.mjs",
+    "ingest:votes": "node worker/ingest-votes.mjs",
+    "summarize:bills": "node worker/summarize-bills.mjs --from-votes",
+    "ingest:donors": "node worker/ingest-donors.mjs",
+    "build:site": "node worker/ingest-legislators.mjs --dry-run && node worker/generate-rep-pages.mjs",
+    "build:embeds": "node worker/build-embeds.mjs",
+    "build:site:full": "node worker/ingest-legislators.mjs --dry-run && node worker/summarize-bills.mjs --from-votes && node worker/build-embeds.mjs && node worker/generate-rep-pages.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
+    "fast-xml-parser": "^4.5.6",
+    "next": "^14.2.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.19",
+    "pg": "^8.12.0",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.6",
+    "typescript": "^5.5.3"
+  }
+}

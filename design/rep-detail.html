@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1440" />
+<title>fixshitbroken — Sen. James Carlson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+.page-header { padding: 32px 64px 16px; }
+.crumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--brown-500); margin-bottom: 22px; }
+.crumb a { color: var(--brown-700); text-decoration: none; font-weight: 600; }
+.crumb .sep { color: var(--cream-300); }
+.crumb .here { color: var(--brown-900); font-weight: 700; }
+
+/* HERO */
+.rep-hero { padding: 0 64px 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch; }
+.rep-identity { background: var(--white); border-radius: 24px; padding: 32px; display: flex; gap: 24px; align-items: center; box-shadow: 0 16px 40px -14px rgba(20,16,11,0.12); }
+.rep-portrait { width: 140px; height: 140px; border-radius: 50%; background: linear-gradient(135deg, #A4452C, #5B2C1C); display: grid; place-items: center; color: var(--cream-100); font-weight: 800; font-size: 48px; flex-shrink: 0; }
+.rep-id-body h1 { font-size: 36px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.025em; line-height: 1.05; margin-bottom: 8px; }
+.rep-id-body .role { font-size: 14px; color: var(--brown-700); margin-bottom: 14px; }
+.rep-id-body .role .party-dot { font-size: 14px; }
+.rep-id-body .tenure { display: inline-block; background: var(--cream-100); padding: 6px 12px; border-radius: 999px; font-size: 12px; color: var(--brown-700); font-weight: 700; margin-bottom: 18px; }
+.rep-id-body .actions { display: flex; gap: 8px; }
+.rep-id-body .actions a { font-size: 13px; padding: 8px 14px; border-radius: 999px; text-decoration: none; font-weight: 700; }
+.rep-id-body .actions .save { background: var(--brown-900); color: var(--cream-100); }
+.rep-id-body .actions .secondary { background: transparent; border: 1px solid var(--cream-300); color: var(--brown-700); }
+
+/* ALIGNMENT CARD */
+.alignment-card { background: var(--brown-900); color: var(--cream-100); border-radius: 24px; padding: 32px; display: flex; gap: 28px; align-items: center; }
+.alignment-card .ring { position: relative; width: 160px; height: 160px; flex-shrink: 0; }
+.alignment-card .ring svg { width: 100%; height: 100%; }
+.alignment-card .ring .pct { position: absolute; inset: 0; display: grid; place-items: center; font-size: 44px; font-weight: 800; color: var(--rust); letter-spacing: -0.03em; }
+.alignment-card .ring .pct-lbl { position: absolute; bottom: 24px; left: 0; right: 0; text-align: center; font-size: 10px; color: var(--brown-300); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
+.alignment-card .meta { flex: 1; }
+.alignment-card .meta h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 6px; }
+.alignment-card .meta .sub { font-size: 13px; color: var(--brown-300); margin-bottom: 18px; }
+.alignment-card .meta .breakdown { display: flex; gap: 18px; padding-top: 14px; border-top: 1px solid rgba(212,190,160,0.15); }
+.alignment-card .meta .row { font-size: 11px; color: var(--brown-300); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; margin-bottom: 4px; }
+.alignment-card .meta .val { font-size: 18px; color: var(--cream-50); font-weight: 800; }
+
+/* TABS */
+.detail-tabs { padding: 0 64px 20px; display: flex; gap: 4px; background: transparent; }
+.detail-tab { font-size: 14px; font-weight: 700; padding: 14px 24px; color: var(--brown-500); border-radius: 999px 999px 0 0; cursor: pointer; border-bottom: 3px solid transparent; }
+.detail-tab.active { color: var(--brown-900); border-bottom-color: var(--rust); }
+.detail-tab .count { background: var(--cream-200); color: var(--brown-700); padding: 2px 8px; border-radius: 999px; font-size: 10px; font-weight: 800; margin-left: 4px; }
+
+/* MAIN LAYOUT */
+.detail-main { padding: 16px 64px 80px; display: grid; grid-template-columns: 1.7fr 1fr; gap: 28px; align-items: flex-start; }
+
+/* VOTES LIST */
+.votes-filter { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+.votes-filter .chip { font-size: 12px; padding: 6px 14px; border-radius: 999px; background: var(--white); border: 1px solid var(--cream-300); color: var(--brown-700); font-weight: 600; cursor: pointer; }
+.votes-filter .chip.active { background: var(--brown-900); color: var(--cream-100); border-color: var(--brown-900); }
+
+.votes-list { background: var(--white); border-radius: 22px; overflow: hidden; box-shadow: 0 14px 36px -14px rgba(20,16,11,0.10); }
+.vote-row { padding: 20px 24px; border-bottom: 1px solid var(--cream-200); display: flex; gap: 16px; align-items: center; }
+.vote-row:last-child { border-bottom: 0; }
+.vote-row .left { flex: 1; min-width: 0; }
+.vote-row .num-row { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; }
+.vote-row .num { font-size: 11px; font-weight: 700; color: var(--brown-500); }
+.vote-row .when { font-size: 11px; color: var(--brown-500); }
+.vote-row .title { font-size: 15px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.01em; margin-bottom: 4px; line-height: 1.3; }
+.vote-row .summary { font-size: 12px; color: var(--brown-600); line-height: 1.5; }
+.vote-row .votes { display: flex; gap: 16px; align-items: center; flex-shrink: 0; }
+.vote-row .vote-stack { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 80px; }
+.vote-row .vote-stack .lbl { font-size: 9px; color: var(--brown-500); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
+.vote-row .diverged { background: var(--rust-light); color: var(--rust); padding: 6px 12px; border-radius: 999px; font-size: 11px; font-weight: 800; display: flex; align-items: center; gap: 4px; }
+.vote-row .aligned { background: var(--sage-light); color: var(--sage); padding: 6px 12px; border-radius: 999px; font-size: 11px; font-weight: 800; display: flex; align-items: center; gap: 4px; }
+
+/* SIDEBAR */
+.sidebar { display: flex; flex-direction: column; gap: 20px; }
+.side-card { background: var(--white); border-radius: 20px; padding: 24px; box-shadow: 0 10px 24px -12px rgba(20,16,11,0.08); }
+.side-card h3 { font-size: 11px; color: var(--brown-500); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; margin-bottom: 14px; }
+.side-card.dark { background: var(--brown-900); color: var(--cream-100); }
+.side-card.dark h3 { color: var(--brown-300); }
+
+/* DONORS */
+.donor-row { display: flex; align-items: center; gap: 10px; padding: 9px 0; }
+.donor-row + .donor-row { border-top: 1px solid var(--cream-200); }
+.donor-row .name { font-size: 13px; color: var(--brown-800); font-weight: 600; flex: 1; }
+.donor-row .amt { font-size: 13px; font-weight: 800; color: var(--brown-900); }
+.donor-row .bar { display: block; height: 4px; background: var(--cream-200); border-radius: 999px; margin-top: 6px; overflow: hidden; }
+.donor-row .bar .fill { display: block; height: 100%; background: var(--rust); border-radius: 999px; }
+
+.top-sector { background: var(--brown-900); color: var(--cream-100); border-radius: 14px; padding: 16px 18px; margin-top: 14px; }
+.top-sector .lbl { font-size: 10px; color: var(--brown-300); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
+.top-sector .name { font-size: 16px; font-weight: 800; margin-top: 4px; }
+.top-sector .amt { font-size: 13px; color: var(--brown-300); margin-top: 2px; }
+
+/* CONTACT */
+.contact-list { list-style: none; }
+.contact-list li { display: flex; gap: 10px; align-items: center; padding: 8px 0; font-size: 13px; }
+.contact-list li + li { border-top: 1px solid var(--cream-200); }
+.contact-list .lbl { font-size: 11px; color: var(--brown-500); width: 70px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; }
+.contact-list .val { color: var(--brown-800); font-weight: 600; }
+
+/* BINGO PREVIEW */
+.bingo-mini { background: var(--cream-50); border-radius: 14px; padding: 18px; }
+.bingo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+.bingo-cell { aspect-ratio: 1; background: var(--white); border-radius: 6px; padding: 6px; font-size: 9px; color: var(--brown-700); font-weight: 700; line-height: 1.15; display: grid; place-items: center; text-align: center; }
+.bingo-cell.hit { background: var(--rust); color: var(--cream-50); }
+.bingo-mini .ftr { font-size: 11px; color: var(--brown-500); text-align: center; margin-top: 10px; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="nav">
+    <a href="index.html" class="logo"><div class="logo-mark">F</div>fixshitbroken</a>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="pillar-will.html" class="active">Will of the people</a>
+      <a href="pillar-legislation.html">Legislation</a>
+      <a href="pillar-town-hall.html">Town hall</a>
+      <a href="pillar-memes.html">Memes</a>
+      <a href="why-we-exist.html">Why we exist</a>
+    </div>
+    <div class="nav-account"><div class="av">M</div></div>
+  </nav>
+
+  <div class="page-header">
+    <div class="crumb">
+      <a href="dashboard.html">Dashboard</a>
+      <span class="sep">/</span>
+      <a href="pillar-will.html">Will of the people</a>
+      <span class="sep">/</span>
+      <span class="here">Sen. James Carlson</span>
+    </div>
+  </div>
+
+  <section class="rep-hero">
+    <div class="rep-identity">
+      <div class="rep-portrait">JC</div>
+      <div class="rep-id-body">
+        <h1>Sen. James Carlson</h1>
+        <div class="role"><span class="party-dot R">Republican · Texas · US Senate</span></div>
+        <div class="tenure">● In office since 2013 · Up for re-election 2028</div>
+        <div class="actions">
+          <a href="#" class="save">+ Save to watchlist</a>
+          <a href="#" class="secondary">📱 Call office</a>
+          <a href="pillar-town-hall.html" class="secondary">Town hall →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="alignment-card">
+      <div class="ring">
+        <svg viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="52" fill="none" stroke="#3D2C1C" stroke-width="10"/>
+          <circle cx="60" cy="60" r="52" fill="none" stroke="#A4452C" stroke-width="10" stroke-dasharray="111 327" stroke-dashoffset="0" transform="rotate(-90 60 60)" stroke-linecap="round"/>
+        </svg>
+        <div class="pct">34%</div>
+      </div>
+      <div class="meta">
+        <h2>Constituent Alignment Score</h2>
+        <div class="sub">Voted with Texas voters 121 of 358 times this term</div>
+        <div class="breakdown">
+          <div>
+            <div class="row">Aligned</div>
+            <div class="val" style="color:var(--sage)">121</div>
+          </div>
+          <div>
+            <div class="row">Diverged</div>
+            <div class="val" style="color:var(--rust)">237</div>
+          </div>
+          <div>
+            <div class="row">Trend (3mo)</div>
+            <div class="val" style="color:var(--rust)">↓ 8 pts</div>
+          </div>
+          <div>
+            <div class="row">Rank in TX</div>
+            <div class="val">38 of 40</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="detail-tabs">
+    <div class="detail-tab active">Voting record <span class="count">358</span></div>
+    <div class="detail-tab">Donors</div>
+    <div class="detail-tab">Town hall <span class="count">2.1k</span></div>
+    <div class="detail-tab">Bingo card</div>
+    <div class="detail-tab">In their own words</div>
+  </div>
+
+  <div class="detail-main">
+
+    <div>
+      <div class="votes-filter">
+        <div class="chip active">All votes</div>
+        <div class="chip">Diverged from TX</div>
+        <div class="chip">Aligned with TX</div>
+        <div class="chip">Last 30 days</div>
+        <div class="chip">Healthcare</div>
+        <div class="chip">Economy</div>
+      </div>
+
+      <div class="votes-list">
+
+        <div class="vote-row">
+          <div class="left">
+            <div class="num-row">
+              <span class="tag live">3 days away</span>
+              <span class="num">HR-4471</span>
+              <span class="when">Vote scheduled May 24</span>
+            </div>
+            <div class="title">Protecting American Prosperity Act</div>
+            <div class="summary">Extends offshore corporate tax cut, cuts SNAP eligibility, $48B to four energy companies, raises pharma patent cap.</div>
+          </div>
+          <div class="votes">
+            <div class="vote-stack"><div class="lbl">Expected vote</div><span class="pill-vote no">YES</span></div>
+            <div class="vote-stack"><div class="lbl">Texas wants</div><span class="pill-vote people">NO · 87%</span></div>
+            <div class="diverged">⚠ Will diverge</div>
+          </div>
+        </div>
+
+        <div class="vote-row">
+          <div class="left">
+            <div class="num-row">
+              <span class="num">S-2104</span>
+              <span class="when">3 days ago · May 18</span>
+            </div>
+            <div class="title">Childcare Tax Credit Expansion</div>
+            <div class="summary">Raises federal childcare tax credit household cap from $8,000 to $12,000 per year.</div>
+          </div>
+          <div class="votes">
+            <div class="vote-stack"><div class="lbl">Carlson</div><span class="pill-vote no">NO</span></div>
+            <div class="vote-stack"><div class="lbl">Texas wanted</div><span class="pill-vote people">YES · 74%</span></div>
+            <div class="diverged">↓ Diverged</div>
+          </div>
+        </div>
+
+        <div class="vote-row">
+          <div class="left">
+            <div class="num-row">
+              <span class="num">HR-2210</span>
+              <span class="when">8 days ago · May 13</span>
+            </div>
+            <div class="title">Border Security Funding Act</div>
+            <div class="summary">Authorizes $26B for additional CBP staffing, surveillance tech, and processing facilities.</div>
+          </div>
+          <div class="votes">
+            <div class="vote-stack"><div class="lbl">Carlson</div><span class="pill-vote yes">YES</span></div>
+            <div class="vote-stack"><div class="lbl">Texas wanted</div><span class="pill-vote people">YES · 68%</span></div>
+            <div class="aligned">✓ Aligned</div>
+          </div>
+        </div>
+
+        <div class="vote-row">
+          <div class="left">
+            <div class="num-row">
+              <span class="num">HR-9012</span>
+              <span class="when">12 days ago · May 9</span>
+            </div>
+            <div class="title">Drug Pricing Reform Act</div>
+            <div class="summary">Allows Medicare to negotiate prescription drug prices directly with manufacturers.</div>
+          </div>
+          <div class="votes">
+            <div class="vote-stack"><div class="lbl">Carlson</div><span class="pill-vote no">NO</span></div>
+            <div class="vote-stack"><div class="lbl">Texas wanted</div><span class="pill-vote people">YES · 78%</span></div>
+            <div class="diverged">↓ Diverged</div>
+          </div>
+        </div>
+
+        <div class="vote-row">
+          <div class="left">
+            <div class="num-row">
+              <span class="num">S-1844</span>
+              <span class="when">18 days ago · May 3</span>
+            </div>
+            <div class="title">Critical Mineral Supply Chain Act</div>
+            <div class="summary">$14B in domestic refining for lithium, cobalt, rare earth elements. Adds tariffs on three countries.</div>
+          </div>
+          <div class="votes">
+            <div class="vote-stack"><div class="lbl">Carlson</div><span class="pill-vote yes">YES</span></div>
+            <div class="vote-stack"><div class="lbl">Texas wanted</div><span class="pill-vote people">YES · 61%</span></div>
+            <div class="aligned">✓ Aligned</div>
+          </div>
+        </div>
+
+        <div class="vote-row">
+          <div class="left">
+            <div class="num-row">
+              <span class="num">HR-5612</span>
+              <span class="when">24 days ago · Apr 27</span>
+            </div>
+            <div class="title">Federal Data Privacy Act</div>
+            <div class="summary">First comprehensive US data privacy law. Lets individuals opt out of data sale; preempts state laws.</div>
+          </div>
+          <div class="votes">
+            <div class="vote-stack"><div class="lbl">Carlson</div><span class="pill-vote no">NO</span></div>
+            <div class="vote-stack"><div class="lbl">Texas wanted</div><span class="pill-vote people">YES · 83%</span></div>
+            <div class="diverged">↓ Diverged</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align:center; margin-top:24px;">
+        <a href="#" style="font-size:13px; color:var(--brown-700); font-weight:700; text-decoration:none; padding:12px 24px; border:1px solid var(--cream-300); border-radius:999px; background:var(--white);">Load 352 more votes →</a>
+      </div>
+    </div>
+
+    <aside class="sidebar">
+
+      <div class="side-card">
+        <h3>Top donor sectors</h3>
+        <div class="donor-row"><div style="flex:1;"><div class="name">Pharmaceutical industry</div><div class="bar"><span class="fill" style="width:100%; background:var(--rust);"></span></div></div><div class="amt">$248k</div></div>
+        <div class="donor-row"><div style="flex:1;"><div class="name">Oil & gas</div><div class="bar"><span class="fill" style="width:84%; background:var(--rust);"></span></div></div><div class="amt">$208k</div></div>
+        <div class="donor-row"><div style="flex:1;"><div class="name">Insurance carriers</div><div class="bar"><span class="fill" style="width:67%; background:var(--rust);"></span></div></div><div class="amt">$166k</div></div>
+        <div class="donor-row"><div style="flex:1;"><div class="name">Real estate & development</div><div class="bar"><span class="fill" style="width:48%; background:var(--brown-500);"></span></div></div><div class="amt">$118k</div></div>
+        <div class="donor-row"><div style="flex:1;"><div class="name">Commercial banks</div><div class="bar"><span class="fill" style="width:36%; background:var(--brown-500);"></span></div></div><div class="amt">$89k</div></div>
+
+        <div class="top-sector">
+          <div class="lbl">⚠ Conflict watch</div>
+          <div class="name">Pharma is top donor.</div>
+          <div class="amt">Voted NO on Drug Pricing Reform 4 out of 4 times.</div>
+        </div>
+      </div>
+
+      <div class="side-card dark">
+        <h3>Bingo card · this quarter</h3>
+        <div class="bingo-mini" style="background: transparent; padding: 0;">
+          <div class="bingo-grid">
+            <div class="bingo-cell hit">"We need to study this more"</div>
+            <div class="bingo-cell hit">Missed a key vote</div>
+            <div class="bingo-cell">Town hall canceled</div>
+            <div class="bingo-cell hit">Voted with pharma</div>
+            <div class="bingo-cell" style="background:var(--brown-300); color:var(--brown-900);">FREE</div>
+            <div class="bingo-cell hit">"My door is always open"</div>
+            <div class="bingo-cell">PAC haul $1M+</div>
+            <div class="bingo-cell hit">"Concerns about both sides"</div>
+            <div class="bingo-cell">Visited the district</div>
+          </div>
+          <div class="ftr" style="color:var(--brown-300); margin-top: 14px;">5 of 9 squares hit — bingo in 4 squares</div>
+        </div>
+      </div>
+
+      <div class="side-card">
+        <h3>Contact + office</h3>
+        <ul class="contact-list">
+          <li><span class="lbl">DC office</span><span class="val">202-224-XXXX</span></li>
+          <li><span class="lbl">Houston</span><span class="val">713-555-XXXX</span></li>
+          <li><span class="lbl">Email</span><span class="val">Contact form →</span></li>
+          <li><span class="lbl">Press</span><span class="val">press@carlson.senate.gov</span></li>
+        </ul>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <footer>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="logo"><div class="logo-mark">F</div>fixshitbroken</a>
+        <div class="tag-text">Built by citizens, for citizens. 100% public data. No PAC money. No lobbyist hands on the wheel.</div>
+      </div>
+      <div class="foot-col"><h5>The four pillars</h5><ul><li>Will of the People</li><li>Legislation for Dummies</li><li>Town Hall</li><li>Politics is a Joke</li></ul></div>
+      <div class="foot-col"><h5>Tools</h5><ul><li>Find your reps</li><li>Browse legislation</li><li>Voter registration</li><li>Browser extension</li></ul></div>
+      <div class="foot-col"><h5>About</h5><ul><li>Why we exist</li><li>Data sources</li><li>Methodology</li><li>Press kit</li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 fixshitbroken · A civic accountability project</div>
+      <div>Privacy · Terms · Contact</div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

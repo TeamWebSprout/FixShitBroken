@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1440" />
+<title>fixshitbroken — Sen. Catherine Cortez Masto</title>
+<meta name="description" content="Sen. Catherine Cortez Masto, Democrat · Nevada · US Senate. Voting record, funding, and accountability on fixshitbroken." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../shared.css" />
+<style>
+.page-header { padding: 32px 64px 16px; }
+.crumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--brown-500); margin-bottom: 22px; }
+.crumb a { color: var(--brown-700); text-decoration: none; font-weight: 600; }
+.crumb .sep { color: var(--cream-300); }
+.crumb .here { color: var(--brown-900); font-weight: 700; }
+.rep-hero { padding: 0 64px 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch; }
+.rep-identity { background: var(--white); border-radius: 24px; padding: 32px; display: flex; gap: 24px; align-items: center; box-shadow: 0 16px 40px -14px rgba(20,16,11,0.12); }
+.rep-portrait { width: 140px; height: 140px; border-radius: 50%; display: grid; place-items: center; color: var(--cream-100); font-weight: 800; font-size: 48px; flex-shrink: 0; }
+.rep-id-body h1 { font-size: 36px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.025em; line-height: 1.05; margin-bottom: 8px; }
+.rep-id-body .role { font-size: 14px; color: var(--brown-700); margin-bottom: 14px; }
+.rep-id-body .role .party-dot { font-size: 14px; }
+.rep-id-body .tenure { display: inline-block; background: var(--cream-100); padding: 6px 12px; border-radius: 999px; font-size: 12px; color: var(--brown-700); font-weight: 700; margin-bottom: 18px; }
+.rep-id-body .actions { display: flex; gap: 8px; }
+.rep-id-body .actions a { font-size: 13px; padding: 8px 14px; border-radius: 999px; text-decoration: none; font-weight: 700; }
+.rep-id-body .actions .save { background: var(--brown-900); color: var(--cream-100); }
+.rep-id-body .actions .secondary { background: transparent; border: 1px solid var(--cream-300); color: var(--brown-700); }
+.alignment-card { background: var(--brown-900); color: var(--cream-100); border-radius: 24px; padding: 32px; display: flex; gap: 28px; align-items: center; }
+.alignment-card .ring { position: relative; width: 160px; height: 160px; flex-shrink: 0; }
+.alignment-card .ring svg { width: 100%; height: 100%; }
+.alignment-card .ring .pct { position: absolute; inset: 0; display: grid; place-items: center; font-size: 44px; font-weight: 800; color: var(--brown-300); letter-spacing: -0.03em; }
+.alignment-card .meta { flex: 1; }
+.alignment-card .meta h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 6px; }
+.alignment-card .meta .sub { font-size: 13px; color: var(--brown-300); margin-bottom: 18px; line-height: 1.5; }
+.alignment-card .meta .breakdown { display: flex; gap: 18px; padding-top: 14px; border-top: 1px solid rgba(212,190,160,0.15); }
+.alignment-card .meta .row { font-size: 11px; color: var(--brown-300); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; margin-bottom: 4px; }
+.alignment-card .meta .val { font-size: 18px; color: var(--cream-50); font-weight: 800; }
+.detail-tabs { padding: 0 64px 20px; display: flex; gap: 4px; background: transparent; }
+.detail-tab { font-size: 14px; font-weight: 700; padding: 14px 24px; color: var(--brown-500); border-radius: 999px 999px 0 0; cursor: pointer; border-bottom: 3px solid transparent; }
+.detail-tab.active { color: var(--brown-900); border-bottom-color: var(--rust); }
+.detail-main { padding: 16px 64px 80px; display: grid; grid-template-columns: 1.7fr 1fr; gap: 28px; align-items: flex-start; }
+.empty-state { background: var(--white); border-radius: 22px; padding: 40px 32px; box-shadow: 0 14px 36px -14px rgba(20,16,11,0.10); text-align: center; }
+.empty-state .ico { width: 44px; height: 44px; border-radius: 12px; background: var(--cream-100); display: grid; place-items: center; margin: 0 auto 16px; font-size: 20px; }
+.empty-state h3 { font-size: 17px; font-weight: 800; color: var(--brown-900); margin-bottom: 8px; }
+.empty-state p { font-size: 13px; color: var(--brown-600); line-height: 1.55; max-width: 440px; margin: 0 auto; }
+.votes-list { background: var(--white); border-radius: 22px; overflow: hidden; box-shadow: 0 14px 36px -14px rgba(20,16,11,0.10); }
+.vote-row { padding: 18px 24px; border-bottom: 1px solid var(--cream-200); display: flex; gap: 16px; align-items: center; }
+.vote-row:last-child { border-bottom: 0; }
+.vote-row .left { flex: 1; min-width: 0; }
+.vote-row .num-row { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; }
+.vote-row .num { font-size: 11px; font-weight: 700; color: var(--brown-500); }
+.vote-row .when { font-size: 11px; color: var(--brown-500); }
+.vote-row .title { font-size: 15px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.01em; margin-bottom: 4px; line-height: 1.3; }
+.vote-row .summary { font-size: 12px; color: var(--brown-600); line-height: 1.5; }
+.vote-row .votes { display: flex; gap: 16px; align-items: center; flex-shrink: 0; }
+.vote-row .vote-stack { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 84px; }
+.vote-row .vote-stack .lbl { font-size: 9px; color: var(--brown-500); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
+.votes-note { font-size: 12px; color: var(--brown-500); margin: 14px 4px 0; line-height: 1.5; }
+.sample-banner { background: #FBE9E2; border: 1px solid #E2B8A8; color: #8F3F1F; border-radius: 12px; padding: 12px 16px; font-size: 12px; font-weight: 700; margin-bottom: 16px; display: flex; gap: 8px; align-items: center; line-height: 1.4; }
+.sidebar { display: flex; flex-direction: column; gap: 20px; }
+.side-card { background: var(--white); border-radius: 20px; padding: 24px; box-shadow: 0 10px 24px -12px rgba(20,16,11,0.08); }
+.side-card h3 { font-size: 11px; color: var(--brown-500); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; margin-bottom: 14px; }
+.side-card .soon { font-size: 13px; color: var(--brown-500); line-height: 1.55; }
+.contact-list { list-style: none; }
+.contact-list li { display: flex; gap: 10px; align-items: center; padding: 8px 0; font-size: 13px; }
+.contact-list li + li { border-top: 1px solid var(--cream-200); }
+.contact-list .lbl { font-size: 11px; color: var(--brown-500); width: 86px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; flex-shrink: 0; }
+.contact-list .val { color: var(--brown-800); font-weight: 600; word-break: break-word; }
+.detail-tab { cursor: pointer; }
+.panel-col { min-width: 0; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+.src-card { background: var(--white); border-radius: 22px; padding: 28px 30px; box-shadow: 0 14px 36px -14px rgba(20,16,11,0.10); }
+.src-card h3 { font-size: 18px; font-weight: 800; color: var(--brown-900); margin-bottom: 8px; }
+.src-note { font-size: 13px; color: var(--brown-600); line-height: 1.6; margin-bottom: 18px; max-width: 620px; }
+.src-list { list-style: none; margin: 0; padding: 0; }
+.src-list li { padding: 13px 0; border-top: 1px solid var(--cream-200); font-size: 14px; color: var(--brown-700); }
+.src-list li:first-child { border-top: 0; }
+.src-list a { color: var(--rust); text-decoration: none; font-weight: 700; }
+.src-list a:hover { text-decoration: underline; }
+.vote-item { border-bottom: 1px solid var(--cream-200); }
+.vote-item:last-child { border-bottom: 0; }
+.vote-item .vote-row { border-bottom: 0; cursor: pointer; outline: none; }
+.vote-item .vote-row:hover { background: var(--cream-50); }
+.vote-item .vote-row:focus-visible { box-shadow: inset 0 0 0 2px var(--rust); }
+.vote-row .chev { color: var(--brown-400); flex-shrink: 0; transition: transform 0.18s ease; }
+.vote-row[aria-expanded="true"] .chev { transform: rotate(180deg); color: var(--rust); }
+.vote-detail { padding: 0 24px; }
+.vote-detail .vd-inner { padding: 4px 0 20px; border-top: 1px dashed var(--cream-300); }
+.vd-h { font-size: 10px; text-transform: uppercase; letter-spacing: 0.09em; font-weight: 800; color: var(--brown-500); margin: 16px 0 8px; }
+.vd-title { font-size: 15px; font-weight: 700; color: var(--brown-900); line-height: 1.4; margin-bottom: 8px; }
+.vd-meta { font-size: 12px; color: var(--brown-600); margin-bottom: 10px; line-height: 1.5; }
+.vd-pos { font-size: 13px; color: var(--brown-800); margin-bottom: 14px; }
+.vd-pos .pill-vote { vertical-align: middle; }
+.vd-link { display: inline-block; font-size: 13px; font-weight: 700; color: var(--rust); text-decoration: none; margin-bottom: 12px; }
+.vd-link:hover { text-decoration: underline; }
+.vd-note { font-size: 12px; color: var(--brown-500); line-height: 1.55; max-width: 620px; }
+.vd-summary { background: var(--cream-50); border-radius: 14px; padding: 16px 18px; margin: 4px 0 14px; }
+.vd-billname { font-size: 14px; font-weight: 800; color: var(--brown-900); margin-bottom: 8px; }
+.vd-tag { display: inline-block; background: var(--cream-200); color: var(--brown-700); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; padding: 3px 9px; border-radius: 999px; margin-bottom: 12px; }
+.vd-bullets { margin: 0 0 10px; padding-left: 18px; }
+.vd-bullets li { font-size: 13px; color: var(--brown-800); line-height: 1.5; margin-bottom: 6px; }
+.vd-cbo { font-size: 12px; color: var(--brown-700); margin-bottom: 8px; }
+.vd-cbo a { color: var(--rust); font-weight: 700; text-decoration: none; }
+.vd-src { font-size: 11px; color: var(--brown-500); line-height: 1.5; }
+.donor-tot { margin: 6px 0 18px; }
+.donor-tot .dt-big { font-size: 34px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.03em; line-height: 1; }
+.donor-tot .dt-lbl { font-size: 12px; color: var(--brown-500); margin-top: 6px; font-weight: 600; }
+.donor-split { margin-bottom: 18px; }
+.donor-split .ds-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--brown-800); font-weight: 700; margin: 10px 0 5px; }
+.donor-split .ds-bar { height: 8px; background: var(--cream-200); border-radius: 999px; overflow: hidden; }
+.donor-split .ds-bar span { display: block; height: 100%; background: var(--sage); border-radius: 999px; }
+.donor-split .ds-bar.pac span { background: var(--rust); }
+.donor-split .ds-bar.party span { background: var(--brown-500); }
+.donor-split .ds-sub { font-size: 11px; color: var(--brown-500); margin: 2px 0 12px; line-height: 1.5; }
+.donor-emp { border-top: 1px solid var(--cream-200); padding-top: 14px; }
+.donor-emp .de-h { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800; color: var(--brown-500); margin-bottom: 10px; }
+.donor-row { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; font-size: 13px; }
+.donor-row .dn { color: var(--brown-800); font-weight: 600; }
+.donor-row .da { color: var(--brown-600); font-weight: 800; white-space: nowrap; }
+.donor-src { font-size: 11px; color: var(--brown-500); margin-top: 14px; line-height: 1.5; }
+.donor-cycles { border-top: 1px solid var(--cream-200); }
+.donor-cyc { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--cream-200); }
+.donor-cyc:last-child { border-bottom: 0; }
+.dc-year { font-size: 15px; font-weight: 800; color: var(--brown-900); }
+.dc-status { display: block; font-size: 10px; font-weight: 700; color: var(--brown-500); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+.dc-nums { text-align: right; font-size: 13px; }
+.dc-raise { display: block; color: var(--sage); font-weight: 800; }
+.dc-spend { display: block; color: var(--brown-500); font-weight: 700; }
+.dc-raise em, .dc-spend em { font-style: normal; font-weight: 600; color: var(--brown-400); font-size: 11px; }
+.sc-yr { font-size: 11px; font-weight: 800; color: var(--brown-700); text-transform: uppercase; letter-spacing: 0.06em; margin: 18px 0 8px; }
+.sc-yr:first-child { margin-top: 2px; }
+.src-card h3 .sc-tag { font-size: 10px; font-weight: 700; color: var(--brown-500); text-transform: uppercase; letter-spacing: 0.05em; background: var(--cream-100); padding: 3px 8px; border-radius: 999px; margin-left: 6px; vertical-align: middle; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="nav">
+    <a href="../index.html" class="logo"><div class="logo-mark">F</div>fixshitbroken</a>
+    <div class="nav-links">
+      <a href="../dashboard.html">Dashboard</a>
+      <a href="../pillar-will.html" class="active">Will of the people</a>
+      <a href="../pillar-legislation.html">Legislation</a>
+      <a href="../pillar-town-hall.html">Town hall</a>
+      <a href="../pillar-memes.html">Memes</a>
+      <a href="../why-we-exist.html">Why we exist</a>
+    </div>
+    <div class="nav-account"><div class="av">M</div></div>
+  </nav>
+
+  <div class="page-header">
+    <div class="crumb">
+      <a href="../dashboard.html">Dashboard</a>
+      <span class="sep">/</span>
+      <a href="../pillar-will.html">Will of the people</a>
+      <span class="sep">/</span>
+      <span class="here">Sen. Catherine Cortez Masto</span>
+    </div>
+  </div>
+
+  <section class="rep-hero">
+    <div class="rep-identity">
+      <div class="rep-portrait" style="background:linear-gradient(135deg, #5B7AA0, #2C4060);">CM</div>
+      <div class="rep-id-body">
+        <h1>Sen. Catherine Cortez Masto</h1>
+        <div class="role"><span class="party-dot D">Democrat · Nevada · US Senate</span></div>
+        <div class="tenure">● In office since 2017</div>
+        <div class="actions">
+          <a href="#" class="save">+ Save to watchlist</a>
+          <a href="tel:202-224-3542" class="secondary">📱 Call office</a>
+          <a href="../pillar-town-hall.html" class="secondary">Town hall →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="alignment-card">
+      <div class="ring">
+        <svg viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="52" fill="none" stroke="#3D2C1C" stroke-width="10"/>
+        </svg>
+        <div class="pct">—</div>
+      </div>
+      <div class="meta">
+        <h2>Constituent Alignment Score</h2>
+        <div class="sub">No score yet. Alignment is computed from verified constituent polls once polling opens — it is never inferred. Shown here with sample size when live.</div>
+        <div class="breakdown">
+          <div><div class="row">Aligned</div><div class="val">—</div></div>
+          <div><div class="row">Diverged</div><div class="val">—</div></div>
+          <div><div class="row">Responses</div><div class="val">0</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="detail-tabs" id="detail-tabs">
+    <div class="detail-tab active" data-tab="votes">Voting record <span class="count" style="background:var(--cream-200);color:var(--brown-700);padding:2px 8px;border-radius:999px;font-size:10px;font-weight:800;margin-left:4px;">10</span></div>
+    <div class="detail-tab" data-tab="donors">Donors</div>
+  </div>
+
+  <div class="detail-main">
+    <div class="panel-col">
+      <div class="tab-panel active" id="panel-votes">
+      <div class="votes-list">
+        <div class="vote-item">
+        <div class="vote-row" role="button" tabindex="0" aria-expanded="false">
+          <div class="left">
+            <div class="num-row"><span class="num">PN851-7</span><span class="when">Jun 14, 2026</span></div>
+            <div class="title">Confirmation: Justin D. Smith, to be U.S. Circuit Judge for the Eighth Circuit</div>
+            <div class="summary">On the Nomination · Confirmed</div>
+          </div>
+          <div class="votes">
+            <div class="vote-stack"><div class="lbl">Masto</div><span class="pill-vote no">NO</span></div>
+            <svg class="chev" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+          <div class="vote-detail" hidden>
+            <div class="vd-inner">
+              <div class="vd-h">What this vote was</div>
+              <p class="vd-title">Confirmation: Justin D. Smith, to be U.S. Circuit Judge for the Eighth Circuit</p>
+              <p class="vd-meta">PN851-7 · On the Nomination · Result: Confirmed · Jun 14, 2026</p>
+              <p class="vd-pos"><strong>Masto</strong> voted <span class="pill-vote no">NO</span>.</p>
+              <p class="vd-note">This is a nomination — the official record has the nominee and the position they were confirmed to.</p>
+              <a class="vd-link" href="https://www.congress.gov/nomination/119th-congress/851" target="_blank" rel="noopener">Nomination details on Congress.gov →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="vote-item">
+        <div class="vote-row" role="button" tabindex="0" aria-expanded="false">
+          <div class="left">
+            <div class="num-row"><span class="num">PN851-7</span><span class="when">Jun 10, 2026</span></div>
+            <div class="title">Motion to Invoke Cloture: Justin D. Smith to be U.S. Circuit Judge for the Eighth Circuit</div>
+            <div class="summary">On the Cloture Motion · Agreed to</div>
+          </div>
+          <div class="votes">
+            <div class="vote-stack"><div class="lbl">Masto</div><span class="pill-vote no">NO</span></div>
+            <svg class="chev" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+          <div class="vote-detail" hidden>
+            <div class="vd-inner">
+              <div class="vd-h">What this vote was</div>
+              <p class="vd-title">Motion to Invoke Cloture: Justin D. Smith to be U.S. Circuit Judge for the Eighth Circuit</p>
+              <p class="vd-meta">PN851-7 · On the Cloture Motion · Result: Agreed to · Jun 10, 2026</p>
+              <p class="vd-pos"><strong>Masto</strong> voted <span class="pill-vote no">NO</span>.</p>
+              <p class="vd-note">This is a nomination — the official record has the nominee and the position they were confirmed to.</p>
+              <a class="vd-link" href="https://www.congress.gov/nomination/119th-congress/851" target="_blank" rel="noopener">Nomination details on Congress.gov →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="vote-item">
+        <div class="vote-row" role="button" tabindex="0" aria-expanded="false">
+          <div class="left">
+            <div class="num-row"><span class="num">PN901-4</span><span class="when">Jun 10, 2026</span></div>
+            <div class="title">Confirmation: Brock Dahl, to be Legal Adviser of the Department of State</div>
+            <div class="summary">On the Nomination · Confirmed</div>
+          </div>
+          <div class="votes">
+            <div class="vote-stack"><div class="lbl">Masto</div><span class="pill-vote no">NO</span></div>
+            <svg class="chev" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+          <div class="vote-detail" hidden>
+            <div class="vd-inner">
+              <div class="vd-h">What this vote was</div>
+              <p class="vd-title">Confirmation: Brock Dahl, to be Legal Adviser of the Department of State</p>
+              <p class="vd-meta">PN901-4 · On the Nomination · Result: Confirmed · Jun 10, 2026</p>
+              <p class="vd-pos"><strong>Masto</strong> voted <span class="pill-vote no">NO</span>.</p>
+              <p class="vd-note">This is a nomination — the official record has the nominee and the position they were confirmed to.</p>
+              <a class="vd-link" href="https://www.congress.gov/nomination/119th-congress/901" target="_blank" rel="noopener">Nomination details on Congress.gov →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="vote-item">
+        <div class="vote-row" role="button" tabindex="0" aria-expanded="false">
+          <div class="left">
+            <div class="num-row"><span class="num">PN901-4</span><span class="when">Jun 9, 2026</span></div>
+            <div class="title">Motion to Invoke Cloture: Brock Dahl to be Legal Adviser of the Department of State</div>
+            <div class="summary">On the Cloture Motion · Agreed to</div>
+          </div>
+          <div class="votes">
+            <div class="vote-stack"><div class="lbl">Masto</div><span class="pill-vote no">NO</span></div>
+            <svg class="chev" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+          <div class="vote-detail" hidden>
+            <div class="vd-inner">
+              <div class="vd-h">What this vote was</div>
+              <p class="vd-title">Motion to Invoke Cloture: Brock Dahl to be Legal Adviser of the Department of State</p>
+              <p class="vd-meta">PN901-4 · On the Cloture Motion · Result: Agreed to · Jun 9, 2026</p>
+              <p class="vd-pos"><strong>Masto</strong> voted <span class="pill-vote no">NO</span>.</p>
+              <p class="vd-note">This is a nomination — the official record has the nominee and the position they were confirmed to.</p>
+              <a class="vd-link" href="https://www.congress.gov/nomination/119th-congress/901" target="_blank" rel="noopener">Nomination details on Congress.gov →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="vote-item">
+        <div class="vote-row" role="button" tabindex="0" aria-expanded="false">
+          <div class="left">
+            <div class="num-row"><span class="num">PN851-5</span><span class="when">Jun 9, 2026</span></div>
+            <div class="title">Confirmation: Anthony J. Powell, to be U.S. District Judge for the District of Kansas</div>
+            <div class="summary">On the Nomination · Confirmed</div>
+          </div>
+          <div class="votes">
+            <div class="vote-stack"><div class="lbl">Masto</div><span class="pill-vote no">NO</span></div>
+            <svg class="chev" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+          <div class="vote-detail" hidden>
+            <div class="vd-inner">
+              <div class="vd-h">What this vote was</div>
+              <p class="vd-title">Confirmation: Anthony J. Powell, to be U.S. District Judge for the District of Kansas</p>
+              <p class="vd-meta">PN851-5 · On the Nomination · Result: Confirmed · Jun 9, 2026</p>
+              <p class="vd-pos"><strong>Masto</strong> voted <span class="pill-vote no">NO</span>.</p>
+              <p class="vd-note">This is a nomination — the official record has the nominee and the position they were confirmed to.</p>
+              <a class="vd-link" href="https://www.congress.gov/nomination/119th-congress/851" target="_blank" rel="noopener">Nomination details on Congress.gov →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="vote-item">
+        <div class="vote-row" role="button" tabindex="0" aria-expanded="false">
+          <div class="left">
+            <div class="num-row"><span class="num">PN851-5</span><span class="when">Jun 9, 2026</span></div>
+            <div class="title">Motion to Invoke Cloture: Anthony J. Powell to be U.S. District Judge for the District of Kansas</div>
+            <div class="summary">On the Cloture Motion · Agreed to</div>
+          </div>
+          <div class="votes">
+            <div class="vote-stack"><div class="lbl">Masto</div><span class="pill-vote no">NO</span></div>
+            <svg class="chev" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+          <div class="vote-detail" hidden>
+            <div class="vd-inner">
+              <div class="vd-h">What this vote was</div>
+              <p class="vd-title">Motion to Invoke Cloture: Anthony J. Powell to be U.S. District Judge for the District of Kansas</p>
+              <p class="vd-meta">PN851-5 · On the Cloture Motion · Result: Agreed to · Jun 9, 2026</p>
+              <p class="vd-pos"><strong>Masto</strong> voted <span class="pill-vote no">NO</span>.</p>
+              <p class="vd-note">This is a nomination — the official record has the nominee and the position they were confirmed to.</p>
+              <a class="vd-link" href="https://www.congress.gov/nomination/119th-congress/851" target="_blank" rel="noopener">Nomination details on Congress.gov →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="vote-item">
+        <div class="vote-row" role="button" tabindex="0" aria-expanded="false">
+          <div class="left">
+            <div class="num-row"><span class="num">PN851-4</span><span class="when">Jun 8, 2026</span></div>
+            <div class="title">Confirmation: Anthony W. Mattivi, to be U.S. District Judge for the District of Kansas</div>
+            <div class="summary">On the Nomination · Confirmed</div>
+          </div>
+          <div class="votes">
+            <div class="vote-stack"><div class="lbl">Masto</div><span class="pill-vote no">NO</span></div>
+            <svg class="chev" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+          <div class="vote-detail" hidden>
+            <div class="vd-inner">
+              <div class="vd-h">What this vote was</div>
+              <p class="vd-title">Confirmation: Anthony W. Mattivi, to be U.S. District Judge for the District of Kansas</p>
+              <p class="vd-meta">PN851-4 · On the Nomination · Result: Confirmed · Jun 8, 2026</p>
+              <p class="vd-pos"><strong>Masto</strong> voted <span class="pill-vote no">NO</span>.</p>
+              <p class="vd-note">This is a nomination — the official record has the nominee and the position they were confirmed to.</p>
+              <a class="vd-link" href="https://www.congress.gov/nomination/119th-congress/851" target="_blank" rel="noopener">Nomination details on Congress.gov →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="vote-item">
+        <div class="vote-row" role="button" tabindex="0" aria-expanded="false">
+          <div class="left">
+            <div class="num-row"><span class="num">PN851-4</span><span class="when">Jun 7, 2026</span></div>
+            <div class="title">Motion to Invoke Cloture: Anthony W. Mattivi to be U.S. District Judge for the District of Kansas</div>
+            <div class="summary">On the Cloture Motion · Agreed to</div>
+          </div>
+          <div class="votes">
+            <div class="vote-stack"><div class="lbl">Masto</div><span class="pill-vote no">NO</span></div>
+            <svg class="chev" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+          <div class="vote-detail" hidden>
+            <div class="vd-inner">
+              <div class="vd-h">What this vote was</div>
+              <p class="vd-title">Motion to Invoke Cloture: Anthony W. Mattivi to be U.S. District Judge for the District of Kansas</p>
+              <p class="vd-meta">PN851-4 · On the Cloture Motion · Result: Agreed to · Jun 7, 2026</p>
+              <p class="vd-pos"><strong>Masto</strong> voted <span class="pill-vote no">NO</span>.</p>
+              <p class="vd-note">This is a nomination — the official record has the nominee and the position they were confirmed to.</p>
+              <a class="vd-link" href="https://www.congress.gov/nomination/119th-congress/851" target="_blank" rel="noopener">Nomination details on Congress.gov →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="vote-item">
+        <div class="vote-row" role="button" tabindex="0" aria-expanded="false">
+          <div class="left">
+            <div class="num-row"><span class="num">S. 1318</span><span class="when">Jun 4, 2026</span></div>
+            <div class="title">Motion to Proceed to the House Message to Accompany S. 1318</div>
+            <div class="summary">On the Motion to Proceed · Rejected</div>
+          </div>
+          <div class="votes">
+            <div class="vote-stack"><div class="lbl">Masto</div><span class="pill-vote no">NO</span></div>
+            <svg class="chev" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+          <div class="vote-detail" hidden>
+            <div class="vd-inner">
+              <div class="vd-h">What this vote was</div>
+              <p class="vd-title">Motion to Proceed to the House Message to Accompany S. 1318</p>
+              <p class="vd-meta">S. 1318 · On the Motion to Proceed · Result: Rejected · Jun 4, 2026</p>
+              <p class="vd-pos"><strong>Masto</strong> voted <span class="pill-vote no">NO</span>.</p>
+              
+              <div class="vd-summary">
+                <div class="vd-h">Legislation for Dummies — what S. 1318 does</div>
+                <p class="vd-billname">Fallen Servicemembers Religious Heritage Restoration Act</p>
+                <span class="vd-tag">Armed Forces and National Security</span>
+                <ul class="vd-bullets"><li>As passed by the House, the bill was rewritten to combine the Foreign Intelligence Accountability Act and the Anti-CBDC Surveillance State Act.</li><li>It reauthorizes Title VII of the Foreign Intelligence Surveillance Act (FISA) through April 30, 2029, and expands protections related to Section 702 surveillance of non-U.S. persons abroad.</li><li>It adds oversight of FBI queries of U.S. person information, including monthly reviews by the Office of the Director of National Intelligence and referrals of noncompliant queries to the Intelligence Community Inspector General.</li><li>It creates criminal penalties for falsifying compliance with querying procedures and for FBI personnel who knowingly violate U.S. person query rules, and limits query approvals to certain FBI attorneys rather than supervisors.</li><li>It bars a Federal Reserve bank from offering financial products or accounts directly to individuals or issuing a central bank digital currency (CBDC), and restricts the Federal Reserve Board from using or developing a CBDC, with certain exceptions.</li></ul>
+                <p class="vd-cbo">CBO cost estimate: <a href="https://www.cbo.gov/publication/61727" target="_blank" rel="noopener">S. 1318, Fallen Servicemembers Religious Heritage Restoration Act</a></p>
+                <p class="vd-src">Summary by the U.S. Congressional Research Service (Library of Congress) — public domain, reflects the latest published version. Sponsor: Sen. Moran, Jerry [R-KS].</p>
+              </div>
+              <a class="vd-link" href="https://www.congress.gov/bill/119th-congress/senate-bill/1318" target="_blank" rel="noopener">Official text &amp; plain-language summary on Congress.gov →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="vote-item">
+        <div class="vote-row" role="button" tabindex="0" aria-expanded="false">
+          <div class="left">
+            <div class="num-row"><span class="num">S. 2</span><span class="when">Jun 4, 2026</span></div>
+            <div class="title">S. 2, As Amended; reconciliation bill pursuant to title II of S. Con. Res. 33</div>
+            <div class="summary">On Passage of the Bill · Passed</div>
+          </div>
+          <div class="votes">
+            <div class="vote-stack"><div class="lbl">Masto</div><span class="pill-vote no">NO</span></div>
+            <svg class="chev" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+          <div class="vote-detail" hidden>
+            <div class="vd-inner">
+              <div class="vd-h">What this vote was</div>
+              <p class="vd-title">S. 2, As Amended; reconciliation bill pursuant to title II of S. Con. Res. 33</p>
+              <p class="vd-meta">S. 2 · On Passage of the Bill · Result: Passed · Jun 4, 2026</p>
+              <p class="vd-pos"><strong>Masto</strong> voted <span class="pill-vote no">NO</span>.</p>
+              
+              <div class="vd-summary">
+                <div class="vd-h">Legislation for Dummies — what S. 2 does</div>
+                <p class="vd-billname">Secure America Act</p>
+                <span class="vd-tag">Economics and Public Finance</span>
+                <ul class="vd-bullets"><li>This bill provides funding to the Department of Homeland Security, U.S. Customs and Border Protection (CBP), and U.S. Immigration and Customs Enforcement (ICE) through FY2029 for immigration enforcement and related activities.</li><li>It is a reconciliation bill assembled under the FY2026 budget resolution (S. Con. Res. 33), meaning it moves through expedited procedures that prevent a filibuster and restrict amendments in the Senate.</li><li>CBP funding covers personnel; border security, technology, and screening; and immigration enforcement activities.</li><li>ICE funding covers personnel, Homeland Security Investigations, enforcement activities, transportation, information technology, facilities and fleet, 287(g) agreements with state and local law enforcement, legal advisers, and certain immigration-related arrests.</li><li>It also gives DHS additional funding for immigration enforcement and for state and local participation in homeland security efforts, with the funding generally remaining available through FY2029.</li></ul>
+                <p class="vd-cbo">CBO cost estimate: <a href="https://www.cbo.gov/publication/62520" target="_blank" rel="noopener">Estimated Budgetary Effects of S. 2, the Secure America Act</a></p>
+                <p class="vd-src">Summary by the U.S. Congressional Research Service (Library of Congress) — public domain, reflects the latest published version. Sponsor: Sen. Graham, Lindsey [R-SC].</p>
+              </div>
+              <a class="vd-link" href="https://www.congress.gov/bill/119th-congress/senate-bill/2" target="_blank" rel="noopener">Official text &amp; plain-language summary on Congress.gov →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="votes-note">Showing 10 most recent roll-call votes for this member, from the official House (Congress.gov) and Senate (XML) feeds. Alignment with constituents is a separate, poll-derived measure and is not shown here.</p>
+      </div>
+
+      <div class="tab-panel" id="panel-donors">
+        <div class="src-card">
+          <h3>Campaign funding — from FEC filings</h3>
+          <p class="src-note">Contributor totals and top donors for Sen. Catherine Cortez Masto come straight from this member's FEC filings (quarterly by law, so always date-stamped). They render right here once the FEC ingestion runs — no estimated or invented figures are ever shown.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <aside class="sidebar">
+      <div class="side-card">
+        <h3>Donor sectors</h3>
+        <div class="soon">Funding data is sourced from FEC filings (quarterly by law, so it is always date-stamped, never real-time). Industry/sector rollups are deferred — the OpenSecrets classification API shut down in April 2025 — so this shows raw contributors first when it lands.</div>
+      </div>
+
+      <div class="side-card">
+        <h3>Contact + office</h3>
+        <ul class="contact-list">
+          <li><span class="lbl">Phone</span><span class="val">202-224-3542</span></li>
+          <li><span class="lbl">Office</span><span class="val">309 Hart Senate Office Building</span></li>
+          <li><span class="lbl">Website</span><span class="val"><a href="https://www.cortezmasto.senate.gov" target="_blank" rel="noopener" style="color:var(--rust);text-decoration:none;">Official site →</a></span></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="../index.html" class="logo"><div class="logo-mark">F</div>fixshitbroken</a>
+        <div class="tag-text">Built by citizens, for citizens. 100% public data. No PAC money. No lobbyist hands on the wheel.</div>
+      </div>
+      <div class="foot-col"><h5>The four pillars</h5><ul><li>Will of the People</li><li>Legislation for Dummies</li><li>Town Hall</li><li>Politics is a Joke</li></ul></div>
+      <div class="foot-col"><h5>Tools</h5><ul><li>Find your reps</li><li>Browse legislation</li><li>Voter registration</li><li>Browser extension</li></ul></div>
+      <div class="foot-col"><h5>About</h5><ul><li>Why we exist</li><li>Data sources</li><li>Methodology</li><li>Press kit</li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 fixshitbroken · A civic accountability project</div>
+      <div>Privacy · Terms · Contact</div>
+    </div>
+  </footer>
+
+</div>
+<script>
+(function () {
+  var tabs = Array.prototype.slice.call(document.querySelectorAll("#detail-tabs .detail-tab"));
+  tabs.forEach(function (t) {
+    t.addEventListener("click", function () {
+      tabs.forEach(function (x) { x.classList.remove("active"); });
+      t.classList.add("active");
+      ["votes", "donors"].forEach(function (name) {
+        var el = document.getElementById("panel-" + name);
+        if (el) el.classList.toggle("active", name === t.dataset.tab);
+      });
+    });
+  });
+
+  // Expandable vote rows (Legislation-for-Dummies detail)
+  function toggleRow(row) {
+    var detail = row.parentNode.querySelector(".vote-detail");
+    if (!detail) return;
+    var open = row.getAttribute("aria-expanded") === "true";
+    row.setAttribute("aria-expanded", open ? "false" : "true");
+    detail.hidden = open;
+  }
+  Array.prototype.slice.call(document.querySelectorAll("#panel-votes .vote-row")).forEach(function (row) {
+    row.addEventListener("click", function () { toggleRow(row); });
+    row.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleRow(row); }
+    });
+  });
+})();
+</script>
+</body>
+</html>

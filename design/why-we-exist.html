@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1440" />
+<title>fixshitbroken — Why we exist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+.wwe-hero { padding: 80px 64px 60px; text-align: center; max-width: 1100px; margin: 0 auto; }
+.wwe-hero .eyebrow { display: inline-block; color: var(--rust); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; margin-bottom: 28px; padding: 8px 18px; border: 1px solid var(--cream-300); border-radius: 999px; background: var(--white); }
+.wwe-hero h1 { font-size: 96px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.04em; line-height: 0.95; margin-bottom: 32px; }
+.wwe-hero h1 .accent { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--brown-600); }
+.wwe-hero .dek { font-size: 22px; color: var(--brown-700); line-height: 1.5; max-width: 760px; margin: 0 auto; font-weight: 400; }
+.wwe-hero .meta { font-size: 13px; color: var(--brown-500); margin-top: 36px; font-style: italic; font-family: 'Instrument Serif', serif; }
+
+.wwe-body { max-width: 760px; margin: 0 auto; padding: 0 64px 80px; }
+
+.wwe-chapter { margin-bottom: 80px; }
+.wwe-chapter .number { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 72px; color: var(--brown-300); line-height: 0.9; margin-bottom: 18px; }
+.wwe-chapter h2 { font-size: 44px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.025em; line-height: 1.05; margin-bottom: 28px; }
+.wwe-chapter h2 .accent { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--brown-600); }
+.wwe-chapter p { font-size: 19px; color: var(--brown-800); line-height: 1.65; margin-bottom: 24px; }
+.wwe-chapter p strong { color: var(--brown-900); font-weight: 800; }
+.wwe-chapter p em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--brown-700); font-size: 21px; }
+
+.pull-quote { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: 42px; line-height: 1.15; color: var(--brown-900); padding: 36px 0; margin: 28px 0; border-top: 1px solid var(--brown-300); border-bottom: 1px solid var(--brown-300); letter-spacing: -0.015em; }
+.pull-quote .attr { display: block; font-family: 'Inter', sans-serif; font-style: normal; font-weight: 700; font-size: 12px; color: var(--rust); text-transform: uppercase; letter-spacing: 0.12em; margin-top: 18px; }
+
+.big-stat { background: var(--brown-900); color: var(--cream-100); border-radius: 20px; padding: 36px 32px; margin: 28px 0; display: flex; gap: 28px; align-items: center; }
+.big-stat .num { font-size: 88px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--rust); }
+.big-stat .meta { flex: 1; }
+.big-stat .meta h4 { font-size: 18px; font-weight: 800; color: var(--cream-50); letter-spacing: -0.01em; margin-bottom: 6px; }
+.big-stat .meta p { font-size: 13px; color: var(--brown-300); line-height: 1.55; margin-bottom: 0; }
+
+/* PROMISES BLOCK */
+.promises { background: var(--cream-50); border-radius: 24px; padding: 36px; margin: 36px 0; }
+.promise-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px solid var(--cream-300); }
+.promise-row:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+.promise-col h4 { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+.promise-col.will h4 { color: var(--sage); }
+.promise-col.wont h4 { color: var(--rust); }
+.promise-col p { font-size: 15px; color: var(--brown-800); line-height: 1.55; margin-bottom: 0; }
+
+/* CTA SECTION */
+.wwe-cta { background: linear-gradient(135deg, var(--brown-900) 0%, #2A1F14 100%); color: var(--cream-100); padding: 80px 64px; text-align: center; }
+.wwe-cta h2 { font-size: 64px; font-weight: 800; letter-spacing: -0.035em; line-height: 1; margin-bottom: 22px; color: var(--cream-50); }
+.wwe-cta h2 .accent { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--brown-300); }
+.wwe-cta p { font-size: 18px; color: var(--brown-300); max-width: 600px; margin: 0 auto 36px; line-height: 1.55; }
+.wwe-cta .actions { display: flex; gap: 14px; justify-content: center; }
+.wwe-cta .actions a { padding: 18px 32px; border-radius: 999px; font-weight: 700; font-size: 16px; text-decoration: none; }
+.wwe-cta .actions .primary { background: var(--rust); color: var(--cream-50); }
+.wwe-cta .actions .secondary { background: transparent; color: var(--cream-100); border: 1px solid rgba(255,255,255,0.2); }
+.wwe-cta .signoff { margin-top: 60px; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 22px; color: var(--brown-300); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="nav">
+    <a href="index.html" class="logo"><div class="logo-mark">F</div>fixshitbroken</a>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="pillar-will.html">Will of the people</a>
+      <a href="pillar-legislation.html">Legislation</a>
+      <a href="pillar-town-hall.html">Town hall</a>
+      <a href="pillar-memes.html">Memes</a>
+      <a href="why-we-exist.html" class="active">Why we exist</a>
+    </div>
+    <div class="nav-account"><div class="av">M</div></div>
+  </nav>
+
+  <section class="wwe-hero">
+    <div class="eyebrow">Why we exist</div>
+    <h1>Politicians work <span class="accent">for us.</span><br/>We forgot that. <span class="accent">So did they.</span></h1>
+    <p class="dek">An honest accounting of why this site exists, what we promise to do, and what we promise we'll never do.</p>
+    <div class="meta">~5 minute read · written and signed by the people who built this</div>
+  </section>
+
+  <div class="wwe-body">
+
+    <article class="wwe-chapter">
+      <div class="number">01</div>
+      <h2>The <span class="accent">situation</span> is bad.</h2>
+      <p>Three out of four Americans, asked any way you can ask the question, say the same thing: <strong>the federal government does not represent them.</strong> Pollsters have been collecting this number for thirty years, and it has only gone in one direction. Up.</p>
+      <p>And yet incumbents keep winning. Reelection rates in the House routinely cross 90%. The Senate does a little better but not by much. We are stuck in a bizarre equilibrium where everyone agrees the system is broken and the same people keep running it.</p>
+
+      <div class="big-stat">
+        <div class="num">94%</div>
+        <div class="meta">
+          <h4>House incumbent reelection rate, 2024</h4>
+          <p>The least popular Congress in measured history kept almost everyone in their seat. The math doesn't work unless something is hiding the misalignment.</p>
+        </div>
+      </div>
+
+      <p>Something is hiding the misalignment. Press releases. Glossy district mailers paid for with your tax dollars. Town halls that haven't happened in years. Floor speeches written for cable news clips, not for the constituents they're nominally addressed to. Voting records buried 14 clicks deep on a government website that hasn't been redesigned since 2007.</p>
+    </article>
+
+    <article class="wwe-chapter">
+      <div class="number">02</div>
+      <h2>The fix isn't <span class="accent">complicated.</span></h2>
+      <p>The gap between what voters want and what their representatives do is not a mystery. It is a measurable, sortable, sharable number. The data already exists. Every roll call vote is public. Every donor disclosure is public. Every committee assignment, hearing transcript, financial filing — public.</p>
+      <p>The problem is not access to information. The problem is that <em>nobody has time to read 1,400 pages of legislation written in legalese to figure out who their senator just sold them out to.</em></p>
+
+      <div class="pull-quote">
+        "Democracy requires citizens. Citizenship requires knowing what the hell is going on. Right now, knowing what the hell is going on requires a full-time job."
+        <span class="attr">— the case for this website, in one sentence</span>
+      </div>
+
+      <p>So we built the tool we wished existed. Every vote scored against district will. Every piece of legislation in plain English. A public board for every member of Congress where their constituents can speak directly and the conversation is permanent and searchable. And, when the absurdity gets to be too much, a meme feed to laugh at the absurdity together.</p>
+    </article>
+
+    <article class="wwe-chapter">
+      <div class="number">03</div>
+      <h2>What we <span class="accent">will</span> and <span class="accent">won't do.</span></h2>
+      <p>Civic tech projects fail for predictable reasons. They get bought. They take ad money and have to soften their edges. They take grant money and have to please foundations. They take VC money and have to grow at any cost. Every one of those compromises starts with someone saying: "we have to be sustainable." And every one of them ends with a slightly worse product that quietly serves someone other than the user.</p>
+      <p>So here's the deal we're making with you, in writing, in advance, before anyone has the chance to buy us:</p>
+
+      <div class="promises">
+        <div class="promise-row">
+          <div class="promise-col will">
+            <h4>✓ What we will do</h4>
+            <p>Show every vote, every donor, every floor speech, every missed committee meeting. No spin. No talking points. Sources linked on every claim.</p>
+          </div>
+          <div class="promise-col wont">
+            <h4>✗ What we will never do</h4>
+            <p>Take a dollar of PAC money. Take corporate sponsorships. Take money from any political party, candidate, or 501(c)(4).</p>
+          </div>
+        </div>
+        <div class="promise-row">
+          <div class="promise-col will">
+            <h4>✓ What we will do</h4>
+            <p>Apply the same standards to every politician of every party. If you find us softer on one side than the other, you have failed us and we have failed you.</p>
+          </div>
+          <div class="promise-col wont">
+            <h4>✗ What we will never do</h4>
+            <p>Run ads. Sell your data. Sell your activity. Sell your contact info. The product is the product. You are not the product.</p>
+          </div>
+        </div>
+        <div class="promise-row">
+          <div class="promise-col will">
+            <h4>✓ What we will do</h4>
+            <p>Open-source our methodology. If we score a vote, you can see exactly how we scored it. If we summarize legislation, you can compare our summary to the source text.</p>
+          </div>
+          <div class="promise-col wont">
+            <h4>✗ What we will never do</h4>
+            <p>Endorse a candidate. Tell you how to vote. Tell you what to think. Our job is showing you what's happening — yours is deciding what to do about it.</p>
+          </div>
+        </div>
+      </div>
+
+      <p>If you ever catch us breaking any of these promises, screenshot it and put it on the internet. We'll thank you. The accountability has to cut both ways.</p>
+    </article>
+
+    <article class="wwe-chapter">
+      <div class="number">04</div>
+      <h2>Where the <span class="accent">money</span> comes from.</h2>
+      <p>Right now, from us. The four of us who built this funded the first year out of pocket. That bought enough runway to launch with no strings.</p>
+      <p>Going forward: a $5/month optional membership for people who want notifications, watchlists, and the weekly rundown. No paywall on the main product. Anyone can use the alignment scores, anyone can read the legislation summaries, anyone can post on the town hall boards. The membership is for people who like the project and want to keep it alive.</p>
+      <p>That's it. No grants. No foundation money. No "strategic partners." If the membership doesn't sustain it, the project doesn't deserve to exist.</p>
+    </article>
+
+    <article class="wwe-chapter">
+      <div class="number">05</div>
+      <h2>This <span class="accent">isn't</span> activism. It's <span class="accent">accounting.</span></h2>
+      <p>We don't have a policy agenda. We don't want one. We are not asking you to take a particular position on healthcare, immigration, defense spending, taxes, or anything else. Those are your decisions to make.</p>
+      <p>What we are doing is much smaller, much narrower, much more clerical than that. We are keeping the books. We are showing the receipts. We are doing the un-glamorous work of writing down what happened so you can see it.</p>
+      <p>What you do with that information is up to you. You might decide your senator is doing a great job and donate to their campaign. You might decide they're terrible and work to unseat them. You might decide the whole thing is hopeless and tune out. All of those are valid responses to the data.</p>
+      <p>The only response that isn't acceptable is the one we have now — which is most people having no idea what their elected representatives are doing, voting on vibes every two years, and being shocked when nothing changes.</p>
+      <p><strong>Politicians work for us.</strong> Time we remembered that. Time they remembered that too.</p>
+    </article>
+
+  </div>
+
+  <section class="wwe-cta">
+    <h2>Stop scrolling. <span class="accent">Start fixing shit.</span></h2>
+    <p>Pick your state. Meet your senators. See what they've actually been doing with your name on their nameplate.</p>
+    <div class="actions">
+      <a href="onboarding.html" class="primary">Find my reps →</a>
+      <a href="pillar-legislation.html" class="secondary">Or browse legislation first</a>
+    </div>
+    <div class="signoff">— The fixshitbroken team</div>
+  </section>
+
+  <footer>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="logo"><div class="logo-mark">F</div>fixshitbroken</a>
+        <div class="tag-text">Built by citizens, for citizens. 100% public data. No PAC money. No lobbyist hands on the wheel.</div>
+      </div>
+      <div class="foot-col"><h5>The four pillars</h5><ul><li>Will of the People</li><li>Legislation for Dummies</li><li>Town Hall</li><li>Politics is a Joke</li></ul></div>
+      <div class="foot-col"><h5>Tools</h5><ul><li>Find your reps</li><li>Browse legislation</li><li>Voter registration</li><li>Browser extension</li></ul></div>
+      <div class="foot-col"><h5>About</h5><ul><li>Why we exist</li><li>Data sources</li><li>Methodology</li><li>Press kit</li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 fixshitbroken · A civic accountability project</div>
+      <div>Privacy · Terms · Contact</div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

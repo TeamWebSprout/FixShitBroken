@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1440" />
+<title>fixshitbroken — Town hall</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+.hero-pillar { padding: 48px 64px 32px; }
+.hero-pillar-head { display: flex; justify-content: space-between; align-items: end; gap: 40px; }
+.hero-pillar-head .left { max-width: 700px; }
+.hero-pillar-head h1 { font-size: 64px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.035em; line-height: 1; margin-bottom: 18px; }
+.hero-pillar-head h1 .accent { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--brown-600); }
+.hero-pillar-head p { font-size: 17px; color: var(--brown-600); line-height: 1.55; }
+.hero-stats { display: flex; gap: 28px; }
+.hero-stat { background: var(--white); border-radius: 16px; padding: 16px 22px; }
+.hero-stat .num { font-size: 28px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.02em; line-height: 1; }
+.hero-stat .lbl { font-size: 11px; color: var(--brown-500); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-top: 4px; }
+
+/* TRENDING POSTS */
+.trending-section { padding: 32px 64px; }
+.section-title { display: flex; justify-content: space-between; align-items: end; margin-bottom: 22px; }
+.section-title h2 { font-size: 32px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.02em; }
+.section-title h2 .accent { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--brown-600); }
+.section-title .link { font-size: 13px; font-weight: 700; color: var(--brown-700); text-decoration: none; }
+
+.trending-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.trend-card { background: var(--white); border-radius: 22px; padding: 22px 24px; display: flex; gap: 14px; box-shadow: 0 14px 32px -14px rgba(20,16,11,0.10); border: 1px solid transparent; cursor: pointer; transition: all 0.2s; }
+.trend-card:hover { border-color: var(--cream-300); }
+.trend-card .rank-col { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; padding-top: 4px; }
+.trend-card .arrow { color: var(--rust); font-size: 18px; font-weight: 800; line-height: 1; }
+.trend-card .ct { font-size: 18px; font-weight: 800; color: var(--brown-900); margin-top: 2px; }
+.trend-card .replies { font-size: 10px; color: var(--brown-500); margin-top: 2px; font-weight: 600; }
+.trend-card .body { flex: 1; min-width: 0; }
+.trend-card .byline { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+.trend-card .user { font-size: 13px; font-weight: 800; color: var(--brown-900); }
+.trend-card .verified { display: inline-flex; align-items: center; gap: 4px; background: var(--sage-light); color: var(--sage); padding: 2px 8px; border-radius: 999px; font-size: 10px; font-weight: 700; }
+.trend-card .target { font-size: 11px; color: var(--brown-500); }
+.trend-card .target strong { color: var(--brown-900); font-weight: 700; }
+.trend-card .text { font-size: 14px; color: var(--brown-800); line-height: 1.55; }
+
+/* MOST ACTIVE BOARDS */
+.boards-section { padding: 32px 64px 80px; }
+.active-boards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 36px; }
+.board-card { background: var(--white); border-radius: 18px; padding: 18px; cursor: pointer; transition: all 0.2s; border: 1px solid transparent; box-shadow: 0 8px 18px -10px rgba(20,16,11,0.08); }
+.board-card:hover { border-color: var(--cream-300); }
+.board-head { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
+.board-photo { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; color: var(--cream-100); font-weight: 800; font-size: 13px; flex-shrink: 0; }
+.board-photo.r { background: linear-gradient(135deg, #A4452C, #5B2C1C); }
+.board-photo.d { background: linear-gradient(135deg, #5B7AA0, #2C4060); }
+.board-name { font-size: 14px; font-weight: 800; color: var(--brown-900); line-height: 1.2; }
+.board-meta { font-size: 11px; color: var(--brown-500); margin-top: 2px; }
+.board-stats { display: flex; justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--cream-200); }
+.board-stat { display: flex; flex-direction: column; }
+.board-stat .n { font-size: 16px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.02em; line-height: 1; }
+.board-stat .l { font-size: 9px; color: var(--brown-500); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; margin-top: 3px; }
+.board-stat.live .n { color: var(--rust); }
+
+/* SEARCH BOARDS */
+.search-bar { display: flex; gap: 12px; margin-bottom: 20px; }
+.search-input { flex: 1; background: var(--white); border: 1px solid var(--cream-300); padding: 14px 22px; border-radius: 999px; font-size: 14px; font-family: inherit; color: var(--brown-800); outline: none; }
+.search-input::placeholder { color: var(--brown-400); }
+.search-filter { display: inline-flex; align-items: center; gap: 8px; background: var(--white); border: 1px solid var(--cream-300); padding: 8px 18px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--brown-700); }
+
+.all-boards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.mini-board { background: var(--white); border-radius: 14px; padding: 14px; display: flex; gap: 12px; align-items: center; cursor: pointer; transition: all 0.2s; border: 1px solid transparent; }
+.mini-board:hover { border-color: var(--cream-300); }
+.mini-board .ph { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; color: var(--cream-100); font-weight: 800; font-size: 12px; flex-shrink: 0; }
+.mini-board .ph.r { background: linear-gradient(135deg, #A4452C, #5B2C1C); }
+.mini-board .ph.d { background: linear-gradient(135deg, #5B7AA0, #2C4060); }
+.mini-board .info { flex: 1; min-width: 0; }
+.mini-board .nm { font-size: 13px; font-weight: 700; color: var(--brown-900); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mini-board .ct { font-size: 11px; color: var(--brown-500); }
+.mini-board .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--rust); flex-shrink: 0; }
+.mini-board .dot.quiet { background: var(--cream-300); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="nav">
+    <a href="index.html" class="logo"><div class="logo-mark">F</div>fixshitbroken</a>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="pillar-will.html">Will of the people</a>
+      <a href="pillar-legislation.html">Legislation</a>
+      <a href="pillar-town-hall.html" class="active">Town hall</a>
+      <a href="pillar-memes.html">Memes</a>
+      <a href="why-we-exist.html">Why we exist</a>
+    </div>
+    <div class="nav-account"><div class="av">M</div></div>
+  </nav>
+
+  <section class="hero-pillar">
+    <div class="hero-pillar-head">
+      <div class="left">
+        <div class="eyebrow">Pillar three</div>
+        <h1>Town hall. <span class="accent">Always open.</span></h1>
+        <p>A public message board for every senator and representative in Congress. Anyone can read it. Reporters can search it. Their staff sees every word. Public, permanent, and indexed by Google — the receipts don't disappear.</p>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">535</div><div class="lbl">Active boards</div></div>
+        <div class="hero-stat"><div class="num">94k</div><div class="lbl">Verified posters</div></div>
+        <div class="hero-stat"><div class="num">100%</div><div class="lbl">Public record</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trending-section">
+    <div class="section-title">
+      <h2>Trending <span class="accent">this week.</span></h2>
+      <a href="#" class="link">See all top posts →</a>
+    </div>
+    <div class="trending-grid">
+
+      <div class="trend-card">
+        <div class="rank-col">
+          <div class="arrow">▲</div>
+          <div class="ct">8.4k</div>
+          <div class="replies">612 replies</div>
+        </div>
+        <div class="body">
+          <div class="byline">
+            <span class="user">@sarah_m_houston</span>
+            <span class="verified">✓ Verified TX-32</span>
+            <span class="target">on <strong>Sen. Carlson's board</strong> · 2d ago</span>
+          </div>
+          <div class="text">"You voted YES on legislation that cuts SNAP for families in our district. Explain that to me like I'm one of the 12,000 people who depend on it here. We are watching, and we vote."</div>
+        </div>
+      </div>
+
+      <div class="trend-card">
+        <div class="rank-col">
+          <div class="arrow">▲</div>
+          <div class="ct">6.7k</div>
+          <div class="replies">438 replies</div>
+        </div>
+        <div class="body">
+          <div class="byline">
+            <span class="user">@portland_dad</span>
+            <span class="verified">✓ Verified OR-03</span>
+            <span class="target">on <strong>Sen. Whitford's board</strong> · 1d ago</span>
+          </div>
+          <div class="text">"Your alignment score dropped 14 points in one quarter. You owe us an explanation. The folks who put you in office aren't the same ones funding your re-election, and we can tell."</div>
+        </div>
+      </div>
+
+      <div class="trend-card">
+        <div class="rank-col">
+          <div class="arrow">▲</div>
+          <div class="ct">5.2k</div>
+          <div class="replies">307 replies</div>
+        </div>
+        <div class="body">
+          <div class="byline">
+            <span class="user">@nm_teacher_anita</span>
+            <span class="verified">✓ Verified NM-02</span>
+            <span class="target">on <strong>Rep. Gonzalez's board</strong> · 3d ago</span>
+          </div>
+          <div class="text">"I disagree with you on roughly half of everything, but on the childcare tax credit you came through for working families. Thank you. That's how representation is supposed to work."</div>
+        </div>
+      </div>
+
+      <div class="trend-card">
+        <div class="rank-col">
+          <div class="arrow">▲</div>
+          <div class="ct">4.8k</div>
+          <div class="replies">266 replies</div>
+        </div>
+        <div class="body">
+          <div class="byline">
+            <span class="user">@marisol_g</span>
+            <span class="verified">✓ Verified TX-30</span>
+            <span class="target">on <strong>Sen. Carlson's board</strong> · 4d ago</span>
+          </div>
+          <div class="text">"Asked your office three separate times for your position on HR-9012. Three months of silence. We deserve answers, not press releases written by interns."</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="boards-section">
+    <div class="section-title">
+      <h2>Most active <span class="accent">boards.</span></h2>
+      <div style="display:flex; gap:6px;">
+        <div class="tab active" style="background:var(--brown-900); color:var(--cream-100); padding:8px 16px; border-radius:999px; font-size:12px; font-weight:700;">This week</div>
+        <div class="tab" style="padding:8px 16px; font-size:12px; color:var(--brown-500); font-weight:700;">All time</div>
+      </div>
+    </div>
+
+    <div class="active-boards">
+      <div class="board-card">
+        <div class="board-head">
+          <div class="board-photo r">JC</div>
+          <div>
+            <div class="board-name">Sen. James Carlson</div>
+            <div class="board-meta"><span class="party-dot R">Republican · Texas</span></div>
+          </div>
+        </div>
+        <div class="board-stats">
+          <div class="board-stat"><div class="n">2,108</div><div class="l">Posts this week</div></div>
+          <div class="board-stat"><div class="n">18.4k</div><div class="l">Total upvotes</div></div>
+          <div class="board-stat live"><div class="n">●  Hot</div><div class="l">Currently trending</div></div>
+        </div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-head">
+          <div class="board-photo d">EW</div>
+          <div>
+            <div class="board-name">Sen. Elaine Whitford</div>
+            <div class="board-meta"><span class="party-dot D">Democrat · Vermont</span></div>
+          </div>
+        </div>
+        <div class="board-stats">
+          <div class="board-stat"><div class="n">1,847</div><div class="l">Posts this week</div></div>
+          <div class="board-stat"><div class="n">14.1k</div><div class="l">Total upvotes</div></div>
+          <div class="board-stat live"><div class="n">●  Hot</div><div class="l">Currently trending</div></div>
+        </div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-head">
+          <div class="board-photo r">MH</div>
+          <div>
+            <div class="board-name">Rep. Michael Hollis</div>
+            <div class="board-meta"><span class="party-dot R">Republican · FL-15</span></div>
+          </div>
+        </div>
+        <div class="board-stats">
+          <div class="board-stat"><div class="n">1,512</div><div class="l">Posts this week</div></div>
+          <div class="board-stat"><div class="n">11.8k</div><div class="l">Total upvotes</div></div>
+          <div class="board-stat live"><div class="n">●  Hot</div><div class="l">Currently trending</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <h2>All <span class="accent">535 boards.</span></h2>
+    </div>
+
+    <div class="search-bar">
+      <input class="search-input" placeholder="Search by senator, representative, or state..." />
+      <div class="search-filter">All states</div>
+      <div class="search-filter">House + Senate</div>
+      <div class="search-filter">Sort: Activity ↓</div>
+    </div>
+
+    <div class="all-boards">
+      <a class="mini-board" href="#"><div class="ph r">JC</div><div class="info"><div class="nm">Sen. James Carlson</div><div class="ct">TX · 2,108 posts</div></div><div class="dot"></div></a>
+      <a class="mini-board" href="#"><div class="ph r">MT</div><div class="info"><div class="nm">Sen. Maria Torres</div><div class="ct">TX · 624 posts</div></div><div class="dot"></div></a>
+      <a class="mini-board" href="#"><div class="ph d">EW</div><div class="info"><div class="nm">Sen. Elaine Whitford</div><div class="ct">VT · 1,847 posts</div></div><div class="dot"></div></a>
+      <a class="mini-board" href="#"><div class="ph d">JM</div><div class="info"><div class="nm">Sen. Jacob Martin</div><div class="ct">ME · 412 posts</div></div><div class="dot"></div></a>
+      <a class="mini-board" href="#"><div class="ph d">AM</div><div class="info"><div class="nm">Sen. Anita Mehta</div><div class="ct">NM · 798 posts</div></div><div class="dot"></div></a>
+      <a class="mini-board" href="#"><div class="ph r">MH</div><div class="info"><div class="nm">Rep. Michael Hollis</div><div class="ct">FL-15 · 1,512 posts</div></div><div class="dot"></div></a>
+      <a class="mini-board" href="#"><div class="ph r">MD</div><div class="info"><div class="nm">Rep. Marcus Diaz</div><div class="ct">TX-32 · 891 posts</div></div><div class="dot"></div></a>
+      <a class="mini-board" href="#"><div class="ph d">SP</div><div class="info"><div class="nm">Rep. Sofia Patel</div><div class="ct">TX-30 · 543 posts</div></div><div class="dot"></div></a>
+      <a class="mini-board" href="#"><div class="ph r">RH</div><div class="info"><div class="nm">Rep. Robert Hayes</div><div class="ct">TX-12 · 318 posts</div></div><div class="dot quiet"></div></a>
+      <a class="mini-board" href="#"><div class="ph d">LK</div><div class="info"><div class="nm">Rep. Linda Kim</div><div class="ct">TX-18 · 412 posts</div></div><div class="dot"></div></a>
+      <a class="mini-board" href="#"><div class="ph r">TB</div><div class="info"><div class="nm">Rep. Thomas Banks</div><div class="ct">TX-04 · 267 posts</div></div><div class="dot quiet"></div></a>
+      <a class="mini-board" href="#"><div class="ph d">JR</div><div class="info"><div class="nm">Rep. Julia Reyes</div><div class="ct">TX-20 · 198 posts</div></div><div class="dot quiet"></div></a>
+      <a class="mini-board" href="#"><div class="ph d">AG</div><div class="info"><div class="nm">Rep. Alex Green</div><div class="ct">TX-07 · 354 posts</div></div><div class="dot"></div></a>
+      <a class="mini-board" href="#"><div class="ph r">PW</div><div class="info"><div class="nm">Rep. Paul Wright</div><div class="ct">TX-01 · 142 posts</div></div><div class="dot quiet"></div></a>
+      <a class="mini-board" href="#"><div class="ph r">SL</div><div class="info"><div class="nm">Rep. Sarah Lopez</div><div class="ct">TX-15 · 89 posts</div></div><div class="dot quiet"></div></a>
+      <a class="mini-board" href="#"><div class="ph r">DM</div><div class="info"><div class="nm">Rep. Daniel Moss</div><div class="ct">TX-25 · 224 posts</div></div><div class="dot quiet"></div></a>
+    </div>
+
+    <div style="text-align:center; margin-top:32px;">
+      <a href="#" style="font-size:14px; color:var(--brown-700); font-weight:700; text-decoration:none; padding:14px 28px; border:1px solid var(--cream-300); border-radius:999px; background:var(--white);">Browse all 535 boards →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="logo"><div class="logo-mark">F</div>fixshitbroken</a>
+        <div class="tag-text">Built by citizens, for citizens. 100% public data. No PAC money. No lobbyist hands on the wheel.</div>
+      </div>
+      <div class="foot-col"><h5>The four pillars</h5><ul><li>Will of the People</li><li>Legislation for Dummies</li><li>Town Hall</li><li>Politics is a Joke</li></ul></div>
+      <div class="foot-col"><h5>Tools</h5><ul><li>Find your reps</li><li>Browse legislation</li><li>Voter registration</li><li>Browser extension</li></ul></div>
+      <div class="foot-col"><h5>About</h5><ul><li>Why we exist</li><li>Data sources</li><li>Methodology</li><li>Press kit</li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 fixshitbroken · A civic accountability project</div>
+      <div>Privacy · Terms · Contact</div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

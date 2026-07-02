@@ -1,0 +1,80 @@
+name: Refresh congressional data
+
+# Runs the ingestion + summarizer + page generator on a schedule, entirely in
+# the cloud (no local Node needed), then commits the refreshed data + pages.
+# Manual runs: Actions tab → "Refresh congressional data" → Run workflow.
+
+on:
+  schedule:
+    - cron: "0 7 * * *"        # every day at 07:00 UTC
+  workflow_dispatch:
+    inputs:
+      full_bills:
+        description: "Summarize ALL bills in Congress (slow) instead of only voted ones"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        working-directory: app
+        run: npm install
+
+      - name: Roster — all 535+ members (keyless)
+        working-directory: app
+        run: node worker/ingest-legislators.mjs --dry-run
+
+      - name: Votes — House + Senate roll calls
+        working-directory: app
+        continue-on-error: true
+        env:
+          CONGRESS_GOV_API_KEY: ${{ secrets.CONGRESS_GOV_API_KEY }}
+        run: node worker/ingest-votes.mjs --no-db
+
+      - name: Bill summaries — CRS via GovInfo (keyless)
+        working-directory: app
+        continue-on-error: true
+        run: |
+          if [ "${{ inputs.full_bills }}" = "true" ]; then
+            node worker/summarize-bills.mjs --all
+          else
+            node worker/summarize-bills.mjs --from-votes
+          fi
+
+      - name: Donors — FEC public filings
+        working-directory: app
+        continue-on-error: true
+        env:
+          FEC_API_KEY: ${{ secrets.FEC_API_KEY }}
+        run: node worker/ingest-donors.mjs
+
+      - name: Build embedded data files
+        working-directory: app
+        run: node worker/build-embeds.mjs
+
+      - name: Generate all member pages
+        working-directory: app
+        run: node worker/generate-rep-pages.mjs
+
+      - name: Commit refreshed site data
+        run: |
+          git config user.name "fixshitbroken-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add web/
+          git commit -m "chore: refresh congressional data [skip ci]" || echo "No changes to commit"
+          git push

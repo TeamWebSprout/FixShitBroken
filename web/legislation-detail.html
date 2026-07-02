@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1440" />
+<title>fixshitbroken — Bill detail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+.page-header { padding: 32px 64px 0; }
+.crumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--brown-500); margin-bottom: 22px; }
+.crumb a { color: var(--brown-700); text-decoration: none; font-weight: 600; }
+.crumb .sep { color: var(--cream-300); }
+.crumb .here { color: var(--brown-900); font-weight: 700; }
+
+/* HERO */
+.legis-hero { padding: 0 64px 36px; }
+.legis-hero-card { background: var(--brown-900); color: var(--cream-100); border-radius: 28px; padding: 40px; display: grid; grid-template-columns: 1.6fr 1fr; gap: 36px; }
+.legis-hero .meta-row { display: flex; gap: 8px; align-items: center; margin-bottom: 18px; flex-wrap: wrap; }
+.legis-hero .meta-row .tag { background: rgba(255,255,255,0.10); color: var(--cream-100); border: 1px solid rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 999px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+.legis-hero .meta-row .tag.live { background: var(--rust); border-color: var(--rust); color: var(--cream-50); }
+.legis-hero h1 { font-size: 48px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; margin-bottom: 14px; }
+.legis-hero h1 .accent { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--brown-300); }
+.legis-hero .num-line { font-size: 14px; color: var(--brown-300); margin-bottom: 18px; }
+.legis-hero .lede { font-size: 16px; color: var(--cream-200); line-height: 1.6; }
+.legis-hero .actions { display: flex; gap: 8px; margin-top: 22px; }
+.legis-hero .actions a { font-size: 13px; padding: 10px 18px; border-radius: 999px; text-decoration: none; font-weight: 700; }
+.legis-hero .actions .save { background: var(--rust); color: var(--cream-50); }
+.legis-hero .actions .share { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: var(--cream-100); }
+.legis-hero .actions .src { background: var(--cream-50); color: var(--brown-900); }
+
+.countdown-block { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 24px; }
+.countdown-block .lbl { font-size: 10px; color: var(--brown-300); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; margin-bottom: 8px; }
+.countdown-block .big { font-size: 56px; font-weight: 800; letter-spacing: -0.04em; line-height: 1; color: var(--cream-50); }
+.countdown-block .sub { font-size: 13px; color: var(--brown-300); margin-top: 6px; margin-bottom: 18px; }
+.countdown-block .div { height: 1px; background: rgba(255,255,255,0.1); margin: 16px 0; }
+.countdown-block .meta-row { display: flex; justify-content: space-between; font-size: 12px; padding: 6px 0; }
+.countdown-block .meta-row .k { color: var(--brown-300); }
+.countdown-block .meta-row .v { color: var(--cream-50); font-weight: 700; }
+
+/* MAIN LAYOUT */
+.legis-main { padding: 16px 64px 80px; display: grid; grid-template-columns: 1.7fr 1fr; gap: 28px; align-items: flex-start; }
+
+/* CONTENT */
+.content-card { background: var(--white); border-radius: 22px; padding: 28px 32px; box-shadow: 0 14px 36px -14px rgba(20,16,11,0.10); margin-bottom: 20px; }
+.content-card h2 { font-size: 22px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.02em; margin-bottom: 14px; }
+.content-card h2 .accent { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--brown-600); }
+.content-card .meta-strip { font-size: 11px; color: var(--brown-500); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 16px; display: flex; gap: 14px; }
+.content-card p { font-size: 15px; color: var(--brown-800); line-height: 1.65; margin-bottom: 12px; }
+
+.bill-bullets { list-style: none; }
+.bill-bullets li { font-size: 14px; color: var(--brown-800); padding: 8px 0 8px 28px; position: relative; line-height: 1.55; }
+.bill-bullets li::before { content: ''; position: absolute; left: 4px; top: 16px; width: 8px; height: 8px; border-radius: 50%; background: var(--brown-700); }
+
+/* WINNERS / LOSERS */
+.wl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.wl-block { border-radius: 14px; padding: 20px; }
+.wl-block.win { background: var(--sage-light); }
+.wl-block.lose { background: var(--rust-light); }
+.wl-block h4 { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+.wl-block.win h4 { color: var(--sage); }
+.wl-block.lose h4 { color: var(--rust); }
+.wl-block .item { padding: 6px 0; font-size: 13px; color: var(--brown-800); line-height: 1.45; display: flex; gap: 8px; }
+.wl-block .item .ic { flex-shrink: 0; }
+.wl-block.win .ic { color: var(--sage); }
+.wl-block.lose .ic { color: var(--rust); }
+
+/* POLL */
+.poll-card { background: var(--brown-900); color: var(--cream-100); border-radius: 22px; padding: 28px 32px; margin-bottom: 20px; }
+.poll-card h2 { color: var(--cream-50); font-size: 22px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 6px; }
+.poll-card .sub { font-size: 13px; color: var(--brown-300); margin-bottom: 22px; }
+.poll-buttons { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 22px; }
+.poll-btn { padding: 16px; border-radius: 14px; border: 1.5px solid; font-weight: 800; font-size: 14px; cursor: pointer; background: transparent; color: var(--cream-100); font-family: inherit; }
+.poll-btn.yes { border-color: var(--sage); }
+.poll-btn.no { border-color: var(--rust); }
+.poll-btn.unsure { border-color: var(--brown-500); }
+.poll-results { background: rgba(255,255,255,0.06); border-radius: 16px; padding: 20px; }
+.poll-results h5 { font-size: 11px; color: var(--brown-300); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; }
+.poll-results h5 .ct { color: var(--brown-300); font-weight: 600; text-transform: none; letter-spacing: 0; }
+.poll-bar-row { margin-bottom: 12px; }
+.poll-bar-row .lbl-row { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 5px; }
+.poll-bar-row .l { color: var(--cream-50); font-weight: 700; }
+.poll-bar-row .r { color: var(--cream-50); font-weight: 800; }
+.poll-bar { height: 8px; background: rgba(255,255,255,0.10); border-radius: 999px; overflow: hidden; }
+.poll-bar .fill { display: block; height: 100%; border-radius: 999px; }
+.poll-bar.yes .fill { background: var(--sage); }
+.poll-bar.no .fill { background: var(--rust); }
+.poll-bar.unsure .fill { background: var(--brown-400); }
+
+/* SIDEBAR */
+.sidebar { display: flex; flex-direction: column; gap: 18px; }
+.side-card { background: var(--white); border-radius: 20px; padding: 24px; box-shadow: 0 10px 24px -12px rgba(20,16,11,0.08); }
+.side-card h3 { font-size: 11px; color: var(--brown-500); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; margin-bottom: 14px; }
+
+/* SPONSOR + COSPONSORS */
+.sponsor-row { display: flex; gap: 12px; align-items: center; }
+.sponsor-photo { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #A4452C, #5B2C1C); display: grid; place-items: center; color: var(--cream-100); font-weight: 800; font-size: 13px; flex-shrink: 0; }
+.sponsor-row .info { flex: 1; min-width: 0; }
+.sponsor-row .name { font-size: 14px; font-weight: 800; color: var(--brown-900); }
+.sponsor-row .role { font-size: 11px; color: var(--brown-500); margin-top: 2px; }
+
+.cosponsor-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-top: 14px; }
+.cosp-dot { aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; color: var(--cream-100); font-weight: 800; font-size: 10px; }
+.cosp-dot.r { background: linear-gradient(135deg, #A4452C, #5B2C1C); }
+.cosp-dot.d { background: linear-gradient(135deg, #5B7AA0, #2C4060); }
+.cosp-meta { font-size: 11px; color: var(--brown-500); margin-top: 12px; text-align: center; font-weight: 600; }
+.cosp-meta strong { color: var(--brown-900); font-weight: 800; }
+
+/* WHO'S LOBBYING */
+.lobby-row { display: flex; gap: 10px; align-items: center; padding: 8px 0; }
+.lobby-row + .lobby-row { border-top: 1px solid var(--cream-200); }
+.lobby-row .name { flex: 1; font-size: 13px; color: var(--brown-800); font-weight: 600; }
+.lobby-row .pos { font-size: 11px; padding: 3px 8px; border-radius: 999px; font-weight: 800; }
+.lobby-row .pos.for { background: var(--sage-light); color: var(--sage); }
+.lobby-row .pos.against { background: var(--rust-light); color: var(--rust); }
+
+/* RELATED */
+.related-item { padding: 10px 0; border-bottom: 1px solid var(--cream-200); }
+.related-item:last-child { border-bottom: 0; }
+.related-item .t { font-size: 13px; font-weight: 700; color: var(--brown-900); line-height: 1.3; }
+.related-item .m { font-size: 11px; color: var(--brown-500); margin-top: 3px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="nav">
+    <a href="index.html" class="logo"><div class="logo-mark">F</div>fixshitbroken</a>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="pillar-will.html">Will of the people</a>
+      <a href="pillar-legislation.html" class="active">Legislation</a>
+      <a href="pillar-town-hall.html">Town hall</a>
+      <a href="pillar-memes.html">Memes</a>
+      <a href="why-we-exist.html">Why we exist</a>
+    </div>
+    <div class="nav-account"><div class="av">M</div></div>
+  </nav>
+
+  <div class="page-header">
+    <div class="crumb">
+      <a href="dashboard.html">Dashboard</a>
+      <span class="sep">/</span>
+      <a href="pillar-legislation.html">Legislation</a>
+      <span class="sep">/</span>
+      <span class="here">Bill detail</span>
+    </div>
+  </div>
+
+  <section class="legis-hero">
+    <div class="legis-hero-card" style="grid-template-columns: 1fr;">
+      <div>
+        <div class="meta-row">
+          <span class="tag">Bill detail</span>
+        </div>
+        <h1>This bill's <span class="accent">breakdown</span> loads from the official record.</h1>
+        <div class="lede">Individual bill pages populate straight from Congress.gov once ingestion runs. Until then we hold this space rather than fill it — no invented sponsor, page count, or vote tally stands in for the real thing.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="legis-main" style="grid-template-columns: 1fr;">
+
+    <div class="content-card" style="text-align:center; max-width:680px; margin:0 auto; padding:44px 40px;">
+      <h2>What will <span class="accent">appear here</span></h2>
+      <p>When a bill loads from the official record, this page shows its plain-English summary, a who-pays / who-benefits breakdown drawn from the text, and who is lobbying it based on public disclosure filings. Because filings never state which side a lobbyist is on, we list who is registered on a bill — never a fabricated "for" or "against."</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="logo"><div class="logo-mark">F</div>fixshitbroken</a>
+        <div class="tag-text">Built by citizens, for citizens. 100% public data. No PAC money. No lobbyist hands on the wheel.</div>
+      </div>
+      <div class="foot-col"><h5>The four pillars</h5><ul><li>Will of the People</li><li>Legislation for Dummies</li><li>Town Hall</li><li>Politics is a Joke</li></ul></div>
+      <div class="foot-col"><h5>Tools</h5><ul><li>Find your reps</li><li>Browse legislation</li><li>Voter registration</li><li>Browser extension</li></ul></div>
+      <div class="foot-col"><h5>About</h5><ul><li>Why we exist</li><li>Data sources</li><li>Methodology</li><li>Press kit</li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 fixshitbroken · A civic accountability project</div>
+      <div>Privacy · Terms · Contact</div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

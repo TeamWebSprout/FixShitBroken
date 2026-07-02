@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1440" />
+<title>fixshitbroken — Legislation for dummies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+.hero-pillar { padding: 48px 64px 32px; }
+.hero-pillar-head { display: flex; justify-content: space-between; align-items: end; gap: 40px; }
+.hero-pillar-head .left { max-width: 700px; }
+.hero-pillar-head h1 { font-size: 64px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.035em; line-height: 1; margin-bottom: 18px; }
+.hero-pillar-head h1 .accent { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--brown-600); }
+.hero-pillar-head p { font-size: 17px; color: var(--brown-600); line-height: 1.55; }
+.hero-stats { display: flex; gap: 28px; }
+.hero-stat { background: var(--white); border-radius: 16px; padding: 16px 22px; }
+.hero-stat .num { font-size: 28px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.02em; line-height: 1; }
+.hero-stat .lbl { font-size: 11px; color: var(--brown-500); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-top: 4px; }
+
+.featured-bar { padding: 24px 64px; }
+.featured-card { background: var(--brown-900); color: var(--cream-50); border-radius: 24px; padding: 32px 36px; display: flex; gap: 36px; align-items: center; }
+.featured-card .left { flex: 1; min-width: 0; }
+.featured-card .badge { display: inline-flex; align-items: center; gap: 8px; background: var(--rust); color: var(--cream-50); padding: 6px 14px; border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; }
+.featured-card h2 { font-size: 30px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 8px; }
+.featured-card .meta { font-size: 12px; color: var(--brown-300); margin-bottom: 14px; }
+.featured-card .lede { font-size: 14px; color: var(--cream-200); line-height: 1.55; max-width: 520px; }
+.featured-card .countdown { background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.2); border-radius: 18px; padding: 20px 22px; min-width: 200px; text-align: center; }
+.featured-card .countdown .lbl { font-size: 10px; color: var(--brown-300); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; margin-bottom: 6px; }
+.featured-card .countdown .big { font-size: 36px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--cream-50); }
+.featured-card .countdown .sub { font-size: 11px; color: var(--brown-300); margin-top: 4px; }
+.featured-card .countdown .cta { display: block; margin-top: 14px; background: var(--rust); color: var(--cream-50); padding: 10px; border-radius: 999px; font-weight: 800; font-size: 13px; text-decoration: none; }
+
+.filter-section { padding: 32px 64px 12px; }
+.filter-tabs { display: flex; gap: 6px; background: var(--cream-50); border: 1px solid var(--cream-300); padding: 4px; border-radius: 999px; width: fit-content; }
+.filter-tab { font-size: 13px; color: var(--brown-500); font-weight: 600; padding: 10px 18px; border-radius: 999px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.filter-tab.active { background: var(--brown-900); color: var(--cream-100); }
+.filter-tab .count { background: rgba(255,255,255,0.18); padding: 2px 8px; border-radius: 999px; font-size: 10px; font-weight: 800; }
+.filter-tab:not(.active) .count { background: var(--cream-200); color: var(--brown-700); }
+
+.legis-feed { padding: 12px 64px 80px; }
+.feed-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.feed-controls h3 { font-size: 18px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.01em; }
+.feed-controls .sort { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--brown-700); font-weight: 600; }
+.feed-controls .sort strong { color: var(--brown-900); font-weight: 800; }
+
+.legis-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+
+.legis-tile { background: var(--white); border-radius: 20px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px; cursor: pointer; transition: all 0.2s; border: 1px solid transparent; box-shadow: 0 10px 24px -12px rgba(20,16,11,0.10); }
+.legis-tile:hover { border-color: var(--cream-300); }
+.legis-tile .meta { display: flex; gap: 6px; flex-wrap: wrap; }
+.legis-tile h3 { font-size: 17px; font-weight: 800; color: var(--brown-900); line-height: 1.25; letter-spacing: -0.01em; }
+.legis-tile .num { font-size: 11px; color: var(--brown-500); font-weight: 500; }
+.legis-tile .summary { font-size: 13px; color: var(--brown-700); line-height: 1.55; flex: 1; }
+.legis-tile .wl { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.legis-tile .wl-box { background: var(--cream-50); border-radius: 10px; padding: 8px 10px; }
+.legis-tile .wl-box.win { background: var(--sage-light); }
+.legis-tile .wl-box.lose { background: var(--rust-light); }
+.legis-tile .wl-box .lbl { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2px; }
+.legis-tile .wl-box.win .lbl { color: var(--sage); }
+.legis-tile .wl-box.lose .lbl { color: var(--rust); }
+.legis-tile .wl-box .txt { font-size: 11px; color: var(--brown-800); line-height: 1.4; }
+.legis-tile .footer { display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--cream-200); }
+.legis-tile .footer .poll { font-size: 11px; color: var(--brown-500); font-weight: 600; }
+.legis-tile .footer .poll strong { color: var(--brown-900); font-weight: 800; }
+.legis-tile .save-btn { background: transparent; border: 1px solid var(--cream-300); color: var(--brown-700); padding: 5px 11px; border-radius: 999px; font-size: 11px; font-weight: 700; cursor: pointer; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="nav">
+    <a href="index.html" class="logo"><div class="logo-mark">F</div>fixshitbroken</a>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="pillar-will.html">Will of the people</a>
+      <a href="pillar-legislation.html" class="active">Legislation</a>
+      <a href="pillar-town-hall.html">Town hall</a>
+      <a href="pillar-memes.html">Memes</a>
+      <a href="why-we-exist.html">Why we exist</a>
+    </div>
+    <div class="nav-account"><div class="av">M</div></div>
+  </nav>
+
+  <section class="hero-pillar">
+    <div class="hero-pillar-head">
+      <div class="left">
+        <div class="eyebrow">Pillar two</div>
+        <h1>Legislation, in <span class="accent">plain English.</span></h1>
+        <p>Every piece of legislation moving through Congress, broken into a 30-second summary, with the winners and losers spelled out. No legalese. No talking points. Just what the text actually says.</p>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">3,840</div><div class="lbl">Pieces summarized</div></div>
+        <div class="hero-stat"><div class="num">30 sec</div><div class="lbl">Avg read time</div></div>
+        <div class="hero-stat"><div class="num">100%</div><div class="lbl">Source-linked</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured-bar">
+    <div class="featured-card">
+      <div class="left">
+        <div class="badge">● Voting in 3 days · Highest watch count this week</div>
+        <h2>The "Protecting American Prosperity Act"</h2>
+        <div class="meta">H.R. 4471 · 1,247 pages · Sponsored by Rep. M. Hollis · 84 cosponsors</div>
+        <div class="lede">Extends an offshore corporate tax cut through 2032, cuts SNAP eligibility for households over $24k, hands $48B in subsidies to four energy companies, and raises the federal cap on pharmaceutical patent extensions.</div>
+      </div>
+      <div class="countdown">
+        <div class="lbl">Floor vote</div>
+        <div class="big">3 days</div>
+        <div class="sub">12 hours, 41 min</div>
+        <a href="legislation-detail.html" class="cta">Read the summary →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="filter-section">
+    <div class="filter-tabs">
+      <div class="filter-tab active">All legislation <span class="count">487</span></div>
+      <div class="filter-tab">Voting this week <span class="count">14</span></div>
+      <div class="filter-tab">In committee <span class="count">219</span></div>
+      <div class="filter-tab">Recently passed <span class="count">38</span></div>
+      <div class="filter-tab">Your watchlist <span class="count">7</span></div>
+    </div>
+  </section>
+
+  <section class="legis-feed">
+    <div class="feed-controls">
+      <h3>14 pieces moving this week</h3>
+      <div class="sort">Sort by: <strong>Vote date ↑</strong></div>
+    </div>
+
+    <div class="legis-grid">
+
+      <a class="legis-tile" href="legislation-detail.html">
+        <div class="meta"><span class="tag live">Voting in 3 days</span><span class="tag">House</span></div>
+        <h3>Protecting American Prosperity Act</h3>
+        <div class="num">H.R. 4471 · 1,247 pages</div>
+        <div class="summary">Extends offshore corporate tax cut through 2032, cuts SNAP eligibility, $48B to energy companies, raises pharma patent cap.</div>
+        <div class="wl">
+          <div class="wl-box win"><div class="lbl">↑ Winners</div><div class="txt">Multinationals, fossil fuels, pharma</div></div>
+          <div class="wl-box lose"><div class="lbl">↓ Losers</div><div class="txt">SNAP families, generic drug buyers</div></div>
+        </div>
+        <div class="footer"><div class="poll"><strong>87%</strong> of polled citizens want NO</div><button class="save-btn">+ Save</button></div>
+      </a>
+
+      <a class="legis-tile" href="legislation-detail.html">
+        <div class="meta"><span class="tag live">Voting in 4 days</span><span class="tag">House</span></div>
+        <h3>Drug Pricing Reform Act</h3>
+        <div class="num">H.R. 9012 · 312 pages</div>
+        <div class="summary">Allows Medicare to negotiate prescription drug prices directly with manufacturers for the first time in program history.</div>
+        <div class="wl">
+          <div class="wl-box win"><div class="lbl">↑ Winners</div><div class="txt">Medicare enrollees, taxpayers</div></div>
+          <div class="wl-box lose"><div class="lbl">↓ Losers</div><div class="txt">Brand-name pharma manufacturers</div></div>
+        </div>
+        <div class="footer"><div class="poll"><strong>78%</strong> of polled citizens want YES</div><button class="save-btn">+ Save</button></div>
+      </a>
+
+      <a class="legis-tile" href="legislation-detail.html">
+        <div class="meta"><span class="tag live">Voting in 6 days</span><span class="tag">Senate</span></div>
+        <h3>Critical Mineral Supply Chain Act</h3>
+        <div class="num">S. 1844 · 487 pages</div>
+        <div class="summary">Funds $14B in domestic refining for lithium, cobalt, and rare earth elements; adds tariffs on imports from three countries.</div>
+        <div class="wl">
+          <div class="wl-box win"><div class="lbl">↑ Winners</div><div class="txt">US mining cos, battery makers</div></div>
+          <div class="wl-box lose"><div class="lbl">↓ Losers</div><div class="txt">Import-reliant manufacturers</div></div>
+        </div>
+        <div class="footer"><div class="poll"><strong>61%</strong> of polled citizens want YES</div><button class="save-btn">+ Save</button></div>
+      </a>
+
+      <a class="legis-tile" href="legislation-detail.html">
+        <div class="meta"><span class="tag live">Voting in 8 days</span><span class="tag">Senate</span></div>
+        <h3>Childcare Tax Credit Extension</h3>
+        <div class="num">S. 2104 · 84 pages</div>
+        <div class="summary">Extends and expands the federal childcare tax credit; raises household cap from $8,000 to $12,000 per year.</div>
+        <div class="wl">
+          <div class="wl-box win"><div class="lbl">↑ Winners</div><div class="txt">Working parents, childcare providers</div></div>
+          <div class="wl-box lose"><div class="lbl">↓ Losers</div><div class="txt">Treasury (revenue offset)</div></div>
+        </div>
+        <div class="footer"><div class="poll"><strong>74%</strong> of polled citizens want YES</div><button class="save-btn">+ Save</button></div>
+      </a>
+
+      <a class="legis-tile" href="legislation-detail.html">
+        <div class="meta"><span class="tag live">Voting in 9 days</span><span class="tag">House</span></div>
+        <h3>Federal Data Privacy Act</h3>
+        <div class="num">H.R. 5612 · 198 pages</div>
+        <div class="summary">First comprehensive US data privacy law. Lets individuals opt out of data sale, sets minimum standards, preempts state laws.</div>
+        <div class="wl">
+          <div class="wl-box win"><div class="lbl">↑ Winners</div><div class="txt">Consumers, privacy advocates</div></div>
+          <div class="wl-box lose"><div class="lbl">↓ Losers</div><div class="txt">Data brokers, ad-tech firms, CA</div></div>
+        </div>
+        <div class="footer"><div class="poll"><strong>83%</strong> of polled citizens want YES</div><button class="save-btn">+ Save</button></div>
+      </a>
+
+      <a class="legis-tile" href="legislation-detail.html">
+        <div class="meta"><span class="tag">Voting in 11 days</span><span class="tag">House</span></div>
+        <h3>Border Security Funding Act</h3>
+        <div class="num">H.R. 2210 · 142 pages</div>
+        <div class="summary">Authorizes $26B for additional CBP staffing, surveillance tech, and processing facilities along the southern border.</div>
+        <div class="wl">
+          <div class="wl-box win"><div class="lbl">↑ Winners</div><div class="txt">CBP, security contractors</div></div>
+          <div class="wl-box lose"><div class="lbl">↓ Losers</div><div class="txt">Treasury, asylum applicants</div></div>
+        </div>
+        <div class="footer"><div class="poll"><strong>52%</strong> of polled citizens want YES</div><button class="save-btn">+ Save</button></div>
+      </a>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="logo"><div class="logo-mark">F</div>fixshitbroken</a>
+        <div class="tag-text">Built by citizens, for citizens. 100% public data. No PAC money. No lobbyist hands on the wheel.</div>
+      </div>
+      <div class="foot-col"><h5>The four pillars</h5><ul><li>Will of the People</li><li>Legislation for Dummies</li><li>Town Hall</li><li>Politics is a Joke</li></ul></div>
+      <div class="foot-col"><h5>Tools</h5><ul><li>Find your reps</li><li>Browse legislation</li><li>Voter registration</li><li>Browser extension</li></ul></div>
+      <div class="foot-col"><h5>About</h5><ul><li>Why we exist</li><li>Data sources</li><li>Methodology</li><li>Press kit</li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 fixshitbroken · A civic accountability project</div>
+      <div>Privacy · Terms · Contact</div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
