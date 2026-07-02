@@ -4,35 +4,43 @@
     "policyArea": "Armed Forces and National Security",
     "sponsor": "Sen. Moran, Jerry [R-KS]",
     "summaryBullets": [
-      "As passed by the House, the bill was rewritten to combine the Foreign Intelligence Accountability Act and the Anti-CBDC Surveillance State Act.",
-      "It reauthorizes Title VII of the Foreign Intelligence Surveillance Act (FISA) through April 30, 2029, and expands protections related to Section 702 surveillance of non-U.S. persons abroad.",
-      "It adds oversight of FBI queries of U.S. person information, including monthly reviews by the Office of the Director of National Intelligence and referrals of noncompliant queries to the Intelligence Community Inspector General.",
-      "It creates criminal penalties for falsifying compliance with querying procedures and for FBI personnel who knowingly violate U.S. person query rules, and limits query approvals to certain FBI attorneys rather than supervisors.",
-      "It bars a Federal Reserve bank from offering financial products or accounts directly to individuals or issuing a central bank digital currency (CBDC), and restricts the Federal Reserve Board from using or developing a CBDC, with certain exceptions."
+      "Foreign Intelligence Accountability Act and the Anti-CBDC Surveillance State Act",
+      "This bill reauthorizes Title VII of the Foreign Intelligence Surveillance Act (FISA) until April 30, 2029, and expands protections related to surveillance under Section 702 of FISA.",
+      "It also prohibits a Federal Reserve bank from offering financial products or services directly to an individual, maintaining an account on behalf of an individual, or issuing a central bank digital currency (CBDC).",
+      "Section 702 of FISA concerns acquiring communications of non-U.S. persons believed to be outside the United States to obtain foreign intelligence information. Information about U.S.",
+      "persons may incidentally be acquired by this type of surveillance and subsequently queried (searched) under certain circumstances.",
+      "Changes to Section 702 include requiring monthly reviews by the Office of the Director of National Intelligence (ODNI) for each U.S. person query conducted by the Federal Bureau of Investigation (FBI).",
+      "ODNI must refer queries that do not comply with established standards, as well as possible abuses of civil liberties or privacy, to the Office of the Intelligence Community Inspector General.",
+      "The bill institutes criminal penalties for (1) those who knowingly and willingly falsify or materially misrepresent complying with querying procedures, and (2) FBI personnel who knowingly and willingly violate procedures related to U.S."
     ],
     "cboCost": {
       "title": "S. 1318, Fallen Servicemembers Religious Heritage Restoration Act",
       "url": "https://www.cbo.gov/publication/61727"
     },
     "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/1318",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
   },
   "S. 2": {
     "shortTitle": "Secure America Act",
-    "policyArea": "Economics and Public Finance",
+    "policyArea": "Immigration",
     "sponsor": "Sen. Graham, Lindsey [R-SC]",
     "summaryBullets": [
-      "This bill provides funding to the Department of Homeland Security, U.S. Customs and Border Protection (CBP), and U.S. Immigration and Customs Enforcement (ICE) through FY2029 for immigration enforcement and related activities.",
-      "It is a reconciliation bill assembled under the FY2026 budget resolution (S. Con. Res. 33), meaning it moves through expedited procedures that prevent a filibuster and restrict amendments in the Senate.",
-      "CBP funding covers personnel; border security, technology, and screening; and immigration enforcement activities.",
-      "ICE funding covers personnel, Homeland Security Investigations, enforcement activities, transportation, information technology, facilities and fleet, 287(g) agreements with state and local law enforcement, legal advisers, and certain immigration-related arrests.",
-      "It also gives DHS additional funding for immigration enforcement and for state and local participation in homeland security efforts, with the funding generally remaining available through FY2029."
+      "Secure America Act",
+      "This act provides $70 billion in funding to the Department of Homeland Security (DHS), U.S. Customs and Border Protection (CBP), and U.S.",
+      "Immigration and Customs Enforcement (ICE) through FY2029 for immigration enforcement, border security, and related activities.",
+      "It is known as a reconciliation bill and includes legislation submitted by certain congressional committees pursuant to provisions in the FY2026 congressional budget resolution (S. Con. Res.",
+      "33) that directed the committees to submit legislation to the House or Senate Budget Committee that will increase the deficit.",
+      "(Reconciliation bills are considered by Congress using expedited legislative procedures that prevent a filibuster and restrict amendments in the Senate.",
+      "TITLE I--COMMITTEE ON HOMELAND SECURITY AND GOVERNMENTAL AFFAIRS",
+      "(Sec. 101) This section provides funding for CBP to hire, pay, train, and equip Border Patrol agents and Border Patrol support personnel to conduct functions other than immigration enforcement and customs functions."
     ],
     "cboCost": {
       "title": "Estimated Budgetary Effects of S. 2, the Secure America Act",
       "url": "https://www.cbo.gov/publication/62520"
     },
     "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/2",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
   },
   "H R 556": {
@@ -142,16 +150,18 @@
     "policyArea": "Commerce",
     "sponsor": "Sen. Ernst, Joni [R-IA]",
     "summaryBullets": [
-      "Reauthorizes through FY2031 and modifies the Small Business Innovation Research (SBIR) program, the Small Business Technology Transfer (STTR) program, and related pilot programs, which provide competitive federal awards for domestic small businesses to conduct R&D with commercialization potential.",
-      "Expands requirements for federal agencies administering these programs to evaluate the security risks of small businesses applying for awards; if an agency denies an application for security reasons, it must give the small business the basis for that determination.",
-      "Requires each agency to set a maximum number of proposals per fiscal year that a small business may submit in response to Phase I and Phase II solicitations.",
-      "Expands training requirements for agencies' contracting officers and acquisition workforce regarding Phase III (commercialization) awards.",
-      "Establishes strategic breakthrough allocations for critical technology areas: additional Phase II SBIR and STTR awards to small businesses that demonstrate effective technology and receive matching funds."
+      "Small Business Innovation and Economic Security Act",
+      "This act reauthorizes through FY2031 and modifies the Small Business Innovation Research (SBIR) program, the Small Business Technology Transfer (STTR) program, and related pilot programs.",
+      "(The SBIR and STTR programs are administered by various federal agencies and provide competitive awards for domestic small businesses to conduct research and development projects that have the potential for commercialization.",
+      "Specifically, the act expands the requirements for federal agencies administering these programs to evaluate the security risks of the small businesses that apply for awards under the programs.",
+      "If an agency denies an application for security reasons, the agency must provide the small business with the basis for such determination.",
+      "Further, each agency must set a maximum number of proposals per fiscal year that a small business concern may submit in response to Phase I and Phase II solicitations.",
+      "The act expands the training requirements for agencies' contracting officers and acquisition workforce with respect to Phase III (commercialization of technologies) awards under the SBIR and STTR programs.",
+      "The act also establishes strategic breakthrough allocations for critical technology areas. These are additional Phase II SBIR and STTR awards to small businesses that demonstrate an effective technology and receive matching funds."
     ],
     "cboCost": null,
     "hasSummary": true,
-    "latestActionDate": "2026-04-13",
-    "latestActionText": "Became Public Law No: 119-83.",
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/3971",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
   },
   "H R 4294": {
@@ -251,19 +261,20 @@
     "policyArea": "Native Americans",
     "sponsor": "Sen. Thune, John [R-SD]",
     "summaryBullets": [
-      "Sets forth requirements for the Bureau of Indian Affairs (BIA) to process proposed residential leasehold mortgages, business leasehold mortgages, land mortgages, or right-of-way documents, including notifying lenders upon receipt, conducting a preliminary review within 10 days, and approving or disapproving within 20 or 30 days depending on the application type.",
-      "Sets requirements for the BIA on response times for completing certified title status reports, notification of processing delays, and the form of notices and delivery of certain reports.",
-      "Provides relevant federal agencies and Indian tribes with read-only access to the Trust Asset and Accounting Management System maintained by the BIA.",
-      "Requires the Government Accountability Office to report on digitizing documents to streamline and expedite completion of mortgage packages for residential mortgages on Indian land.",
-      "Establishes the position of Realty Ombudsman within the BIA's Division of Real Estate Services."
+      "Tribal Trust Land Homeownership Act of 2025",
+      "This act sets forth requirements for the processing of a proposed residential leasehold mortgage, business leasehold mortgage, land mortgage, or right-of-way document by the Bureau of Indian Affairs (BIA).",
+      "The BIA must notify lenders upon receipt of such documentation, perform a preliminary review of such documents not later than 10 days after receipt, and approve or disapprove of such documents within 20 or 30 days, depending on the type of application.",
+      "Additionally, the act sets forth requirements for the BIA regarding (1) response times for the completion of certified title status reports, (2) notification of delays in processing, and (3) the form of notices and delivery of certain reports.",
+      "The act also provides relevant federal agencies and Indian tribes with read-only access to the Trust Asset and Accounting Management System maintained by the BIA.",
+      "The Government Accountability Office must report on digitizing documents for the purpose of streamlining and expediting the completion of mortgage packages for residential mortgages on Indian land.",
+      "Finally, the act establishes within the BIA's Division of Real Estate Services the position of Realty Ombudsman."
     ],
     "cboCost": {
       "title": "S. 723, Tribal Trust Land Homeownership Act of 2025",
       "url": "https://www.cbo.gov/publication/61441"
     },
     "hasSummary": true,
-    "latestActionDate": "2026-05-04",
-    "latestActionText": "Became Public Law No: 119-88.",
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/723",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
   },
   "H RES 1095": {
@@ -338,17 +349,18 @@
     "policyArea": "Transportation and Public Works",
     "sponsor": "Sen. Cruz, Ted [R-TX]",
     "summaryBullets": [
-      "Addresses aviation safety by expanding requirements for aircraft tracking and communication using Automatic Dependent Surveillance-Broadcast (ADS-B) technology and increasing oversight.",
-      "Generally requires aircraft to operate with ADS-B In equipment so they receive other aircraft's location information and traffic advisories; current law does not require this.",
-      "Limits which flights may be treated as 'sensitive government missions' that qualify for an exception from ADS-B Out requirements (e.g., excluding training flights) and adds reporting and notification requirements for that exception.",
-      "Requires GAO to review use of the ADS-B Out exception and the DOT Inspector General to annually audit FAA oversight of operations that use it.",
-      "Repeals a 2025 law that exempts certain military helicopters from ADS-B Out requirements in the Washington, DC, metropolitan area.",
-      "Requires the Army Inspector General to audit the Army's coordination with the FAA, directs the FAA to create an office to coordinate military aircraft airspace use and review flight safety around airports, and requires FAA memoranda of understanding with military agencies for safety information sharing."
+      "Rotorcraft Operations Transparency and Oversight Reform Act or the ROTOR Act",
+      "This bill addresses aviation safety by increasing requirements for aircraft tracking and communication using Automatic Dependent Surveillance-Broadcast (ADS-B) technology and expanding oversight.",
+      "As background, ADS-B for broadcasting (Out) and receiving (In) transmits information (e.g., location and weather information) between aircraft and air traffic control.",
+      "Under the bill, aircraft must generally operate with ADS-B In equipment to provide the aircraft with location information of other aircraft and traffic advisories. Current law does not require this equipment.",
+      "Current Federal Aviation Administration (FAA) regulations allow aircraft performing a sensitive government mission to be excepted from requirements for using ADS-B Out equipment.",
+      "This bill limits which flights may be considered sensitive government missions (e.g., not training flights) and requires additional reporting and notifications for the exception.",
+      "The Government Accountability Office must review the use of the ADS-B Out exception and the Office of the Inspector General (OIG) of the Department of Transportation must annually audit FAA oversight of operations that use the exception.",
+      "Further, the bill repeals a 2025 law that exempts certain military helicopters from the ADS-B Out requirements for the Washington, DC, metropolitan area."
     ],
     "cboCost": null,
     "hasSummary": true,
-    "latestActionDate": "2026-02-24",
-    "latestActionText": "On motion to suspend the rules and pass the bill Failed by the Yeas and Nays: (2/3 required): 264 - 133 (Roll no. 72).",
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/2503",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
   },
   "H R 6329": {
@@ -395,20 +407,21 @@
     "policyArea": "Government Operations and Politics",
     "sponsor": "Sen. Scott, Rick [R-FL]",
     "summaryBullets": [
-      "Per the latest CRS summary (as passed by the House), the bill's text was changed to the Safeguard American Voter Eligibility Act (SAVE America Act), which requires documentary proof of U.S. citizenship to register to vote and photo identification to vote in federal elections.",
-      "Prohibits states from processing a federal voter-registration application unless the applicant presents documentary proof of U.S. citizenship, and specifies acceptable documents (e.g., REAL ID-compliant ID indicating citizenship, a valid U.S. passport, or a government-issued photo ID showing a U.S. birthplace).",
-      "Requires states to process applications despite name discrepancies if additional documentation is provided, and to establish an alternative process to demonstrate citizenship.",
-      "Requires states to take ongoing steps to ensure only U.S. citizens are registered, including submitting voter lists to the Department of Homeland Security for comparison with the SAVE (Systematic Alien Verification for Entitlements) system, giving flagged individuals a chance to prove citizenship, and removing noncitizens from voter lists.",
-      "Provides a private right of action for certain violations and establishes criminal penalties for certain offenses.",
-      "Bars officials from providing a federal-election ballot to anyone who does not present valid physical photo ID (with provisional-ballot and religious-objection affidavit procedures), sets photo-ID/Social Security requirements for non-in-person voting with exceptions for overseas military and certain elderly/disabled voters, and requires officials to provide free public access to a digital imaging device to copy photo ID where practicable."
+      "Safeguard American Voter Eligibility Act or the SAVE America Act",
+      "This bill requires individuals to provide documentary proof of U.S. citizenship when registering to vote, and requires photo identification to vote, in federal elections.",
+      "Specifically, the bill prohibits states from accepting and processing an application to register to vote in a federal election unless the applicant presents documentary proof of U.S. citizenship.",
+      "The bill specifies what documents are considered acceptable proof of U.S. citizenship, such as identification that complies with the REAL ID Act of 2005 that indicates U.S. citizenship, a valid U.S.",
+      "passport, or a valid government-issued photo identification card that shows the applicant's place of birth was in the United States.",
+      "Further, the bill (1) requires states to accept and process a voter registration application in the event of a name discrepancy in the applicant's documentation, as long as the applicant provides additional documentation; and (2) requires states to establish an alternative process to demonstrate U.",
+      "S. citizenship.",
+      "Within 30 days of the bill's enactment, each state must take affirmative steps on an ongoing basis to ensure that only U.S. citizens are registered to vote, which shall include establishing a program to identify individuals who are not U.S."
     ],
     "cboCost": {
       "title": "S. 1383, Veterans Accessibility Advisory Committee Act of 2025",
       "url": "https://www.cbo.gov/publication/61745"
     },
     "hasSummary": true,
-    "latestActionDate": "2026-03-26",
-    "latestActionText": "Considered by Senate (Message from the House considered). (consideration: CR S1647)",
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/1383",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
   },
   "H R 261": {
@@ -959,6 +972,540 @@
     "hasSummary": true,
     "latestActionDate": "2026-01-14",
     "latestActionText": "Motion to reconsider laid on the table Agreed to without objection.",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 1399": {
+    "shortTitle": "Directing the Committee on Ethics to preserve and publicly release records relating to monetary settlements involving acts of sexual harassment.",
+    "policyArea": "",
+    "sponsor": "Rep. Massie, Thomas [R-KY-4]",
+    "summaryBullets": [],
+    "cboCost": null,
+    "hasSummary": false,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1399",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Con.Res. 108": {
+    "shortTitle": "Directing the President pursuant to section 5(c) of the War Powers Resolution to remove United States Armed Forces from hostilities in Lebanon.",
+    "policyArea": "International Affairs",
+    "sponsor": "Rep. Tlaib, Rashida [D-MI-12]",
+    "summaryBullets": [
+      "This concurrent resolution directs the President to remove U.S. Armed Forces from hostilities in Lebanon within seven days of the resolution's adoption.",
+      "The resolution specifies that it shall not be construed to prevent or limit security cooperation with the Lebanese Armed Forces or the protection of diplomatic facilities."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/108",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 1398": {
+    "shortTitle": "Providing for consideration of the bill (H.R. 8800) to authorize appropriations for fiscal year 2027 for military activities of the Department of Defense, for military construction, and for defense activities of the Department of Energy, to prescribe military personnel strengths for such fiscal year, and for other purposes; providing for consideration of the bill (H.R. 8595) making appropriations for national security, Department of State, and related programs for the fiscal year ending September 30, 2027, and for other purposes; providing for consideration of the bill (H.R. 8884) to amend title II of the Social Security Act to reauthorize demonstration authority for the disability insurance program; providing for consideration of the resolution (H. Res. 1383) commemorating the one-year anniversary of the enactment of the Working Families Tax Cuts; and for other purposes.",
+    "policyArea": "",
+    "sponsor": "Rep. Scott, Austin [R-GA-8]",
+    "summaryBullets": [],
+    "cboCost": null,
+    "hasSummary": false,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1398",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S 629": {
+    "shortTitle": "Emergency Conservation Program Improvement Act of 2025",
+    "policyArea": "Agriculture and Food",
+    "sponsor": "Sen. Fischer, Deb [R-NE]",
+    "summaryBullets": [
+      "Emergency Conservation Program Improvement Act of 2025",
+      "This bill revises the Emergency Conservation Program (ECP) and the Emergency Forest Restoration Program (EFRP) to expand eligibility for payments to agricultural producers and owners of forest land impacted by natural disasters.",
+      "The bill also provides additional options to receive an advance on cost-sharing payments before carrying out emergency measures.",
+      "The bill expands advance ECP payments to include the replacement, repair, or restoration of farmland or conservation structures requiring an immediate response.",
+      "Producers may receive an advance on cost-sharing payments for 75% of the cost of the replacement and 50% of the cost of the repair or restoration.",
+      "Current law limits advance payments to 25% of the cost of the repair or replacement of fencing.",
+      "Under EFRP, the bill allows owners of nonindustrial private forest land impacted by a natural disaster to receive an advance on cost-sharing payments for up to 75% of the cost of the emergency measures.",
+      "Currently, advance payments are not available under the program."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/629",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 1335": {
+    "shortTitle": "Condemning actors seeking to defraud the United States Government, and expressing the sense of the House of Representatives that governmentwide fraud and improper payment prevention reforms will meaningfully improve the financial prosperity of the United States, and that Federal program eligibility should be verified before payment.",
+    "policyArea": "Government Operations and Politics",
+    "sponsor": "Rep. Fallon, Pat [R-TX-4]",
+    "summaryBullets": [
+      "This resolution condemns the actions of those seeking to defraud the U.S. government.",
+      "The resolution also expresses the belief of the House of Representatives that (1) legislative and policy reforms to prevent fraud and improper payment will meaningfully improve the continued financial prosperity of the U.S.",
+      "government and the American taxpayer, and (2) federal program eligibility and spending activities should be verified prior to payments being issued."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1335",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 1140": {
+    "shortTitle": "Providing for consideration of the bill (H.R. 5408) to accelerate workplace time-to-contract under the National Labor Relations Act.",
+    "policyArea": "Congress",
+    "sponsor": "Rep. Norcross, Donald [D-NJ-1]",
+    "summaryBullets": [
+      "This resolution provides for the consideration of the bill (H.R. 5408) to accelerate workplace time-to-contract under the National Labor Relations Act."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1140",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S 2": {
+    "shortTitle": "Secure America Act",
+    "policyArea": "Immigration",
+    "sponsor": "Sen. Graham, Lindsey [R-SC]",
+    "summaryBullets": [
+      "Secure America Act",
+      "This act provides $70 billion in funding to the Department of Homeland Security (DHS), U.S. Customs and Border Protection (CBP), and U.S.",
+      "Immigration and Customs Enforcement (ICE) through FY2029 for immigration enforcement, border security, and related activities.",
+      "It is known as a reconciliation bill and includes legislation submitted by certain congressional committees pursuant to provisions in the FY2026 congressional budget resolution (S. Con. Res.",
+      "33) that directed the committees to submit legislation to the House or Senate Budget Committee that will increase the deficit.",
+      "(Reconciliation bills are considered by Congress using expedited legislative procedures that prevent a filibuster and restrict amendments in the Senate.",
+      "TITLE I--COMMITTEE ON HOMELAND SECURITY AND GOVERNMENTAL AFFAIRS",
+      "(Sec. 101) This section provides funding for CBP to hire, pay, train, and equip Border Patrol agents and Border Patrol support personnel to conduct functions other than immigration enforcement and customs functions."
+    ],
+    "cboCost": {
+      "title": "Estimated Budgetary Effects of S. 2, the Secure America Act",
+      "url": "https://www.cbo.gov/publication/62520"
+    },
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/2",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 1345": {
+    "shortTitle": "Providing for consideration of the bill (H.R. 8312) to establish fraud prevention and program integrity functions and data sharing authorities within the Department of Treasury and a permanent governmentwide Inspector General for Fraud, Accountability, and Recovery, and for other purposes; providing for consideration of the bill (H.R. 8464) to amend title 31, United States Code, to authorize pausing and segmenting payments, and for other purposes; providing for consideration of the resolution (H. Res. 1335) condemning actors seeking to defraud the United States Government, and expressing the sense of the House of Representatives that governmentwide fraud and improper payment prevention reforms will meaningfully improve the financial prosperity of the United States, and that Federal program eligibility should be verified before payment; and providing for consideration of the bill (S. 2) to provide for reconciliation pursuant to title II of S. Con. Res. 33.",
+    "policyArea": "Congress",
+    "sponsor": "Rep. Langworthy, Nicholas A. [R-NY-23]",
+    "summaryBullets": [
+      "This resolution provides for the consideration of the bill (H.R.",
+      "8312) to establish fraud prevention and program integrity functions and data sharing authorities within the Department of Treasury and a permanent governmentwide Inspector General for Fraud, Accountability, and Recovery, and for other purposes; providing for consideration of the bill (H.",
+      "R. 8464) to amend title 31, United States Code, to authorize pausing and segmenting payments, and for other purposes; providing for consideration of the resolution (H. Res.",
+      "1335) condemning actors seeking to defraud the United States Government, and expressing the sense of the House of Representatives that governmentwide fraud and improper payment prevention reforms will meaningfully improve the financial prosperity of the United States, and that Federal program eligibility should be verified before payment; and providing for consideration of the bill (S.",
+      "2) to provide for reconciliation pursuant to title II of S. Con. Res. 33."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1345",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 518": {
+    "shortTitle": "Providing for consideration of the bill (H.R. 2913) to authorize support for Ukraine, and for other purposes.",
+    "policyArea": "Congress",
+    "sponsor": "Rep. Meeks, Gregory W. [D-NY-5]",
+    "summaryBullets": [
+      "This resolution provides for the consideration of H.R. 2913, the Ukraine Support Act. It also provides that the Clerk of the House shall transmit to the Senate a message that the House has passed H.R.",
+      "2913 no later than one week after the bill's passage."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/518",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 1336": {
+    "shortTitle": "Waiving a requirement of clause 6(a) of rule XIII with respect to consideration of certain resolutions reported from the Committee on Rules.",
+    "policyArea": "Congress",
+    "sponsor": "Rep. Foxx, Virginia [R-NC-5]",
+    "summaryBullets": [
+      "This resolution provides for the House of Representatives to consider on the same day without a two-thirds vote any resolution reported by the Committee on Rules through the legislative day of June 5, 2026, relating to a measure providing for reconciliation pursuant to title II of S.",
+      "Con.Res.33. Specifically, the resolution waives a House Rule requiring a two-thirds vote to consider a report from the Committee on Rules on the same day it is presented to the House."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1336",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Con.Res. 84": {
+    "shortTitle": "Directing the President pursuant to section 5(c) of the War Powers Resolution to remove United States Armed Forces from Lebanon.",
+    "policyArea": "International Affairs",
+    "sponsor": "Rep. Tlaib, Rashida [D-MI-12]",
+    "summaryBullets": [
+      "This concurrent resolution directs the President to remove U.S. Armed Forces from Lebanon within seven days of the resolution's adoption."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/84",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Con.Res. 86": {
+    "shortTitle": "Directing the President, pursuant to section 5(c) of the War Powers Resolution, to remove United States Armed Forces from hostilities with Iran.",
+    "policyArea": "International Affairs",
+    "sponsor": "Rep. Meeks, Gregory W. [D-NY-5]",
+    "summaryBullets": [
+      "This concurrent resolution directs the President to remove U.S. Armed Forces from hostilities against Iran unless explicitly authorized by a declaration of war or a congressional authorization for use of military force against Iran.",
+      "Elements of the U.S. Armed Forces needed to defend the United States, an ally, or a partner from imminent attack are not covered by this requirement provided the President complies with a specified provision of the War Powers Resolution.",
+      "(The provision generally requires the President to remove U.S. Armed Forces from hostilities no more than 60 days after the President notifies or is required to notify Congress of such involvement, unless Congress authorizes such use.",
+      "For more information on the War Powers Resolution, see CRS In Focus 13134."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/86",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 1333": {
+    "shortTitle": "Providing for consideration of the bill (H.R. 8646) making appropriations for Agriculture, Rural Development, Food and Drug Administration, and Related Agencies programs for the fiscal year ending September 30, 2027, and for other purposes; providing for consideration of the bill (H.R. 7726) to amend the Child Care and Development Block Grant Act of 1990 to withhold funds from noncompliant States under such Act; providing for consideration of the bill (H.R. 7892) to amend the Higher Education Act of 1965 to require to the Secretary of Education to use an identity fraud detection system to review each FAFSA to determine whether the FAFSA presents a reasonable suspicion of identity fraud; and providing for consideration of the bill (H.R. 8872) to amend part A of title IV of the Social Security Act to target funds to low-income families, strengthen program integrity guardrails for State expenditure of funds, require measurement of improper payments, and establish goals for eliminating fraud and improper payments under the program of block grants to States for temporary assistance for needy families, and for other purposes.",
+    "policyArea": "Congress",
+    "sponsor": "Rep. Houchin, Erin [R-IN-9]",
+    "summaryBullets": [
+      "This resolution provides for the consideration of the bill (H.R.",
+      "8646) making appropriations for Agriculture, Rural Development, Food and Drug Administration, and Related Agencies programs for the fiscal year ending September 30, 2027, and for other purposes; providing for consideration of the bill (H.",
+      "R. 7726) to amend the Child Care and Development Block Grant Act of 1990 to withhold funds from noncompliant States under such Act; providing for consideration of the bill (H.R.",
+      "7892) to amend the Higher Education Act of 1965 to require to the Secretary of Education to use an identity fraud detection system to review each FAFSA to determine whether the FAFSA presents a reasonable suspicion of identity fraud; and providing for consideration of the bill (H.",
+      "R.",
+      "8872) to amend part A of title IV of the Social Security Act to target funds to low-income families, strengthen program integrity guardrails for State expenditure of funds, require measurement of improper payments, and establish goals for eliminating fraud and improper payments under the program of block grants to States for temporary assistance for needy families, and for other purposes."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1333",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 1175": {
+    "shortTitle": "Providing for consideration of the bill (H.R. 8035) to amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978 through October 20, 2027, and for other purposes.",
+    "policyArea": "Congress",
+    "sponsor": "Rep. Scott, Austin [R-GA-8]",
+    "summaryBullets": [
+      "This resolution provides for the consideration of the bill (H.R.",
+      "8035) to amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978 through October 20, 2027, and for other purposes."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1175",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 1156": {
+    "shortTitle": "Expressing support for tax policies that support working families.",
+    "policyArea": "Taxation",
+    "sponsor": "Rep. Kelly, Mike [R-PA-16]",
+    "summaryBullets": [
+      "This resolution expresses support for tax policies that support working families and recognizes the tax relief enacted as part of the 2025 reconciliation act."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1156",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 965": {
+    "shortTitle": "Providing for consideration of the bill (H.R. 1689) to require the Secretary of Homeland Security to designate Haiti for temporary protected status.",
+    "policyArea": "Congress",
+    "sponsor": "Rep. Pressley, Ayanna [D-MA-7]",
+    "summaryBullets": [
+      "This resolution provides for the consideration of the bill (H.R. 1689) to require the Secretary of Homeland Security to designate Haiti for temporary protected status."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/965",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Con.Res. 40": {
+    "shortTitle": "Directing the President, pursuant to section 5(c) of the War Powers Resolution, to remove United States Armed Forces from hostilities with Iran.",
+    "policyArea": "International Affairs",
+    "sponsor": "Rep. Meeks, Gregory W. [D-NY-5]",
+    "summaryBullets": [
+      "This concurrent resolution directs the President to remove U.S. Armed Forces from hostilities against Iran unless explicitly authorized by a declaration of war or a congressional authorization for use of military force against Iran.",
+      "Elements of the U.S. Armed Forces needed to defend the United States, an ally, or a partner from imminent attack are not covered by this requirement provided the President complies with a specified provision of the War Powers Resolution.",
+      "(The provision generally requires the President to remove U.S. Armed Forces from hostilities no more than 60 days after the President notifies or is required to notify Congress of such involvement, unless Congress authorizes such use.",
+      "For more information on the War Powers Resolution, see CRS In Focus 13134."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/40",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 1174": {
+    "shortTitle": "Providing for consideration of the bill (H.R. 6387) to amend the Clean Air Act to require revisions to regulations governing the review and handling of air quality monitoring data influenced by exceptional events or actions to mitigate wildfire risk; providing for consideration of the bill (H.R. 6398) to amend the Clean Air Act relating to review by the Environmental Protection Agency of proposed legislation; providing for consideration of the bill (H.R. 6409) to amend the Clean Air Act to clarify standards for emissions emanating from outside of the United States, and for other purposes; and providing for consideration of the resolution (H. Res. 1156) expressing support for tax policies that support working families.",
+    "policyArea": "Congress",
+    "sponsor": "Rep. Langworthy, Nicholas A. [R-NY-23]",
+    "summaryBullets": [
+      "This resolution provides for the consideration of the bill (H.R.",
+      "6387) to amend the Clean Air Act to require revisions to regulations governing the review and handling of air quality monitoring data influenced by exceptional events or actions to mitigate wildfire risk; providing for consideration of the bill (H.",
+      "R. 6398) to amend the Clean Air Act relating to review by the Environmental Protection Agency of proposed legislation; providing for consideration of the bill (H.R.",
+      "6409) to amend the Clean Air Act to clarify standards for emissions emanating from outside of the United States, and for other purposes; and providing for consideration of the resolution (H. Res.",
+      "1156) expressing support for tax policies that support working families."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1174",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 1142": {
+    "shortTitle": "Providing for disposition of the Senate amendment to the bill (H.R. 7147) making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes.",
+    "policyArea": "Congress",
+    "sponsor": "Rep. Fischbach, Michelle [R-MN-7]",
+    "summaryBullets": [],
+    "cboCost": null,
+    "hasSummary": false,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1142",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 1128": {
+    "shortTitle": "Expressing the support of the House of Representatives for the Department of Homeland Security.",
+    "policyArea": "Immigration",
+    "sponsor": "Rep. Mackenzie, Ryan [R-PA-7]",
+    "summaryBullets": [
+      "This resolution recognizes the importance of fully funding the Department of Homeland Security (DHS).",
+      "The resolution also (1) cautions that Americans are at greater risk each day DHS is subject to a lapse in appropriations, and (2) expresses gratitude to DHS employees for their commitment to protect the United States."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1128",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 1131": {
+    "shortTitle": "Providing for consideration of the bill (H.R. 8029) making appropriations for the Department of Homeland Security for the fiscal year ending September 30, 2026, and for other purposes; providing for consideration of the resolution (H. Res. 1128) expressing the support of the House of Representatives for the Department of Homeland Security; providing for consideration of the bill (H.R. 5103) to establish a program to Beautify the District of Columbia and establish the District of Columbia Safe and Beautiful Commission; providing for consideration of the bill (H.R. 7084) to amend title 46, United States Code, with respect to the types of vessels that may enter or operate in navigable waters of the United States or transfer cargo in any port or place under the jurisdiction of the United States, and for other purposes; and for other purposes.",
+    "policyArea": "Congress",
+    "sponsor": "Rep. Houchin, Erin [R-IN-9]",
+    "summaryBullets": [
+      "This resolution provides for the consideration of the bill (H.R.",
+      "8029) making appropriations for the Department of Homeland Security for the fiscal year ending September 30, 2026, and for other purposes; providing for consideration of the resolution (H. Res.",
+      "1128) expressing the support of the House of Representatives for the Department of Homeland Security; providing for consideration of the bill (H.R.",
+      "5103) to establish a program to Beautify the District of Columbia and establish the District of Columbia Safe and Beautiful Commission; providing for consideration of the bill (H.R.",
+      "7084) to amend title 46, United States Code, with respect to the types of vessels that may enter or operate in navigable waters of the United States or transfer cargo in any port or place under the jurisdiction of the United States, and for other purposes; and for other purposes."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1131",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.J.Res. 139": {
+    "shortTitle": "Proposing an amendment to the Constitution of the United States requiring a balanced budget for the Federal Government.",
+    "policyArea": "Economics and Public Finance",
+    "sponsor": "Rep. Biggs, Andy [R-AZ-5]",
+    "summaryBullets": [
+      "This joint resolution proposes a constitutional amendment prohibiting total federal expenditures for a year from exceeding the average annual federal receipts collected in the three prior years, adjusted for changes in the population of U.",
+      "S. citizens and inflation. Expenditures for payment of debt and receipts derived from borrowing are excluded.",
+      "Under the amendment, Congress may authorize specific expenditures in excess of the limit with (1) a roll call vote of two-thirds of each chamber, or (2) a roll call vote for any year in which a declaration of war is in effect.",
+      "The amendment also prohibits any bill to levy a new tax or increase the rate of any tax from becoming law unless it has been approved by a roll call vote of two-thirds of the whole number of each chamber of Congress.",
+      "The requirements take effect in the fifth year beginning after ratification of the amendment."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/139",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 1115": {
+    "shortTitle": "Providing for consideration of the bill (H.R. 556) to prohibit the Secretary of the Interior and the Secretary of Agriculture from prohibiting the use of lead ammunition or tackle on certain Federal land or water under the jurisdiction of the Secretary of the Interior and the Secretary of Agriculture, and for other purposes; providing for consideration of the bill (H.R. 1958) to amend the Immigration and Nationality Act to clarify that aliens who have been convicted of defrauding the United States Government or the unlawful receipt of public benefits are inadmissible and deportable; providing for consideration of the bill (H.R. 4638) to amend the Immigration and Nationality Act to provide that an alien who has been convicted of harming animals used in law enforcement is inadmissible and deportable, and for other purposes; and relating to consideration of motions to suspend the rules.",
+    "policyArea": "Congress",
+    "sponsor": "Rep. Foxx, Virginia [R-NC-5]",
+    "summaryBullets": [
+      "This resolution provides for the consideration of the bill (H.R.",
+      "556) to prohibit the Secretary of the Interior and the Secretary of Agriculture from prohibiting the use of lead ammunition or tackle on certain Federal land or water under the jurisdiction of the Secretary of the Interior and the Secretary of Agriculture, and for other purposes; providing for consideration of the bill (H.",
+      "R.",
+      "1958) to amend the Immigration and Nationality Act to clarify that aliens who have been convicted of defrauding the United States Government or the unlawful receipt of public benefits are inadmissible and deportable; providing for consideration of the bill (H.",
+      "R.",
+      "4638) to amend the Immigration and Nationality Act to provide that an alien who has been convicted of harming animals used in law enforcement is inadmissible and deportable, and for other purposes; and relating to consideration of motions to suspend the rules."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1115",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Con.Res. 38": {
+    "shortTitle": "Directing the President pursuant to section 5(c) of the War Powers Resolution to remove United States Armed Forces from unauthorized hostilities in the Islamic Republic of Iran.",
+    "policyArea": "International Affairs",
+    "sponsor": "Rep. Massie, Thomas [R-KY-4]",
+    "summaryBullets": [
+      "This concurrent resolution directs the President to terminate the use of U.S.",
+      "Armed Forces from hostilities against Iran or any part of the Iranian government or military unless a declaration of war or authorization to use military force for such purpose has been enacted.",
+      "The resolution specifies that it shall not be construed to prevent the United States from defending itself from imminent attack."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/38",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 1099": {
+    "shortTitle": "Reaffirming Iran remains the largest state sponsor of terrorism.",
+    "policyArea": "International Affairs",
+    "sponsor": "Rep. Mast, Brian J. [R-FL-21]",
+    "summaryBullets": [
+      "This resolution states that the House of Representatives declares it is the policy of the United States that Iran continues to be the largest state sponsor of terrorism."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1099",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 1100": {
+    "shortTitle": "Directing the Committee on Ethics to preserve and publicly release records of the Committee's review of violations or alleged violations of clause 9 (as it pertains to acts of sexual harassment) and clause 18 of rule XXIII of the Rules of the House of Representatives.",
+    "policyArea": "Congress",
+    "sponsor": "Rep. Mace, Nancy [R-SC-1]",
+    "summaryBullets": [
+      "This resolution directs the House Committee on Ethics to preserve and publicly disclose records related to violations or alleged violations of the Code of Official Conduct involving acts of sexual harassment, unwelcome sexual advance, or sexual assault by a Member, Delegate, or Resident Commissioner.",
+      "(The Code of Official Conduct is Rule XXIII of the Rules of the House of Representatives.",
+      "Under the resolution, the committee must preserve all records (including investigative materials) of such a violation or alleged violation.",
+      "Further, within 60 days after the resolution is adopted, the committee must publicly release available reports, conclusions, recommendations, exhibits, and attachments related to such investigations.",
+      "The personally identifiable information of victims, alleged victims, and witnesses must be redacted."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1100",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 1095": {
+    "shortTitle": "Providing for consideration of the bill (H.R. 7744) making appropriations for the Department of Homeland Security for the fiscal year ending September 30, 2026, and for other purposes.",
+    "policyArea": "Congress",
+    "sponsor": "Rep. Jack, Brian [R-GA-3]",
+    "summaryBullets": [
+      "This resolution provides for the consideration of the bill (H.R. 7744) making appropriations for the Department of Homeland Security for the fiscal year ending September 30, 2026, and for other purposes."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1095",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 1075": {
+    "shortTitle": "Providing for consideration of the bill (H.R. 4626) to amend the Energy Policy and Conservation Act to prohibit the Secretary of Energy from prescribing any new or amended energy conservation standard for a product that is not technologically feasible and economically justified, and for other purposes, and providing for consideration of the bill (H.R. 4758) to repeal provisions of Public Law 117-169 relating to taxpayer subsidies for home electrification, and for other purposes.",
+    "policyArea": "Congress",
+    "sponsor": "Rep. Griffith, H. Morgan [R-VA-9]",
+    "summaryBullets": [
+      "This resolution provides for the consideration of the bill (H.R.",
+      "4626) to amend the Energy Policy and Conservation Act to prohibit the Secretary of Energy from prescribing any new or amended energy conservation standard for a product that is not technologically feasible and economically justified, and for other purposes, and providing for consideration of the bill (H.",
+      "R. 4758) to repeal provisions of Public Law 117-169 relating to taxpayer subsidies for home electrification, and for other purposes."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1075",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S 254": {
+    "shortTitle": "ARTIST Act",
+    "policyArea": "Native Americans",
+    "sponsor": "Sen. Sullivan, Dan [R-AK]",
+    "summaryBullets": [
+      "Alaska’s Right to Ivory Sales and Tradition Act or the ARTIST Act",
+      "This act prohibits states from imposing bans on marine mammal products produced by Alaska Natives.",
+      "Specifically, states may not prohibit the interstate commerce, importation, sale, transfer, trade, barter, or possession of marine mammal ivory, marine mammal bone, or baleen legally produced by an Alaska Native as an authentic Alaska Native article of handicrafts and clothing."
+    ],
+    "cboCost": {
+      "title": "S. 254, ARTIST Act",
+      "url": "https://www.cbo.gov/publication/61684"
+    },
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/254",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 1189": {
+    "shortTitle": "Providing for consideration of the bill (H.R. 4690) to amend the Energy Conservation and Production Act to repeal certain Federal building energy efficiency performance standards, and for other purposes; providing for consideration of the resolution (H. Res. 1182) expressing support for rural communities across the United States as stewards of the environment, major suppliers of United States energy resources, critical providers of food production and manufacturing capacity, and drivers of national economic stability, and recognizing the work of the House of Representatives in the 119th Congress in support of those vital communities; providing for consideration of the bill (H.R. 1897) to amend the Endangered Species Act of 1973 to optimize conservation through resource prioritization, incentivize wildlife conservation on private lands, provide for greater incentives to recover listed species, create greater transparency and accountability in recovering listed species, streamline the permitting process, eliminate barriers to conservation, and restore congressional intent; and providing for consideration of the bill (H.R. 5587) to amend the Geothermal Steam Act of 1970 to waive the requirement for a Federal drilling permit for certain activities, to exempt certain activities from the requirements of the National Environmental Policy Act of 1969, and for other purposes.",
+    "policyArea": "Congress",
+    "sponsor": "Rep. Roy, Chip [R-TX-21]",
+    "summaryBullets": [
+      "This resolution provides for the consideration of the bill (H.R.",
+      "4690) to amend the Energy Conservation and Production Act to repeal certain Federal building energy efficiency performance standards, and for other purposes; providing for consideration of the resolution (H. Res.",
+      "1182) expressing support for rural communities across the United States as stewards of the environment, major suppliers of United States energy resources, critical providers of food production and manufacturing capacity, and drivers of national economic stability, and recognizing the work of the House of Representatives in the 119th Congress in support of those vital communities; providing for consideration of the bill (H.",
+      "R.",
+      "1897) to amend the Endangered Species Act of 1973 to optimize conservation through resource prioritization, incentivize wildlife conservation on private lands, provide for greater incentives to recover listed species, create greater transparency and accountability in recovering listed species, streamline the permitting process, eliminate barriers to conservation, and restore congressional intent; and providing for consideration of the bill (H.",
+      "R.",
+      "5587) to amend the Geothermal Steam Act of 1970 to waive the requirement for a Federal drilling permit for certain activities, to exempt certain activities from the requirements of the National Environmental Policy Act of 1969, and for other purposes."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1189",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S 1020": {
+    "shortTitle": "A bill to require the Federal Energy Regulatory Commission to extend the time period during which licensees are required to commence construction of certain hydropower projects.",
+    "policyArea": "Energy",
+    "sponsor": "Sen. Daines, Steve [R-MT]",
+    "summaryBullets": [
+      "This act authorizes the Federal Energy Regulatory Commission (FERC) to extend construction deadlines for hydropower projects that were issued a license before March 13, 2020.",
+      "FERC is authorized, upon the request of the licensees, to extend the deadline for beginning construction on such projects an additional six years beyond the eight-year extension FERC is authorized to provide under current law.",
+      "The extension must consist of no more than three consecutive two-year periods.",
+      "The act also provides that FERC may reinstate certain expired licenses for projects with construction deadlines extended under this act, effective as of the date they expire."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/1020",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S.J.RES. 185": {
+    "shortTitle": "A joint resolution to direct the removal of United States Armed Forces from hostilities within or against the Islamic Republic of Iran that have not been authorized by Congress.",
+    "policyArea": "International Affairs",
+    "sponsor": "Sen. Kaine, Tim [D-VA]",
+    "summaryBullets": [
+      "This joint resolution directs the President to remove U.S. Armed Forces from hostilities within or against Iran unless a declaration of war or authorization to use military force for such purpose has been enacted.",
+      "The resolution specifies that it shall not be construed to prevent the United States from defending against an attack on the United States or its personnel or facilities in other nations."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/185",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S.J.RES. 196": {
+    "shortTitle": "A joint resolution providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Education relating to \"Reimagining and Improving Student Education-Federal Student Loan Program Final Regulations\".",
+    "policyArea": "Education",
+    "sponsor": "Sen. Merkley, Jeff [D-OR]",
+    "summaryBullets": [],
+    "cboCost": null,
+    "hasSummary": false,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/196",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.CON.RES. 86": {
+    "shortTitle": "Directing the President, pursuant to section 5(c) of the War Powers Resolution, to remove United States Armed Forces from hostilities with Iran.",
+    "policyArea": "International Affairs",
+    "sponsor": "Rep. Meeks, Gregory W. [D-NY-5]",
+    "summaryBullets": [
+      "This concurrent resolution directs the President to remove U.S. Armed Forces from hostilities against Iran unless explicitly authorized by a declaration of war or a congressional authorization for use of military force against Iran.",
+      "Elements of the U.S. Armed Forces needed to defend the United States, an ally, or a partner from imminent attack are not covered by this requirement provided the President complies with a specified provision of the War Powers Resolution.",
+      "(The provision generally requires the President to remove U.S. Armed Forces from hostilities no more than 60 days after the President notifies or is required to notify Congress of such involvement, unless Congress authorizes such use.",
+      "For more information on the War Powers Resolution, see CRS In Focus 13134."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/86",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.R. 6644": {
+    "shortTitle": "21st Century ROAD to Housing Act",
+    "policyArea": "Housing and Community Development",
+    "sponsor": "Rep. Hill, J. French [R-AR-2]",
+    "summaryBullets": [
+      "Housing for the 21st Century Act",
+      "This bill revises federal housing programs, including by expanding available financing for affordable housing and providing grants for planning and community development activities.",
+      "For example, the bill increases the statutory maximum loan limits for mortgage insurance programs administered by the Federal Housing Administration for multifamily homes and requires the use of a more specific inflation index for such loans.",
+      "The bill also increases the maximum eligible income for the Department of Housing and Urban Development's (HUD's) HOME Investment Partnerships Program (grants to states and localities to support housing for low-income households) and establishes a grant program to assist regional, state, and local entities with strategies to support affordable housing.",
+      "In addition, the bill",
+      "exempts certain housing-related activities from the environmental review process, including certain construction, improvement, or rehabilitation of residential buildings;",
+      "excludes veterans' disability benefits from being considered as income for purposes of determining eligibility for the Veterans Affairs Supportive Housing (VASH) program;",
+      "establishes a pilot program to provide grants to public housing agencies (PHAs) and other owners of federally assisted housing to test the efficacy of temperature sensors to support compliance with temperature requirements;"
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-bill/6644",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S.RES. 616": {
+    "shortTitle": "A resolution requesting information on Honduras's human rights practices pursuant to section 502B(c) of the Foreign Assistance Act of 1961.",
+    "policyArea": "International Affairs",
+    "sponsor": "Sen. Cortez Masto, Catherine [D-NV]",
+    "summaryBullets": [],
+    "cboCost": null,
+    "hasSummary": false,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-resolution/616",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S.J.RES. 172": {
+    "shortTitle": "A joint resolution to direct the removal of United States Armed Forces from hostilities within or against the Islamic Republic of Iran that have not been authorized by Congress.",
+    "policyArea": "International Affairs",
+    "sponsor": "Sen. Warnock, Raphael G. [D-GA]",
+    "summaryBullets": [
+      "This joint resolution directs the President to remove U.S. Armed Forces from hostilities within or against Iran unless a declaration of war or authorization to use military force for such purpose has been enacted.",
+      "The resolution specifies that it shall not be construed to prevent the United States from defending against an attack on the United States or its personnel or facilities in other nations."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/172",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S.J.RES. 190": {
+    "shortTitle": "A joint resolution providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Executive Office for Immigration Review relating to \"Appellate Procedures for the Board of Immigration Appeals\".",
+    "policyArea": "Immigration",
+    "sponsor": "Sen. Kaine, Tim [D-VA]",
+    "summaryBullets": [],
+    "cboCost": null,
+    "hasSummary": false,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/190",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
   }
 }
