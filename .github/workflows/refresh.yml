@@ -76,5 +76,5 @@ jobs:
           git config user.name "fixshitbroken-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add web/
-          git commit -m "chore: refresh congressional data [skip ci]" || echo "No changes to commit"
+          git commit -m "chore: refresh congressional data" || echo "No changes to commit"
           git push

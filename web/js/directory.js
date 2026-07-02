@@ -82,7 +82,7 @@
     a.href = m.sample ? "rep-detail.html" : `reps/${encodeURIComponent(m.bioguide_id)}.html`;
     a.innerHTML = `
       <div class="rep-tile-head">
-        <div class="rep-tile-ph ${partyClass(m.party)}">${initials(m.full_name)}</div>
+        <div class="rep-tile-ph ${partyClass(m.party)}">${initials(m.full_name)}${m.photo_url ? `<img class="avatar-img" src="${escapeHtml(m.photo_url)}" alt="" loading="lazy" onerror="this.remove()">` : ""}</div>
         <div>
           <div class="nm">${r.prefix} ${escapeHtml(m.full_name)}</div>
           <div class="role"><span class="party-dot ${m.party || "I"}">${PARTY_NAME[m.party] || "Independent"} · ${r.place}</span></div>

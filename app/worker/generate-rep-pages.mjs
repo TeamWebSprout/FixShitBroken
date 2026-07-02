@@ -101,7 +101,8 @@ const STYLE = `
 .crumb .here { color: var(--brown-900); font-weight: 700; }
 .rep-hero { padding: 0 64px 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch; }
 .rep-identity { background: var(--white); border-radius: 24px; padding: 32px; display: flex; gap: 24px; align-items: center; box-shadow: 0 16px 40px -14px rgba(20,16,11,0.12); }
-.rep-portrait { width: 140px; height: 140px; border-radius: 50%; display: grid; place-items: center; color: var(--cream-100); font-weight: 800; font-size: 48px; flex-shrink: 0; }
+.rep-portrait { width: 140px; height: 140px; border-radius: 50%; display: grid; place-items: center; color: var(--cream-100); font-weight: 800; font-size: 48px; flex-shrink: 0; position: relative; overflow: hidden; }
+.rep-portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .rep-id-body h1 { font-size: 36px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.025em; line-height: 1.05; margin-bottom: 8px; }
 .rep-id-body .role { font-size: 14px; color: var(--brown-700); margin-bottom: 14px; }
 .rep-id-body .role .party-dot { font-size: 14px; }
@@ -234,7 +235,7 @@ function shortDate(d) {
   if (!d) return "";
   const dt = new Date(d);
   if (isNaN(dt)) return esc(String(d).split(",")[0]); // Senate's "Month DD, YYYY, ..." -> "Month DD"
-  return dt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+  return dt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "America/New_York" });
 }
 
 // Build a canonical Congress.gov deep link from a vote's bill/nomination string.
@@ -414,8 +415,8 @@ export function renderRepPage(m, votes = [], opts = {}) {
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=1440" />
-<title>fixshitbroken — ${esc(name)}</title>
-<meta name="description" content="${esc(name)}, ${esc(roleText(m))}. Voting record, funding, and accountability on fixshitbroken." />
+<title>take back the hill — ${esc(name)}</title>
+<meta name="description" content="${esc(name)}, ${esc(roleText(m))}. Voting record, funding, and accountability on take back the hill." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
@@ -426,7 +427,7 @@ export function renderRepPage(m, votes = [], opts = {}) {
 <div class="page">
 
   <nav class="nav">
-    <a href="../index.html" class="logo"><div class="logo-mark">F</div>fixshitbroken</a>
+    <a href="../index.html" class="logo"><div class="logo-mark"></div>take back the hill</a>
     <div class="nav-links">
       <a href="../dashboard.html">Dashboard</a>
       <a href="../pillar-will.html" class="active">Will of the people</a>
@@ -450,7 +451,7 @@ export function renderRepPage(m, votes = [], opts = {}) {
 
   <section class="rep-hero">
     <div class="rep-identity">
-      <div class="rep-portrait" style="background:${grad};">${esc(initials(l.full_name))}</div>
+      <div class="rep-portrait" style="background:${grad};">${esc(initials(l.full_name))}<img src="https://unitedstates.github.io/images/congress/225x275/${esc(l.bioguide_id)}.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
       <div class="rep-id-body">
         <h1>${esc(name)}</h1>
         <div class="role"><span class="party-dot ${l.party || "I"}">${esc(roleText(m))}</span></div>
@@ -458,7 +459,7 @@ export function renderRepPage(m, votes = [], opts = {}) {
         <div class="actions">
           <a href="#" class="save">+ Save to watchlist</a>
           ${l.contact?.phone ? `<a href="tel:${esc(l.contact.phone)}" class="secondary">📱 Call office</a>` : ""}
-          <a href="../pillar-town-hall.html" class="secondary">Town hall →</a>
+          <a href="../town-hall-board.html?id=${esc(l.bioguide_id)}" class="secondary">Town hall →</a>
         </div>
       </div>
     </div>
@@ -517,7 +518,7 @@ ${renderVotingRecord(m, votes, opts.sample)}
   <footer>
     <div class="foot-grid">
       <div class="foot-brand">
-        <a href="../index.html" class="logo"><div class="logo-mark">F</div>fixshitbroken</a>
+        <a href="../index.html" class="logo"><div class="logo-mark"></div>take back the hill</a>
         <div class="tag-text">Built by citizens, for citizens. 100% public data. No PAC money. No lobbyist hands on the wheel.</div>
       </div>
       <div class="foot-col"><h5>The four pillars</h5><ul><li>Will of the People</li><li>Legislation for Dummies</li><li>Town Hall</li><li>Politics is a Joke</li></ul></div>
@@ -525,7 +526,7 @@ ${renderVotingRecord(m, votes, opts.sample)}
       <div class="foot-col"><h5>About</h5><ul><li>Why we exist</li><li>Data sources</li><li>Methodology</li><li>Press kit</li></ul></div>
     </div>
     <div class="foot-bottom">
-      <div>© 2026 fixshitbroken · A civic accountability project</div>
+      <div>© 2026 take back the hill · A civic accountability project</div>
       <div>Privacy · Terms · Contact</div>
     </div>
   </footer>

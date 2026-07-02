@@ -49,7 +49,7 @@
   function senCard(m) {
     return `<div class="sen-block">
       <div class="sen-block-head">
-        <div class="sen-photo ${partyClass(m.party)}">${initials(m.full_name)}</div>
+        <div class="sen-photo ${partyClass(m.party)}">${initials(m.full_name)}${m.photo_url ? `<img class="avatar-img" src="${esc(m.photo_url)}" alt="" loading="lazy" onerror="this.remove()">` : ""}</div>
         <div>
           <div class="sen-name"><a href="${href(m)}" style="color:inherit;text-decoration:none;">Sen. ${esc(m.full_name)}</a></div>
           <div class="sen-meta">${PARTY_NAME[m.party] || "Independent"} · ${esc(STATE_NAMES[m.state] || m.state)} · US Senate</div>
@@ -68,7 +68,7 @@
 
   function houseCard(m) {
     return `<a class="house-card" href="${href(m)}">
-      <div class="ph ${partyClass(m.party)}">${initials(m.full_name)}</div>
+      <div class="ph ${partyClass(m.party)}">${initials(m.full_name)}${m.photo_url ? `<img class="avatar-img" src="${esc(m.photo_url)}" alt="" loading="lazy" onerror="this.remove()">` : ""}</div>
       <div class="info"><div class="nm">Rep. ${esc(m.full_name)}</div><div class="dst">${esc(districtLabel(m))} · ${esc(m.party || "I")}</div></div>
       <div class="scr" style="font-size:15px;color:var(--brown-400);">→</div>
     </a>`;
