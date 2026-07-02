@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1440" />
+<title>fixshitbroken — Town Hall moderation policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+.policy-hero { padding: 44px 64px 24px; max-width: 860px; }
+.policy-hero h1 { font-size: 52px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.035em; line-height: 1.02; margin-bottom: 18px; }
+.policy-hero h1 .accent { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--brown-600); }
+.policy-hero p { font-size: 17px; color: var(--brown-600); line-height: 1.6; }
+.policy-hero .draft { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; background: var(--cream-100); border: 1px solid var(--cream-300); color: var(--brown-600); font-size: 12px; font-weight: 700; padding: 6px 12px; border-radius: 999px; }
+
+.policy-body { padding: 12px 64px 72px; max-width: 860px; }
+.policy-sec { padding: 28px 0; border-top: 1px solid var(--cream-300); }
+.policy-sec:first-child { border-top: 0; }
+.policy-sec h2 { font-size: 26px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.02em; margin-bottom: 8px; }
+.policy-sec h2 .num { color: var(--brown-300); font-family: 'Instrument Serif', serif; font-style: italic; margin-right: 10px; }
+.policy-sec p { font-size: 15px; color: var(--brown-700); line-height: 1.7; margin-top: 12px; }
+.policy-sec p strong { color: var(--brown-900); font-weight: 700; }
+.policy-list { margin: 14px 0 0; padding: 0; list-style: none; }
+.policy-list li { position: relative; padding: 8px 0 8px 26px; font-size: 15px; color: var(--brown-700); line-height: 1.6; }
+.policy-list li::before { content: ''; position: absolute; left: 4px; top: 15px; width: 8px; height: 8px; border-radius: 50%; background: var(--brown-300); }
+.policy-list.ok li::before { background: var(--sage); }
+.policy-list.no li::before { background: var(--rust); }
+.callout { margin-top: 18px; background: var(--brown-900); color: var(--cream-100); border-radius: 18px; padding: 22px 24px; }
+.callout h3 { font-size: 16px; font-weight: 800; color: var(--white); margin-bottom: 8px; }
+.callout p { font-size: 14px; line-height: 1.65; color: var(--cream-100); margin: 0; opacity: 0.94; }
+.callout.light { background: var(--cream-50); border: 1px solid var(--cream-300); }
+.callout.light h3 { color: var(--brown-900); }
+.callout.light p { color: var(--brown-700); }
+.back-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 14px; font-weight: 700; color: var(--brown-700); text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="nav">
+    <a href="index.html" class="logo"><div class="logo-mark">F</div>fixshitbroken</a>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="pillar-will.html">Will of the people</a>
+      <a href="pillar-legislation.html">Legislation</a>
+      <a href="pillar-town-hall.html" class="active">Town hall</a>
+      <a href="pillar-memes.html">Memes</a>
+      <a href="why-we-exist.html">Why we exist</a>
+    </div>
+    <div class="nav-account"><div class="av">M</div></div>
+  </nav>
+
+  <div class="page-header" style="padding-bottom:0;">
+    <div class="crumb">
+      <a href="pillar-town-hall.html">Town hall</a>
+      <span class="sep">/</span>
+      <span class="here">Moderation policy</span>
+    </div>
+  </div>
+
+  <section class="policy-hero">
+    <div class="eyebrow">Published before the first post</div>
+    <h1>How Town Hall is <span class="accent">moderated.</span></h1>
+    <p>A public, permanent, Google-indexed board about named public officials is powerful and risky in the same breath. So the rules are written down in the open, before a single board accepts a post — not improvised after the first crisis.</p>
+    <span class="draft">● Draft policy · finalized before Phase 5 launch</span>
+  </section>
+
+  <section class="policy-body">
+
+    <div class="policy-sec">
+      <h2><span class="num">01</span>Who can post</h2>
+      <p>Reading is open to everyone — the public, the press, and the member's own staff. <strong>Posting is limited to verified constituents</strong> of the board's member: their state for a senator, their district for a representative. This single rule does most of the work. It reinforces the "constituent" promise and is the most effective defense against spam and coordinated brigading.</p>
+      <ul class="policy-list">
+        <li>One verified person, one account. Identity is name-linked, not anonymous.</li>
+        <li>Verification is required before your first post, and re-checked if your registration changes.</li>
+        <li>House-district verification is stricter than a ZIP guess, because roughly a third of ZIP codes straddle more than one district. We won't badge someone a constituent unless we can actually place them.</li>
+      </ul>
+    </div>
+
+    <div class="policy-sec">
+      <h2><span class="num">02</span>What belongs here</h2>
+      <p>Town Hall is for holding an office accountable, in public. Aim at the record and the role.</p>
+      <ul class="policy-list ok">
+        <li>Criticism of votes, bills, public statements, missed votes, and constituent service.</li>
+        <li>Questions the member's office should answer, and follow-ups when they don't.</li>
+        <li>Sourced claims, receipts, and links to the official record.</li>
+      </ul>
+    </div>
+
+    <div class="policy-sec">
+      <h2><span class="num">03</span>What gets removed</h2>
+      <p>A small set of hard lines, applied to everyone regardless of party or popularity.</p>
+      <ul class="policy-list no">
+        <li>Threats, incitement, or calls for violence against anyone.</li>
+        <li>Targeting a person's family, home address, or personal safety (doxxing).</li>
+        <li>Harassment, slurs, and content targeting protected groups.</li>
+        <li>Knowingly false statements of fact presented as truth, and impersonation.</li>
+        <li>Spam, coordinated inauthentic activity, and vote manipulation.</li>
+      </ul>
+      <p>Sharp, angry, and unflattering is fine — that's the point of a town hall. Illegal and abusive is not.</p>
+    </div>
+
+    <div class="policy-sec">
+      <h2><span class="num">04</span>Permanence vs. removal</h2>
+      <p>The brand promise is that <strong>the receipts don't disappear</strong>. Moderation requires that some posts do come down. We resolve that tension out loud rather than pretending it doesn't exist.</p>
+      <div class="callout">
+        <h3>Removed doesn't mean vanished</h3>
+        <p>Permanence is a promise not to memory-hole legitimate criticism — it is not a promise to host content that breaks the rules. When a post is removed, its permanent URL returns a visible <strong>tombstone</strong> naming the reason ("removed for a violation of §03: doxxing"), instead of silently disappearing. The moderation itself stays on the record.</p>
+      </div>
+    </div>
+
+    <div class="policy-sec">
+      <h2><span class="num">05</span>How moderation runs</h2>
+      <p>A realistic stack for a small, citizen-funded team, layered so volume stays manageable:</p>
+      <ul class="policy-list">
+        <li><strong>Automated filtering</strong> catches the obvious — spam, slurs, threats — at the moment of posting.</li>
+        <li><strong>Community flagging</strong> lets readers surface what filters miss.</li>
+        <li><strong>A human backstop</strong> reviews the flag queue. Verified-constituent gating keeps that queue small enough for people to actually read.</li>
+      </ul>
+    </div>
+
+    <div class="policy-sec">
+      <h2><span class="num">06</span>Appeals</h2>
+      <p>If your post is removed, you'll be told which rule it broke and you can appeal. Removals are logged with a reason and a timestamp, so decisions can be reviewed and — where we got it wrong — reversed. Members and their staff can report content, but get no special power to delete criticism of themselves.</p>
+      <div class="callout light">
+        <h3>This is a living document</h3>
+        <p>This policy is published in draft while the boards are still closed, so it can be pressure-tested in public before anyone posts. It will be finalized — and dated — before Phase 5 opens, and changes will be shown in the open, not quietly edited in.</p>
+      </div>
+      <a class="back-link" href="pillar-town-hall.html">← Back to Town Hall</a>
+    </div>
+
+  </section>
+
+  <footer>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="logo"><div class="logo-mark">F</div>fixshitbroken</a>
+        <div class="tag-text">Built by citizens, for citizens. 100% public data. No PAC money. No lobbyist hands on the wheel.</div>
+      </div>
+      <div class="foot-col"><h5>The four pillars</h5><ul><li>Will of the People</li><li>Legislation for Dummies</li><li>Town Hall</li><li>Politics is a Joke</li></ul></div>
+      <div class="foot-col"><h5>Tools</h5><ul><li>Find your reps</li><li>Browse legislation</li><li>Voter registration</li><li>Browser extension</li></ul></div>
+      <div class="foot-col"><h5>About</h5><ul><li>Why we exist</li><li>Data sources</li><li>Moderation policy</li><li>Press kit</li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 fixshitbroken · A civic accountability project</div>
+      <div>Privacy · Terms · Contact</div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

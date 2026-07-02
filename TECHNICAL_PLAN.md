@@ -166,7 +166,96 @@ Staffing reality: a small team cannot manually review everything at scale. The r
 
 ---
 
-## 7. Open questions, resolved
+## 7. Constituency verification: proving residency without postal mail
+
+Section 1.2 defers House-district binding to "the moment it is needed," and section 4 already has the Census Geocoder resolving an address to a district for free. This section resolves the question that leaves open: once a user types an address, how do you gain confidence they actually live there, without the print-and-mail postcard (rejected in section 6 for cost and labor)?
+
+**Separate the two problems first.** They get bundled as "verify the address," but only one is hard. *Resolving* an address to a congressional district is solved and free (Census Geocoder, single-record call; Geocodio as the paid fallback). *Proving the person lives at the address they typed* is the actual problem, and it has an honest ceiling worth stating up front: every cheap, non-intrusive method is defeatable by a motivated individual. None are unspoofable. The goal is therefore not proof; it is raising the cost of brigading a *specific* district high enough that it is not worth it. Calibrate every choice below to that bar, not to certainty.
+
+**Reframe address as constituency.** What the product actually needs is not a mailing address but the answer to "is this person a constituent of district X." Framing it that way opens methods a utility bill cannot reach, and several of them map more directly to the thing that matters (can this person vote for this member) than proof of a postal address does.
+
+### 7.1 The right architecture: risk-based, tiered — not one gate for everyone
+
+Requiring strong residency proof from every user at signup is the expensive, high-friction path, and it contradicts the funding model. The model that fits is **tiered verification with step-up on risk**:
+
+- **Baseline (everyone):** email + phone OTP (already built) + self-attested address geocoded to a district and bound to the verified identity. This grants a "verified constituent (self-reported)" state and the ability to post. Assurance is low on its own, but bound to one-verified-identity-per-account and a logged, bannable false-attestation rule, it raises cost meaningfully at zero marginal spend.
+- **Step-up (only when a risk signal fires):** require one stronger check — voter-file match, payment AVS, or a one-time device geofence (7.2) — when the system sees a velocity spike, an IP geolocating to the wrong region, a flagged account, a contentious board, or any counted-vote context where the score is attackable (section 2).
+
+This keeps expensive verification the exception, not the default, and never touches postal mail. It is also the concrete implementation of section 1.2's "ship option 1, design for option 2."
+
+**Deferred-verification variant, worth considering.** Let people post immediately in a clearly-labeled "unverified" state and reserve the constituent badge (and any constituent-only views or counted votes) for those who pass a check. Friction at signup drops to zero and integrity moves into display logic. The tradeoff is that unverified posts still generate moderation load.
+
+### 7.2 The methods, with what each actually proves
+
+| Method | What it proves | Cost / friction | Where it breaks |
+|---|---|---|---|
+| **Self-attested + geocoded, identity-bound** | Little on its own; raises cost when tied to verified identity + false-attestation ban | Zero cost, zero friction | Trivially false in isolation — needs the identity binding to matter |
+| **Voter-file match** (state files, or L2 / Catalist / TargetSmart) | Registered voter at that address in that district — arguably the *ideal* constituent test | Per-match cost; name + address only, no document upload | Misses the unregistered: renters, young, recent movers, non-citizen residents who are still constituents |
+| **Phone-to-address identity match** (Prove, Telesign, Ekata, etc.) | Whether the already-collected phone is associated on record with the claimed name/address | Small per-check cost, no user friction, no labor | Prepaid phones, numbers not in the user's name, younger users |
+| **Payment AVS** (billing address checked at charge) | Bank-verified billing address as a side effect of the $5/month charge | Near-zero added friction *if they already pay*, no labor | Excludes non-payers; billing address ≠ residence necessarily |
+| **One-time device geofence** (browser/app location at signup) | Physical *presence* in the claimed district, at district accuracy | Free; a permission prompt | Mock-location/dev-tools spoofing; must be home at signup; privacy-sensitive |
+| **Reuse a proofed identity** (Login.gov, ID.me, mobile driver's licenses) | High-assurance identity incl. address, proofing offloaded to the provider | Minimal build; provider cost + UX friction + dependency | Coverage gaps; capabilities/pricing shift — verify before committing |
+| **Bank-account verification** (Plaid returns bank-on-file address) | Strong, bank-verified name + address | OAuth bank login | Connecting a bank to post on a message board is a trust ask this surface probably can't carry — likely too intrusive |
+
+### 7.3 The brand caveat, decided on principle
+
+Several of the stronger options (phone-to-address, voter file, credit-header lookups) route users through the data-broker economy. For a product whose pitch is "built by citizens, 100% public data, no lobbyist hands on the wheel," quietly piping people through data brokers is a real tension and carries its own privacy-law exposure (state privacy statutes, and TCPA-adjacent consent concerns already flagged in section 10). Direct state voter files, Login.gov, and AVS-on-your-own-payment are more defensible on that axis than broker lookups. Decide this on principle, not just on cost.
+
+**Recommendation.** Ship the baseline (7.1) for launch, since senators-only v1 needs only state anyway (section 1.2). Build voter-file match and payment AVS as the first two step-up checks, because they are the most brand-defensible and the voter-file match doubles as the cleanest definition of "constituent." Treat everything else as later, risk-triggered additions. Do not gate all users behind any paid or broker-backed check by default.
+
+### 7.4 The proposed system, concretely
+
+The spine is two mechanisms working together: **named assurance levels** that permissions and badges check, backed by a **trust score** the risk engine uses to decide when to force a step-up. Levels are the coarse gate; the score is the fine-grained lever.
+
+**Assurance levels**
+
+- **L0 — Reader.** No account, read-only. Most traffic; stays frictionless.
+- **L1 — Verified human.** Email verified + phone OTP passed, phone unique (one account per number). Can follow members, build watchlists, set notifications. Cannot post or vote.
+- **L2 — Constituent, self-reported.** L1 + address geocoded to a district (Census, section 4), bound to identity, attestation logged as a bannable act. Grants posting where the claimed state/district matches, plus a muted "constituent (self-reported)" badge. **Default posting tier.**
+- **L3 — Constituent, corroborated.** L2 + one passing external signal (7.2). Grants the strong "verified local" badge; required for anything that feeds the score or is flagged high-risk.
+
+For senators-only v1, L2 already suffices for senator boards and polls (state is enough), so launch requires no paid external check. L3 is what unlocks House boards later and what the engine forces on contentious surfaces.
+
+**Action → required level**
+
+| Action | Requires |
+|---|---|
+| Read boards/posts | L0 |
+| Watchlist, follow, notifications | L1 |
+| Post to your senator's board | L2 |
+| Post to a House board · counted poll vote feeding a score | L3 (or L2 + clean risk pass) |
+| Any board flagged under brigade pressure | L3 enforced |
+
+**Trust score (tunable defaults).** Signals add points so weak ones combine and no single is a chokepoint:
+
+| Signal | Points |
+|---|---|
+| Email verified | +1 |
+| Phone OTP + unique | +2 |
+| Address geocoded + attested | +1 |
+| IP region consistent with claimed state (passive) | +1 |
+| Device geofence inside claimed district | +2 |
+| Payment AVS match on the $5 charge | +3 |
+| Voter-file exact match (name + address) | +4 |
+| Reused proofed identity (Login.gov / ID.me) | +5 |
+
+Thresholds: **post ≥ 4**, **counted vote / strong badge ≥ 6**, **high-risk context ≥ 6 enforced**. The risk engine raises the *required* threshold — it does not hard-block — when it sees velocity spikes, an IP geolocating to the wrong region, prior flags, or a board under brigade pressure. Below threshold, the user gets a step-up prompt, not a rejection.
+
+**Step-up UX: user picks the path.** No corroboration method has full coverage (renters miss voter files, young users miss phone-to-address, non-payers miss AVS), so L2→L3 presents a short "verify however suits you" menu and takes the first that passes: payment AVS (near-zero friction if already paying), state voter-file match (name + address, no upload), or a one-time device location check. Data-broker phone-to-address stays off the user-facing menu per 7.3 — a silent backend risk signal at most.
+
+**Provider order (most brand-defensible first).** Auth + OTP: Supabase Auth. District: Census, Geocodio fallback. Corroboration: payment AVS via the existing processor → direct state voter files (or L2/Catalist if a vendor is acceptable) → Login.gov. Bank/Plaid stays out.
+
+**Data-model deltas (extend, don't replace).** `verification_event` gains `signal`, `points`, `confidence`, `expires_at`. `user` gains derived, cached `assurance_level` and `trust_score`, recomputed on each event. Continue snapshotting `user_state`/`user_district` at every post and poll vote (already done for `poll_response`) so a later move never re-attributes past actions.
+
+**Anti-abuse specifics that are easy to skip.** Hash and unique-constrain the phone so one number can't farm accounts. Rate-limit *OTP sends* per number/IP/hour and cap daily SMS spend from day one — OTP-pumping is a real DoS against a $5/month project. Re-verify on any address change; expire corroboration after ~12 months so stale badges don't persist. Log every decision with its inputs for the appeal path.
+
+**Privacy posture.** Store the minimum: phone as a salted hash, not plaintext; retain the raw address only long enough to geocode and corroborate, then keep the district plus a hashed reference. Corroboration providers should return a match/confidence, not a stored dossier.
+
+**Honest limitation.** This raises the cost of brigading a specific district and makes counted votes defensible, but the cheap tiers are spoofable by a determined individual, and a coordinated group of *real* verified constituents defeats identity checks entirely. That residual is handled by rate-limiting and velocity anomaly detection (section 2), not by verification.
+
+---
+
+## 8. Open questions, resolved
 
 **Bingo Card: cut from v1.** It is the one feature not attached to a pillar. It adds editorial work and another moderation surface ("Voted with pharma" as a public claim carries the same defamation exposure as a low score, with less rigor behind it). Defer it. Revisit only once the four pillars are real and only if it earns its place.
 
@@ -178,7 +267,7 @@ Staffing reality: a small team cannot manually review everything at scale. The r
 
 ---
 
-## 8. Build order
+## 9. Build order
 
 The handoff's instinct ("get the first three pillars real with real data before polls and memes") is sound. Refined:
 
@@ -198,7 +287,7 @@ The handoff's instinct ("get the first three pillars real with real data before 
 
 ---
 
-## 9. Things to get a lawyer on before launch (not legal advice)
+## 10. Things to get a lawyer on before launch (not legal advice)
 
 - **Defamation exposure** from Hall of Shame, public scores, and permanent indexed Town Hall posts. The opinion-grounded-in-disclosed-data framing and the published methodology are the mitigations, but a media/defamation lawyer should review the score's presentation and the Town Hall takedown flow.
 - **TCPA / SMS consent** for phone verification.

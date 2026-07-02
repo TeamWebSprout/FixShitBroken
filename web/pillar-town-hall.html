@@ -20,62 +20,54 @@
 .hero-stat .num { font-size: 28px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.02em; line-height: 1; }
 .hero-stat .lbl { font-size: 11px; color: var(--brown-500); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-top: 4px; }
 
-/* TRENDING POSTS */
-.trending-section { padding: 32px 64px; }
-.section-title { display: flex; justify-content: space-between; align-items: end; margin-bottom: 22px; }
-.section-title h2 { font-size: 32px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.02em; }
-.section-title h2 .accent { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--brown-600); }
-.section-title .link { font-size: 13px; font-weight: 700; color: var(--brown-700); text-decoration: none; }
+/* HOW IT WORKS */
+.how-section { padding: 20px 64px 8px; }
+.how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.how-card { background: var(--white); border-radius: 20px; padding: 24px; box-shadow: 0 12px 32px -14px rgba(20,16,11,0.10); }
+.how-card .ic { width: 40px; height: 40px; border-radius: 12px; background: var(--cream-100); display: grid; place-items: center; font-size: 18px; margin-bottom: 14px; }
+.how-card h3 { font-size: 17px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.01em; margin-bottom: 8px; }
+.how-card p { font-size: 13.5px; color: var(--brown-600); line-height: 1.6; }
+.how-card p a { color: var(--brown-800); font-weight: 700; text-decoration: none; border-bottom: 1px solid var(--cream-300); }
 
-.trending-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.trend-card { background: var(--white); border-radius: 22px; padding: 22px 24px; display: flex; gap: 14px; box-shadow: 0 14px 32px -14px rgba(20,16,11,0.10); border: 1px solid transparent; cursor: pointer; transition: all 0.2s; }
-.trend-card:hover { border-color: var(--cream-300); }
-.trend-card .rank-col { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; padding-top: 4px; }
-.trend-card .arrow { color: var(--rust); font-size: 18px; font-weight: 800; line-height: 1; }
-.trend-card .ct { font-size: 18px; font-weight: 800; color: var(--brown-900); margin-top: 2px; }
-.trend-card .replies { font-size: 10px; color: var(--brown-500); margin-top: 2px; font-weight: 600; }
-.trend-card .body { flex: 1; min-width: 0; }
-.trend-card .byline { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
-.trend-card .user { font-size: 13px; font-weight: 800; color: var(--brown-900); }
-.trend-card .verified { display: inline-flex; align-items: center; gap: 4px; background: var(--sage-light); color: var(--sage); padding: 2px 8px; border-radius: 999px; font-size: 10px; font-weight: 700; }
-.trend-card .target { font-size: 11px; color: var(--brown-500); }
-.trend-card .target strong { color: var(--brown-900); font-weight: 700; }
-.trend-card .text { font-size: 14px; color: var(--brown-800); line-height: 1.55; }
+/* PHASE NOTE */
+.phase-note { margin: 24px 64px 8px; background: var(--brown-900); color: var(--cream-50); border-radius: 20px; padding: 22px 26px; display: flex; align-items: center; gap: 18px; }
+.phase-note .badge { flex-shrink: 0; background: var(--rust); color: var(--cream-50); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; padding: 7px 14px; border-radius: 999px; }
+.phase-note p { font-size: 14px; line-height: 1.6; color: var(--cream-100); }
+.phase-note p strong { color: var(--white); font-weight: 800; }
 
-/* MOST ACTIVE BOARDS */
-.boards-section { padding: 32px 64px 80px; }
-.active-boards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 36px; }
-.board-card { background: var(--white); border-radius: 18px; padding: 18px; cursor: pointer; transition: all 0.2s; border: 1px solid transparent; box-shadow: 0 8px 18px -10px rgba(20,16,11,0.08); }
-.board-card:hover { border-color: var(--cream-300); }
-.board-head { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
-.board-photo { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; color: var(--cream-100); font-weight: 800; font-size: 13px; flex-shrink: 0; }
-.board-photo.r { background: linear-gradient(135deg, #A4452C, #5B2C1C); }
-.board-photo.d { background: linear-gradient(135deg, #5B7AA0, #2C4060); }
-.board-name { font-size: 14px; font-weight: 800; color: var(--brown-900); line-height: 1.2; }
-.board-meta { font-size: 11px; color: var(--brown-500); margin-top: 2px; }
-.board-stats { display: flex; justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--cream-200); }
-.board-stat { display: flex; flex-direction: column; }
-.board-stat .n { font-size: 16px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.02em; line-height: 1; }
-.board-stat .l { font-size: 9px; color: var(--brown-500); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; margin-top: 3px; }
-.board-stat.live .n { color: var(--rust); }
+/* DIRECTORY */
+.boards-directory { padding: 36px 64px 80px; }
+.dir-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; gap: 20px; flex-wrap: wrap; }
+.dir-head h2 { font-size: 36px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.025em; }
+.dir-head h2 .accent { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--brown-600); }
+.dir-head .sub { font-size: 13px; color: var(--brown-500); margin-top: 4px; }
 
-/* SEARCH BOARDS */
-.search-bar { display: flex; gap: 12px; margin-bottom: 20px; }
-.search-input { flex: 1; background: var(--white); border: 1px solid var(--cream-300); padding: 14px 22px; border-radius: 999px; font-size: 14px; font-family: inherit; color: var(--brown-800); outline: none; }
+.filter-row { display: flex; gap: 12px; align-items: center; margin-bottom: 28px; flex-wrap: wrap; }
+.filter-pill { background: var(--white); border: 1px solid var(--cream-300); padding: 8px 16px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--brown-700); cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.filter-pill.active { background: var(--brown-900); color: var(--cream-100); border-color: var(--brown-900); }
+.search-input { flex: 1; min-width: 200px; max-width: 320px; background: var(--white); border: 1px solid var(--cream-300); padding: 10px 16px; border-radius: 999px; font-size: 13px; font-family: inherit; color: var(--brown-800); outline: none; }
 .search-input::placeholder { color: var(--brown-400); }
-.search-filter { display: inline-flex; align-items: center; gap: 8px; background: var(--white); border: 1px solid var(--cream-300); padding: 8px 18px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--brown-700); }
+.state-select { background: var(--white); border: 1px solid var(--cream-300); padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--brown-700); font-family: inherit; cursor: pointer; outline: none; }
+.state-select:focus { border-color: var(--brown-400); }
+.dir-count { display: inline-flex; align-items: center; gap: 6px; background: var(--white); border: 1px solid var(--cream-300); padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--brown-700); margin-left: auto; }
+.dir-count strong { font-weight: 800; color: var(--brown-900); }
 
-.all-boards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-.mini-board { background: var(--white); border-radius: 14px; padding: 14px; display: flex; gap: 12px; align-items: center; cursor: pointer; transition: all 0.2s; border: 1px solid transparent; }
-.mini-board:hover { border-color: var(--cream-300); }
-.mini-board .ph { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; color: var(--cream-100); font-weight: 800; font-size: 12px; flex-shrink: 0; }
-.mini-board .ph.r { background: linear-gradient(135deg, #A4452C, #5B2C1C); }
-.mini-board .ph.d { background: linear-gradient(135deg, #5B7AA0, #2C4060); }
-.mini-board .info { flex: 1; min-width: 0; }
-.mini-board .nm { font-size: 13px; font-weight: 700; color: var(--brown-900); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.mini-board .ct { font-size: 11px; color: var(--brown-500); }
-.mini-board .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--rust); flex-shrink: 0; }
-.mini-board .dot.quiet { background: var(--cream-300); }
+.board-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.board-grid-note { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--brown-500); font-size: 14px; line-height: 1.6; }
+.board-tile { background: var(--white); border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 14px; cursor: pointer; transition: all 0.2s; border: 1px solid transparent; box-shadow: 0 8px 20px -10px rgba(20,16,11,0.08); }
+.board-tile:hover { border-color: var(--cream-300); transform: translateY(-1px); }
+.board-tile-head { display: flex; gap: 12px; align-items: center; }
+.board-tile-ph { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; color: var(--cream-100); font-weight: 800; font-size: 14px; flex-shrink: 0; }
+.board-tile-ph.r { background: linear-gradient(135deg, #A4452C, #5B2C1C); }
+.board-tile-ph.d { background: linear-gradient(135deg, #5B7AA0, #2C4060); }
+.board-tile-ph.i { background: linear-gradient(135deg, #7A5839, #3D2C1C); }
+.board-tile-id { min-width: 0; }
+.board-tile .nm { font-size: 14px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.01em; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.board-tile .role { font-size: 11px; color: var(--brown-500); margin-top: 4px; }
+.board-tile-foot { display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--cream-200); }
+.board-tile .board-status { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--brown-500); }
+.board-tile .board-status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--cream-300); }
+.board-tile .board-go { font-size: 11px; font-weight: 700; color: var(--brown-700); }
 </style>
 </head>
 <body>
@@ -102,18 +94,59 @@
         <p>A public message board for every senator and representative in Congress. Anyone can read it. Reporters can search it. Their staff sees every word. Public, permanent, and indexed by Google — the receipts don't disappear.</p>
       </div>
       <div class="hero-stats">
-        <div class="hero-stat"><div class="num">Phase 5</div><div class="lbl">Launches with</div></div>
+        <div class="hero-stat"><div class="num">537</div><div class="lbl">Member boards</div></div>
         <div class="hero-stat"><div class="num">Verified</div><div class="lbl">Constituents only</div></div>
         <div class="hero-stat"><div class="num">Public</div><div class="lbl">Moderation policy</div></div>
       </div>
     </div>
   </section>
 
-  <section class="boards-section">
-    <div class="card-lg" style="text-align:center; padding:56px 40px; max-width:720px; margin:0 auto;">
-      <div class="tag dark" style="margin-bottom:20px;">Opens in Phase 5</div>
-      <h2 style="font-size:32px; font-weight:800; color:var(--brown-900); letter-spacing:-0.02em; margin-bottom:14px;">The boards aren't <span class="accent" style="font-family:'Instrument Serif',serif; font-style:italic; font-weight:400; color:var(--brown-600);">open yet.</span></h2>
-      <p style="font-size:16px; color:var(--brown-600); line-height:1.6; max-width:520px; margin:0 auto;">Town Hall gives every member of Congress a public message board. We're building it right: posting is limited to verified constituents, and a moderation policy is published in the open before the first board goes live. No fabricated posts, handles, or numbers will ever appear here — until it's real, it stays empty.</p>
+  <section class="how-section">
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="ic">🪪</div>
+        <h3>Verified constituents post</h3>
+        <p>Reading is open to everyone. Posting is limited to people verified to live in that member's state or district — one verified person, one voice. It keeps the board honest and hard to brigade.</p>
+      </div>
+      <div class="how-card">
+        <div class="ic">🔗</div>
+        <h3>Public &amp; permanent</h3>
+        <p>Every board and post gets a stable, Google-indexed URL that reporters can find and cite. The point is a record that doesn't get memory-holed — legitimate criticism stays put.</p>
+      </div>
+      <div class="how-card">
+        <div class="ic">⚖️</div>
+        <h3>Moderated in the open</h3>
+        <p>Rules are published before the first post, not invented after an incident. Removed posts leave a visible tombstone, never a silent delete. <a href="town-hall-policy.html">Read the policy →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="phase-note">
+    <span class="badge">Opens in Phase 5</span>
+    <p><strong>The boards aren't open for posting yet.</strong> Every member below already has a board — real member, real permanent URL — but they stay empty until verification and moderation are live. No fabricated posts, handles, or numbers will ever appear here. Until it's real, it stays empty.</p>
+  </div>
+
+  <section class="boards-directory">
+    <div class="dir-head">
+      <div>
+        <h2>Every board. <span class="accent">One per member.</span></h2>
+        <div class="sub">Find your senators and representative. Open a board to see exactly how it will look and work.</div>
+      </div>
+    </div>
+    <div class="filter-row" id="board-filter-row">
+      <input class="search-input" id="board-search" placeholder="Search by name or state..." />
+      <select class="state-select" id="board-state" aria-label="Filter by state"><option value="all">All states</option></select>
+      <div class="filter-pill active" data-filter="all">All boards</div>
+      <div class="filter-pill" data-filter="senate">Senate</div>
+      <div class="filter-pill" data-filter="house">House</div>
+      <div class="filter-pill" data-filter="R">Republican</div>
+      <div class="filter-pill" data-filter="D">Democrat</div>
+      <div class="filter-pill" data-filter="I">Independent</div>
+      <div class="dir-count" id="board-count">Loading…</div>
+    </div>
+
+    <div class="board-grid" id="board-grid">
+      <div class="board-grid-note">Loading all 537 member boards…</div>
     </div>
   </section>
 
@@ -125,7 +158,7 @@
       </div>
       <div class="foot-col"><h5>The four pillars</h5><ul><li>Will of the People</li><li>Legislation for Dummies</li><li>Town Hall</li><li>Politics is a Joke</li></ul></div>
       <div class="foot-col"><h5>Tools</h5><ul><li>Find your reps</li><li>Browse legislation</li><li>Voter registration</li><li>Browser extension</li></ul></div>
-      <div class="foot-col"><h5>About</h5><ul><li>Why we exist</li><li>Data sources</li><li>Methodology</li><li>Press kit</li></ul></div>
+      <div class="foot-col"><h5>About</h5><ul><li>Why we exist</li><li>Data sources</li><li>Moderation policy</li><li>Press kit</li></ul></div>
     </div>
     <div class="foot-bottom">
       <div>© 2026 fixshitbroken · A civic accountability project</div>
@@ -134,5 +167,7 @@
   </footer>
 
 </div>
+<script src="data/legislators-data.js"></script>
+<script src="js/townhall.js" defer></script>
 </body>
 </html>

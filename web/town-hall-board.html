@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1440" />
+<title>fixshitbroken — Town Hall board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+/* BOARD HEADER */
+.bp-header { padding: 40px 64px 8px; }
+.bp-id { display: flex; align-items: center; gap: 18px; }
+.bp-ph { width: 72px; height: 72px; border-radius: 50%; display: grid; place-items: center; color: var(--cream-100); font-weight: 800; font-size: 24px; flex-shrink: 0; }
+.bp-ph.r { background: linear-gradient(135deg, #A4452C, #5B2C1C); }
+.bp-ph.d { background: linear-gradient(135deg, #5B7AA0, #2C4060); }
+.bp-ph.i { background: linear-gradient(135deg, #7A5839, #3D2C1C); }
+.bp-id h1 { font-size: 40px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.03em; line-height: 1.05; }
+.bp-id .role { font-size: 15px; color: var(--brown-600); margin-top: 6px; }
+.bp-id .role .party-dot { font-size: 14px; }
+.bp-actions { margin-left: auto; display: flex; gap: 10px; align-items: center; }
+.bp-header-row { display: flex; align-items: center; gap: 18px; }
+
+/* LAYOUT */
+.bp-layout { padding: 24px 64px 80px; display: grid; grid-template-columns: 1fr 340px; gap: 28px; align-items: start; }
+
+/* COMPOSER */
+.composer { background: var(--white); border-radius: 22px; padding: 22px 24px; box-shadow: 0 14px 32px -16px rgba(20,16,11,0.12); border: 1px solid var(--cream-200); position: relative; }
+.composer.locked { }
+.composer-top { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.composer-av { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #A4452C, #5B4028); display: grid; place-items: center; color: var(--cream-50); font-weight: 800; font-size: 14px; flex-shrink: 0; }
+.composer-who { font-size: 13px; color: var(--brown-500); }
+.composer-who strong { color: var(--brown-900); font-weight: 800; display: block; font-size: 14px; }
+.composer-badge { margin-left: auto; display: inline-flex; align-items: center; gap: 5px; background: var(--sage-light); color: var(--sage); padding: 4px 10px; border-radius: 999px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; }
+.composer-field { background: var(--cream-50); border: 1px solid var(--cream-200); border-radius: 14px; padding: 16px 18px; font-size: 14px; color: var(--brown-400); min-height: 88px; line-height: 1.55; }
+.composer-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 14px; }
+.composer-rules { font-size: 12px; color: var(--brown-500); }
+.composer-rules a { color: var(--brown-700); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--cream-300); }
+.composer-btn { background: var(--brown-300); color: var(--white); padding: 11px 22px; border: 0; border-radius: 999px; font-weight: 700; font-size: 14px; font-family: inherit; cursor: not-allowed; opacity: 0.85; }
+.composer-lock-note { display: flex; align-items: center; gap: 8px; margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--cream-300); font-size: 12.5px; color: var(--brown-600); line-height: 1.5; }
+.composer-lock-note .k { font-size: 14px; }
+
+/* FEED / EMPTY STATE */
+.feed-head { display: flex; align-items: center; justify-content: space-between; margin: 28px 2px 16px; }
+.feed-head h2 { font-size: 20px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.01em; }
+.feed-sort { display: inline-flex; gap: 4px; background: var(--cream-50); padding: 4px; border-radius: 999px; border: 1px solid var(--cream-300); opacity: 0.6; }
+.feed-sort span { font-size: 12px; color: var(--brown-500); font-weight: 600; padding: 6px 14px; border-radius: 999px; }
+.feed-sort span.on { background: var(--brown-900); color: var(--cream-100); }
+
+.feed-empty { background: var(--white); border-radius: 22px; padding: 48px 40px; text-align: center; box-shadow: 0 14px 32px -16px rgba(20,16,11,0.10); border: 1px dashed var(--cream-300); }
+.feed-empty .mark { width: 52px; height: 52px; border-radius: 16px; background: var(--cream-100); display: grid; place-items: center; font-size: 24px; margin: 0 auto 16px; }
+.feed-empty h3 { font-size: 22px; font-weight: 800; color: var(--brown-900); letter-spacing: -0.01em; margin-bottom: 10px; }
+.feed-empty h3 .accent { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--brown-600); }
+.feed-empty p { font-size: 14px; color: var(--brown-600); line-height: 1.65; max-width: 460px; margin: 0 auto; }
+
+/* SIDEBAR */
+.bp-side > * + * { margin-top: 20px; }
+.side-card { background: var(--white); border-radius: 20px; padding: 22px; box-shadow: 0 12px 28px -16px rgba(20,16,11,0.10); }
+.side-card h4 { font-size: 12px; font-weight: 800; color: var(--brown-900); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; }
+.side-rule { display: flex; gap: 10px; padding: 9px 0; font-size: 13px; color: var(--brown-700); line-height: 1.5; }
+.side-rule + .side-rule { border-top: 1px solid var(--cream-200); }
+.side-rule .n { color: var(--sage); font-weight: 800; flex-shrink: 0; }
+.side-card .policy-link { display: inline-block; margin-top: 14px; font-size: 13px; font-weight: 700; color: var(--brown-700); text-decoration: none; }
+.side-card.dark { background: var(--brown-900); color: var(--cream-100); }
+.side-card.dark h4 { color: var(--cream-200); }
+.side-card.dark p { font-size: 13px; line-height: 1.6; color: var(--cream-100); opacity: 0.92; }
+.side-card.dark .tomb { margin-top: 12px; background: rgba(212,190,160,0.12); border: 1px solid rgba(212,190,160,0.2); border-radius: 12px; padding: 12px 14px; font-size: 12px; color: var(--cream-200); line-height: 1.5; }
+.side-card.dark .tomb strong { color: var(--white); }
+</style>
+</head>
+<body>
+<div class="page" id="board-page">
+
+  <nav class="nav">
+    <a href="index.html" class="logo"><div class="logo-mark">F</div>fixshitbroken</a>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="pillar-will.html">Will of the people</a>
+      <a href="pillar-legislation.html">Legislation</a>
+      <a href="pillar-town-hall.html" class="active">Town hall</a>
+      <a href="pillar-memes.html">Memes</a>
+      <a href="why-we-exist.html">Why we exist</a>
+    </div>
+    <div class="nav-account"><div class="av">M</div></div>
+  </nav>
+
+  <div class="page-header" style="padding-bottom:0;">
+    <div class="crumb">
+      <a href="pillar-town-hall.html">Town hall</a>
+      <span class="sep">/</span>
+      <span class="here" id="bp-crumb-here">Board</span>
+    </div>
+  </div>
+
+  <section class="bp-header">
+    <div class="bp-header-row">
+      <div class="bp-id">
+        <div class="bp-ph i" id="bp-ph">—</div>
+        <div>
+          <h1 id="bp-name">Loading board…</h1>
+          <div class="role" id="bp-role">&nbsp;</div>
+        </div>
+      </div>
+      <div class="bp-actions">
+        <a class="btn-secondary" id="bp-profile-link" href="pillar-will.html">View voting record &amp; donors →</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="bp-layout">
+    <div class="bp-main">
+
+      <div class="composer locked">
+        <div class="composer-top">
+          <div class="composer-av">You</div>
+          <div class="composer-who"><strong>Post to this board</strong>Verified constituents of this member</div>
+          <span class="composer-badge">✓ Local · verified</span>
+        </div>
+        <div class="composer-field">Say your piece — about a vote, a bill, a town hall they skipped. Keep it about the record and the office. Real name-linked account, real district, on the record.</div>
+        <div class="composer-foot">
+          <div class="composer-rules">On the record and permanent. <a href="town-hall-policy.html">The rules →</a></div>
+          <button class="composer-btn" disabled>Post</button>
+        </div>
+        <div class="composer-lock-note">
+          <span class="k">🔒</span>
+          <span>Posting opens in <strong>Phase 5</strong>, once accounts and constituent verification are live. This is a preview of the composer — it's intentionally inactive, and nothing you type is saved.</span>
+        </div>
+      </div>
+
+      <div class="feed-head">
+        <h2>The board</h2>
+        <div class="feed-sort"><span class="on">Top</span><span>Newest</span><span>Constituents</span></div>
+      </div>
+
+      <div class="feed-empty">
+        <div class="mark">🗳️</div>
+        <h3>No posts <span class="accent">yet.</span></h3>
+        <p>This board is real and its URL is permanent, but it stays empty until verification and moderation go live. When it opens, verified constituents' posts appear here — newest and most-supported first — each on its own permanent, searchable link. We never seed a board with fabricated posts to make it look busy.</p>
+      </div>
+
+    </div>
+
+    <aside class="bp-side">
+      <div class="side-card">
+        <h4>Who can post here</h4>
+        <div class="side-rule"><span class="n">1</span><span>Anyone can read. Posting is for verified constituents of this member.</span></div>
+        <div class="side-rule"><span class="n">2</span><span>One verified person, one account. Real name-linked identity, no anonymous pile-ons.</span></div>
+        <div class="side-rule"><span class="n">3</span><span>Keep it about the record and the office — not the person's family, home, or safety.</span></div>
+        <a class="policy-link" href="town-hall-policy.html">Full moderation policy →</a>
+      </div>
+
+      <div class="side-card dark">
+        <h4>Permanent, but accountable</h4>
+        <p>The promise is that legitimate criticism doesn't get memory-holed. It is not a promise to host illegal or abusive content.</p>
+        <div class="tomb"><strong>Removed ≠ vanished.</strong> A post that breaks the rules is replaced by a visible tombstone stating why — so the moderation itself stays on the record.</div>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="logo"><div class="logo-mark">F</div>fixshitbroken</a>
+        <div class="tag-text">Built by citizens, for citizens. 100% public data. No PAC money. No lobbyist hands on the wheel.</div>
+      </div>
+      <div class="foot-col"><h5>The four pillars</h5><ul><li>Will of the People</li><li>Legislation for Dummies</li><li>Town Hall</li><li>Politics is a Joke</li></ul></div>
+      <div class="foot-col"><h5>Tools</h5><ul><li>Find your reps</li><li>Browse legislation</li><li>Voter registration</li><li>Browser extension</li></ul></div>
+      <div class="foot-col"><h5>About</h5><ul><li>Why we exist</li><li>Data sources</li><li>Moderation policy</li><li>Press kit</li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 fixshitbroken · A civic accountability project</div>
+      <div>Privacy · Terms · Contact</div>
+    </div>
+  </footer>
+
+</div>
+<script src="data/legislators-data.js"></script>
+<script src="js/townhall.js" defer></script>
+</body>
+</html>
