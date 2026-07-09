@@ -975,7 +975,7 @@
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
   },
   "H.Res. 1399": {
-    "shortTitle": "Directing the Committee on Ethics to preserve and publicly release records relating to monetary settlements involving acts of sexual harassment.",
+    "shortTitle": "Directing the Committee on Ethics to preserve and publicly release records relating to .monetary settlements involving acts of sexual harassment.",
     "policyArea": "",
     "sponsor": "Rep. Massie, Thomas [R-KY-4]",
     "summaryBullets": [],
@@ -999,11 +999,17 @@
   },
   "H.Res. 1398": {
     "shortTitle": "Providing for consideration of the bill (H.R. 8800) to authorize appropriations for fiscal year 2027 for military activities of the Department of Defense, for military construction, and for defense activities of the Department of Energy, to prescribe military personnel strengths for such fiscal year, and for other purposes; providing for consideration of the bill (H.R. 8595) making appropriations for national security, Department of State, and related programs for the fiscal year ending September 30, 2027, and for other purposes; providing for consideration of the bill (H.R. 8884) to amend title II of the Social Security Act to reauthorize demonstration authority for the disability insurance program; providing for consideration of the resolution (H. Res. 1383) commemorating the one-year anniversary of the enactment of the Working Families Tax Cuts; and for other purposes.",
-    "policyArea": "",
+    "policyArea": "Congress",
     "sponsor": "Rep. Scott, Austin [R-GA-8]",
-    "summaryBullets": [],
+    "summaryBullets": [
+      "This resolution provides for the consideration of the bill (H.R.",
+      "8800) to authorize appropriations for fiscal year 2027 for military activities of the Department of Defense, for military construction, and for defense activities of the Department of Energy, to prescribe military personnel strengths for such fiscal year, and for other purposes; providing for consideration of the bill (H.",
+      "R. 8595) making appropriations for national security, Department of State, and related programs for the fiscal year ending September 30, 2027, and for other purposes; providing for consideration of the bill (H.R.",
+      "8884) to amend title II of the Social Security Act to reauthorize demonstration authority for the disability insurance program; providing for consideration of the resolution (H. Res.",
+      "1383) commemorating the one-year anniversary of the enactment of the Working Families Tax Cuts; and for other purposes."
+    ],
     "cboCost": null,
-    "hasSummary": false,
+    "hasSummary": true,
     "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1398",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
   },
