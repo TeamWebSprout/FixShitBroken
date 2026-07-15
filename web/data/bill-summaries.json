@@ -1476,7 +1476,10 @@
       "excludes veterans' disability benefits from being considered as income for purposes of determining eligibility for the Veterans Affairs Supportive Housing (VASH) program;",
       "establishes a pilot program to provide grants to public housing agencies (PHAs) and other owners of federally assisted housing to test the efficacy of temperature sensors to support compliance with temperature requirements;"
     ],
-    "cboCost": null,
+    "cboCost": {
+      "title": "Estimated Budgetary Effects of H.R. 6644, the 21st Century ROAD to Housing Act",
+      "url": "https://www.cbo.gov/publication/62570"
+    },
     "hasSummary": true,
     "congressUrl": "https://www.congress.gov/bill/119th-congress/house-bill/6644",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
@@ -1512,6 +1515,16 @@
     "cboCost": null,
     "hasSummary": false,
     "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/190",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S. 4784": {
+    "shortTitle": "An original bill to authorize appropriations for fiscal year 2027 for military activities of the Department of Defense, for military construction, and for defense activities of the Department of Energy, to prescribe military personnel strengths for such fiscal year, and for other purposes.",
+    "policyArea": "Armed Forces and National Security",
+    "sponsor": "Sen. Wicker, Roger F. [R-MS]",
+    "summaryBullets": [],
+    "cboCost": null,
+    "hasSummary": false,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/4784",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
   }
 }
