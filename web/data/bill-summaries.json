@@ -1518,7 +1518,7 @@
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
   },
   "S. 4784": {
-    "shortTitle": "An original bill to authorize appropriations for fiscal year 2027 for military activities of the Department of Defense, for military construction, and for defense activities of the Department of Energy, to prescribe military personnel strengths for such fiscal year, and for other purposes.",
+    "shortTitle": "National Defense Authorization Act for Fiscal Year 2027",
     "policyArea": "Armed Forces and National Security",
     "sponsor": "Sen. Wicker, Roger F. [R-MS]",
     "summaryBullets": [],
@@ -1540,6 +1540,16 @@
     "cboCost": null,
     "hasSummary": true,
     "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1423",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S.J.RES. 198": {
+    "shortTitle": "A joint resolution providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Centers for Medicare & Medicaid Services of the Department of Health and Human Services relating to \"Medicare Program; Implementation of Prior Authorization for Select Services for the Wasteful and Inappropriate Services Reduction (WISeR) Model\".",
+    "policyArea": "Health",
+    "sponsor": "Sen. Wyden, Ron [D-OR]",
+    "summaryBullets": [],
+    "cboCost": null,
+    "hasSummary": false,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/198",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
   }
 }
