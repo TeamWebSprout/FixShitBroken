@@ -1521,9 +1521,18 @@
     "shortTitle": "National Defense Authorization Act for Fiscal Year 2027",
     "policyArea": "Armed Forces and National Security",
     "sponsor": "Sen. Wicker, Roger F. [R-MS]",
-    "summaryBullets": [],
+    "summaryBullets": [
+      "National Defense Authorization Act for Fiscal Year 2027",
+      "This bill sets forth policies and authorities for FY2027 for Department of Defense (DOD) programs, activities, and military construction as well as the national security programs of the Department of Energy (DOE).",
+      "Among other elements, the bill",
+      "authorizes the procurement of various items, including aircraft and ships;",
+      "sets active duty and reserve component personnel strength levels;",
+      "sets policy regarding various aspects of military health care and military compensation;",
+      "sets policy regarding DOD acquisitions and acquisition management, including contracting authorities;",
+      "sets policy for various matters related to DOD interactions with foreign nations, including matters concerning the Middle East, Europe, and the Indo-Pacific;"
+    ],
     "cboCost": null,
-    "hasSummary": false,
+    "hasSummary": true,
     "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/4784",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
   },
@@ -1568,6 +1577,25 @@
     "cboCost": null,
     "hasSummary": false,
     "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1438",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Con.Res. 113": {
+    "shortTitle": "Establishing the congressional budget for the United States Government for fiscal year 2027 and setting forth the appropriate budgetary levels for fiscal years 2028 through 2036.",
+    "policyArea": "Economics and Public Finance",
+    "sponsor": "Rep. Arrington, Jodey C. [R-TX-19]",
+    "summaryBullets": [
+      "This concurrent resolution establishes the congressional budget for the federal government for FY2027, sets forth budgetary levels for FY2028-FY2036, and provides reconciliation instructions for legislation that increases the deficit.",
+      "The resolution recommends levels and amounts for FY2027-FY2036 for",
+      "federal revenues,",
+      "new budget authority,",
+      "budget outlays,",
+      "deficits (on-budget),",
+      "debt subject to limit,",
+      "debt held by the public, and"
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/113",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
   }
 }
