@@ -1631,5 +1631,25 @@
     "hasSummary": true,
     "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/180",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.R. 5334": {
+    "shortTitle": "SEED Act",
+    "policyArea": "Taxation",
+    "sponsor": "Rep. Panetta, Jimmy [D-CA-19]",
+    "summaryBullets": [
+      "Supporting Early-childhood Educators' Deductions Act of 2025 or the SEED Act of 2025",
+      "This bill expands eligibility for the above-the-line federal tax deduction for certain eligible educator expenses to include early childhood educators.",
+      "(An above-the-line tax deduction is subtracted from gross income to calculate adjusted gross income.",
+      "Under current law, kindergarten through grade 12 teachers, instructors, counselors, principals, or aides in schools that provide elementary or secondary education are allowed an above-the-line tax deduction of up to $300 (in 2025 and adjusted annually) for certain unreimbursed professional development and classroom expenses.",
+      "(Other conditions apply.",
+      "The bill expands eligibility for the tax deduction for such educator expenses to include early childhood educators in schools that provide early childhood (pre-kindergarten) education."
+    ],
+    "cboCost": {
+      "title": "H.R. 5334, Supporting Early-childhood Educators’ Deductions Act",
+      "url": "https://www.cbo.gov/publication/62382"
+    },
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-bill/5334",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
   }
 }
