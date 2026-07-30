@@ -1651,5 +1651,15 @@
     "hasSummary": true,
     "congressUrl": "https://www.congress.gov/bill/119th-congress/house-bill/5334",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S.RES. 817": {
+    "shortTitle": "An executive resolution authorizing the en bloc consideration in Executive Session of certain nominations on the Executive Calendar.",
+    "policyArea": "",
+    "sponsor": "Sen. Thune, John [R-SD]",
+    "summaryBullets": [],
+    "cboCost": null,
+    "hasSummary": false,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-resolution/817",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
   }
 }
