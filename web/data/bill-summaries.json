@@ -1661,5 +1661,28 @@
     "hasSummary": false,
     "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-resolution/817",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S.J.RES. 181": {
+    "shortTitle": "A joint resolution to direct the removal of United States Armed Forces from hostilities within or against the Islamic Republic of Iran that have not been authorized by Congress.",
+    "policyArea": "International Affairs",
+    "sponsor": "Sen. Gillibrand, Kirsten E. [D-NY]",
+    "summaryBullets": [
+      "This joint resolution directs the President to remove U.S. Armed Forces from hostilities within or against Iran unless a declaration of war or authorization to use military force for such purpose has been enacted.",
+      "The resolution specifies that it shall not be construed to prevent the United States from defending against an attack on the United States or its personnel or facilities in other nations."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/181",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S.J.RES. 199": {
+    "shortTitle": "A joint resolution providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Health and Human Services relating to \"Restoring Flexibility in the Child Care and Development Fund (CCDF)\".",
+    "policyArea": "Families",
+    "sponsor": "Sen. Murray, Patty [D-WA]",
+    "summaryBullets": [],
+    "cboCost": null,
+    "hasSummary": false,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/199",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
   }
 }
