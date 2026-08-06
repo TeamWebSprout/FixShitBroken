@@ -1711,5 +1711,15 @@
     "hasSummary": true,
     "congressUrl": "https://www.congress.gov/bill/119th-congress/house-bill/6500",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S.J.RES. 187": {
+    "shortTitle": "A joint resolution providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to \"Modification to the Start of the Submission Period for Perfluoroalkyl and Polyfluoroalkyl Substances (PFAS) Reporting and Recordkeeping Under TSCA 8(a)(7)\".",
+    "policyArea": "Environmental Protection",
+    "sponsor": "Sen. Whitehouse, Sheldon [D-RI]",
+    "summaryBullets": [],
+    "cboCost": null,
+    "hasSummary": false,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/187",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
   }
 }
