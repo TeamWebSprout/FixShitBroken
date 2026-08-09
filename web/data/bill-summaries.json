@@ -1691,7 +1691,7 @@
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
   },
   "H.R. 6500": {
-    "shortTitle": "AGOA Extension Act",
+    "shortTitle": "Continuing Appropriations and Extensions Act, 2027",
     "policyArea": "Foreign Trade and International Finance",
     "sponsor": "Rep. Smith, Jason [R-MO-8]",
     "summaryBullets": [
@@ -1720,6 +1720,16 @@
     "cboCost": null,
     "hasSummary": false,
     "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/187",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S. 5271": {
+    "shortTitle": "A bill to amend the Help America Vote Act of 2002 to require voters to provide photo identification.",
+    "policyArea": "",
+    "sponsor": "Sen. Husted, Jon [R-OH]",
+    "summaryBullets": [],
+    "cboCost": null,
+    "hasSummary": false,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/5271",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
   }
 }
