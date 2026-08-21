@@ -15615,8 +15615,8 @@
       {
         "year": "2026",
         "contributions": 456272,
-        "expenditures": 2470731,
-        "cashOnHand": 652,
+        "expenditures": 2471383,
+        "cashOnHand": 0,
         "fromIndividuals": 139755,
         "individualItemized": 120955,
         "individualUnitemized": 18800,
@@ -15702,8 +15702,8 @@
       }
     ],
     "totalContributions": 9430171,
-    "totalExpenditures": 9428803,
-    "coverageThrough": "2026-06-30",
+    "totalExpenditures": 9429455,
+    "coverageThrough": "2026-08-07",
     "source": "Federal Election Commission (OpenFEC), per-cycle filings"
   },
   "S001195": {
