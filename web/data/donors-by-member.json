@@ -4808,8 +4808,8 @@
         "expenditures": 138981,
         "cashOnHand": 60931,
         "fromIndividuals": 42579,
-        "individualItemized": 35740,
-        "individualUnitemized": 6839,
+        "individualItemized": 35940,
+        "individualUnitemized": 6639,
         "fromPacs": 26101,
         "fromParty": 0
       }
