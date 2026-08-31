@@ -10550,7 +10550,7 @@
         "year": "2026",
         "contributions": 4204013,
         "expenditures": 4337765,
-        "cashOnHand": 1075631,
+        "cashOnHand": 1075737,
         "fromIndividuals": 2282283,
         "individualItemized": 2084465,
         "individualUnitemized": 197819,
@@ -33500,10 +33500,10 @@
         "contributions": 6306828,
         "expenditures": 3457356,
         "cashOnHand": 2871872,
-        "fromIndividuals": 3353986,
-        "individualItemized": 1711347,
+        "fromIndividuals": 3350486,
+        "individualItemized": 1707847,
         "individualUnitemized": 1642639,
-        "fromPacs": 1555904,
+        "fromPacs": 1465275,
         "fromParty": 5000
       },
       {
