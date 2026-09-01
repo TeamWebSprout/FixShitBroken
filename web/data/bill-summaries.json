@@ -1740,5 +1740,34 @@
     "hasSummary": true,
     "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/5271",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S 32": {
+    "shortTitle": "LACA",
+    "policyArea": "Law",
+    "sponsor": "Sen. Cruz, Ted [R-TX]",
+    "summaryBullets": [
+      "Local Access to Courts Act or LACA",
+      "This bill adds College Station to the list of places where court must be held in the Galveston Division of the Southern District of Texas.",
+      "Additionally, the bill adds El Centro to the list of places where court must be held in the Southern District of California."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/32",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S 307": {
+    "shortTitle": "Prison Staff Safety Enhancement Act",
+    "policyArea": "Crime and Law Enforcement",
+    "sponsor": "Sen. Blackburn, Marsha [R-TN]",
+    "summaryBullets": [
+      "Prison Staff Safety Enhancement Act",
+      "This bill establishes requirements for the Department of Justice (DOJ) and component agencies to assess and respond to incidents of sexual harassment and sexual assault by incarcerated individuals against Bureau of Prisons (BOP) staff.",
+      "Specifically, the bill requires DOJ to adopt national standards for the prevention, reduction, and punishment of sexual harassment and sexual assault by incarcerated individuals against correctional officers or other employees of the BOP.",
+      "Additionally, the bill requires the BOP to fully implement the recommendations of the DOJ Inspector General contained in the report titled Evaluation of the Federal Bureau of Prisons’ Efforts to Address Sexual Harassment and Sexual Assault Committed by Inmates Toward Staff."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/307",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
   }
 }
