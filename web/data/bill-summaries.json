@@ -1774,7 +1774,7 @@
   },
   "H.Res. 1498": {
     "shortTitle": "In the matter of allegations relating to Representative Chuck Edwards.",
-    "policyArea": "",
+    "policyArea": "Congress",
     "sponsor": "Rep. Guest, Michael [R-MS-3]",
     "summaryBullets": [],
     "cboCost": null,
@@ -1806,6 +1806,21 @@
     "cboCost": null,
     "hasSummary": false,
     "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1499",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.J.Res. 1": {
+    "shortTitle": "Proposing an amendment to the Constitution of the United States to require that the Supreme Court of the United States be composed of nine justices.",
+    "policyArea": "Law",
+    "sponsor": "Rep. Biggs, Andy [R-AZ-5]",
+    "summaryBullets": [
+      "This joint resolution proposes a constitutional amendment requiring the Supreme Court to be composed of nine Justices—one Chief Justice and eight Associate Justices."
+    ],
+    "cboCost": {
+      "title": "H.J. Res. 1, a joint resolution proposing an amendment to the Constitution of the United States to require that the Supreme Court of the United States be composed of nine justices",
+      "url": "https://www.cbo.gov/publication/62597"
+    },
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/1",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
   }
 }
