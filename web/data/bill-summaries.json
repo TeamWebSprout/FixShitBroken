@@ -1776,9 +1776,11 @@
     "shortTitle": "In the matter of allegations relating to Representative Chuck Edwards.",
     "policyArea": "Congress",
     "sponsor": "Rep. Guest, Michael [R-MS-3]",
-    "summaryBullets": [],
+    "summaryBullets": [
+      "This resolution censures Representative Chuck Edwards of North Carolina."
+    ],
     "cboCost": null,
-    "hasSummary": false,
+    "hasSummary": true,
     "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1498",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
   },
