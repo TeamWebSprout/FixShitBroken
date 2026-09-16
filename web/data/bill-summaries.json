@@ -1829,5 +1829,103 @@
     "hasSummary": true,
     "congressUrl": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/1",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Con.Res. 93": {
+    "shortTitle": "Directing the President, pursuant to section 5(c) of the War Powers Resolution, to remove United States Armed Forces from hostilities with Iran.",
+    "policyArea": "International Affairs",
+    "sponsor": "Rep. Moulton, Seth [D-MA-6]",
+    "summaryBullets": [
+      "This concurrent resolution directs the President to remove U.S. Armed Forces from hostilities against Iran unless explicitly authorized by a declaration of war or a congressional authorization for use of military force against Iran.",
+      "Elements of the U.S. Armed Forces needed to defend the United States, an ally, or a partner from imminent attack are not covered by this requirement provided the President complies with a specified provision of the War Powers Resolution.",
+      "(The provision generally requires the President to remove U.S. Armed Forces from hostilities no more than 60 days after the President notifies or is required to notify Congress of such involvement, unless Congress authorizes such use.",
+      "For more information on the War Powers Resolution, see CRS In Focus 13134."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/93",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.J.Res. 210": {
+    "shortTitle": "Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to \"California State Nonroad Engine Pollution Control Standards; Ocean-Going Vessels At-Berth; Notice of Decision\".",
+    "policyArea": "Environmental Protection",
+    "sponsor": "Rep. Fong, Vince [R-CA-20]",
+    "summaryBullets": [
+      "This joint resolution revokes the authorization granted to the California Air Resources Board (CARB) to amend its Ocean-Going Vessels At-Berth Regulation.",
+      "Among other elements, the amendment proposed by CARB and authorized by the Environmental Protection Agency (EPA) expanded auxiliary engine emissions reductions requirements to include additional categories of ocean-going vessels.",
+      "(Under the Clean Air Act, the EPA may authorize California to adopt and enforce standards relating to the control of emissions from nonroad vehicles or engines if those standards meet certain requirements.",
+      "Specifically, the joint resolution nullifies the EPA authorization decision titled California State Nonroad Engine Pollution Control Standards; Ocean-Going Vessels At-Berth; Notice of Decision."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/210",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 1530": {
+    "shortTitle": "Providing for consideration of the bill (H.R. 9576) to establish the National Fraud Enforcement Division of the Department of Justice; providing for consideration of the bill (H.R. 10326) to enhance information-sharing capabilities between Federal law enforcement and State agencies to detect, investigate, and prosecute fraud in certain Federal programs, and to protect individual privacy; providing for consideration of the joint resolution (H.J. Res. 210) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to ''California State Nonroad Engine Pollution Control Standards; Ocean-Going Vessels At-Berth; Notice of Decision''; providing for consideration of the joint resolution (H.J. Res. 213) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule issued by the Environmental Protection Agency relating to the ''California State Nonroad Engine Pollution Control Standards; Commercial Harbor Craft Regulations; Notice of Decision''; and providing for consideration of the Senate amendments to the bill (H.R. 5334) to amend the Internal Revenue Code of 1986 to allow early childhood educators to take the educator expense deduction, and for other purposes.",
+    "policyArea": "Congress",
+    "sponsor": "Rep. Fischbach, Michelle [R-MN-7]",
+    "summaryBullets": [],
+    "cboCost": null,
+    "hasSummary": false,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1530",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 1486": {
+    "shortTitle": "Impeaching Donald John Trump, President of the United States, for high crimes and misdemeanors.",
+    "policyArea": "Government Operations and Politics",
+    "sponsor": "Rep. Green, Al [D-TX-9]",
+    "summaryBullets": [
+      "This resolution impeaches President Donald Trump for high crimes and misdemeanors.",
+      "Specifically, the resolution sets forth one article of impeachment concerning abuse of presidential powers by allowing U.S. Immigration and Customs Enforcement (ICE) and U.S.",
+      "Customs and Border Protection (CBP) to operate in violation of the First, Fourth, and Fifth Amendments to the U.S. Constitution while undermining judicial oversight."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1486",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S. 4668": {
+    "shortTitle": "Protect College Sports Act of 2026",
+    "policyArea": "Sports and Recreation",
+    "sponsor": "Sen. Cruz, Ted [R-TX]",
+    "summaryBullets": [
+      "Protect College Sports Act of 2026",
+      "This bill establishes requirements for name, image, or likeness (NIL) agreements for college student athletes and provides a limited antitrust exemption for schools and conferences to pool and sell certain college sports media rights.",
+      "The requirements address elements of the court-approved agreement to settle In re College Athlete NIL Litigation (i.e., House settlement).",
+      "First, the bill statutorily prohibits institutions, conferences, or interstate intercollegiate athletic associations (e.g.",
+      ", the National Collegiate Athletic Association [NCAA]) from restricting student athletes from entering NIL agreements (subject to specified limitations). Students must report to their institution NIL compensation greater than $600.",
+      "The bill requires agents to register with a state and caps agent endorsement contract fees at 5%.",
+      "The bill also provides student athletes with one transfer without losing athletic eligibility and restricts football personnel from becoming the head football coach at a different institution during the same season.",
+      "Further, the bill prohibits institutions, conferences, or specified entities acting for the benefit of an institution from providing athletes with compensation that circumvents the limit on sharing revenue with student athletes established under the House settlement."
+    ],
+    "cboCost": {
+      "title": "S. 4668, Protect College Sports Act of 2026",
+      "url": "https://www.cbo.gov/publication/62630"
+    },
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/4668",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.R. 3633": {
+    "shortTitle": "Digital Asset Market Clarity Act",
+    "policyArea": "Finance and Financial Sector",
+    "sponsor": "Rep. Hill, J. French [R-AR-2]",
+    "summaryBullets": [
+      "Digital Asset Market Clarity Act of 2025 or the CLARITY Act of 2025",
+      "This bill establishes a regulatory framework for digital commodities, defined by the bill as digital assets that rely upon a blockchain for their value.",
+      "The Commodity Futures Trading Commission must generally regulate digital commodities transactions, including digital commodity exchanges, brokers, and dealers.",
+      "To qualify for trade on an exchange (1) a digital commodity’s blockchain must be mature, or on a blockchain system that has achieved decentralized control as defined by the bill; or (2) the issuer of the digital commodity must file certain reports.",
+      "The bill establishes requirements for trade monitoring, recordkeeping, and the commingling of customer assets.",
+      "The bill exempts digital commodities on mature blockchains (and digital commodities on blockchains expected to mature within certain timeframes) from Securities and Exchange Commission (SEC) registration requirements if annual sales fall under a certain amount and other requirements are met.",
+      "The bill provides the SEC with jurisdiction over digital commodity activities and transactions engaged in by certain brokers and dealers on alternative trading systems and by national securities exchanges.",
+      "Digital commodity exchanges, brokers, and dealers are subject to the Bank Secrecy Act for anti-money laundering and related purposes."
+    ],
+    "cboCost": {
+      "title": "Estimated Budgetary Effects of H.R. 3633, CLARITY Act of 2025",
+      "url": "https://www.cbo.gov/publication/61542"
+    },
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-bill/3633",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
   }
 }
