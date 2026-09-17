@@ -1861,7 +1861,7 @@
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
   },
   "H.Res. 1530": {
-    "shortTitle": "Providing for consideration of the bill (H.R. 9576) to establish the National Fraud Enforcement Division of the Department of Justice; providing for consideration of the bill (H.R. 10326) to enhance information-sharing capabilities between Federal law enforcement and State agencies to detect, investigate, and prosecute fraud in certain Federal programs, and to protect individual privacy; providing for consideration of the joint resolution (H.J. Res. 210) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to ''California State Nonroad Engine Pollution Control Standards; Ocean-Going Vessels At-Berth; Notice of Decision''; providing for consideration of the joint resolution (H.J. Res. 213) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule issued by the Environmental Protection Agency relating to the ''California State Nonroad Engine Pollution Control Standards; Commercial Harbor Craft Regulations; Notice of Decision''; and providing for consideration of the Senate amendments to the bill (H.R. 5334) to amend the Internal Revenue Code of 1986 to allow early childhood educators to take the educator expense deduction, and for other purposes.",
+    "shortTitle": "Providing for consideration of the bill (H.R. 9576) to establish the National Fraud Enforcement Division of the Department of Justice; providing for consideration of the bill (H.R. 10326) to enhance information-sharing capabilities between Federal law enforcement and State agencies to detect, investigate, and prosecute fraud in certain Federal programs, and to protect individual privacy; providing for consideration of the joint resolution (H.J. Res. 210) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to ‘‘California State Nonroad Engine Pollution Control Standards; Ocean-Going Vessels At-Berth; Notice of Decision''; providing for consideration of the joint resolution (H.J. Res. 213) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule issued by the Environmental Protection Agency relating to the ‘‘California State Nonroad Engine Pollution Control Standards; Commercial Harbor Craft Regulations; Notice of Decision''; and providing for consideration of the Senate amendments to the bill (H.R. 5334) to amend the Internal Revenue Code of 1986 to allow early childhood educators to take the educator expense deduction, and for other purposes.",
     "policyArea": "Congress",
     "sponsor": "Rep. Fischbach, Michelle [R-MN-7]",
     "summaryBullets": [],
@@ -1926,6 +1926,38 @@
     },
     "hasSummary": true,
     "congressUrl": "https://www.congress.gov/bill/119th-congress/house-bill/3633",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S 2403": {
+    "shortTitle": "Retire through Ownership Act",
+    "policyArea": "Labor and Employment",
+    "sponsor": "Sen. Marshall, Roger [R-KS]",
+    "summaryBullets": [
+      "Retire through Ownership Act",
+      "This bill allows the fiduciary of an Employee Stock Ownership Plan (ESOP) to rely on a valuation provided by an independent valuation expert or business appraiser in determining the fair market value of the plan's securities if the securities are not traded on a national securities exchange (i.",
+      "e., not publicly traded) and the expert or appraiser follows specified methodologies.",
+      "In general, ESOPs are defined contribution pension plans where employees accrue shares of their employers' stock in individual accounts as part of their compensation.",
+      "After separating from employment or retiring, employees receive the cash value of their shares.",
+      "Under the bill, an independent expert or appraiser must adhere to the methodology established under the Internal Revenue Service Ruling 59-60, which prescribes the factors a professional business appraiser should consider in forming a valuation of the stock for a closely held business."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/2403",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.J.Res. 213": {
+    "shortTitle": "Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule issued by the Environmental Protection Agency relating to the \"California State Nonroad Engine Pollution Control Standards; Commercial Harbor Craft Regulations; Notice of Decision\".",
+    "policyArea": "Environmental Protection",
+    "sponsor": "Rep. Gallagher, James [R-CA-1]",
+    "summaryBullets": [
+      "This joint resolution revokes the partial authorization granted to the California Air Resources Board (CARB) to amend its Commercial Harbor Craft regulation.",
+      "Among other elements, the amendments proposed by CARB and partially authorized by the Environmental Protection Agency (EPA) create new emission standards and compliance dates depending on vessel category and engine model year and expand the types of vessels covered by the regulation (e.",
+      "g. commercial fishing boats). (Under the Clean Air Act, the EPA may authorize California to adopt and enforce standards relating to the control of emissions from nonroad vehicles or engines if those standards meet certain requirements.",
+      "Specifically, the joint resolution nullifies the EPA authorization decision titled California State Nonroad Engine Pollution Control Standards; Commercial Harbor Craft Regulations; Notice of Decision."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/213",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
   }
 }
