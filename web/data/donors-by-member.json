@@ -13004,8 +13004,8 @@
       {
         "year": "2026",
         "contributions": 978277,
-        "expenditures": 886964,
-        "cashOnHand": 1075956,
+        "expenditures": 886217,
+        "cashOnHand": 1076703,
         "fromIndividuals": 607582,
         "individualItemized": 552138,
         "individualUnitemized": 55444,
@@ -13091,7 +13091,7 @@
       }
     ],
     "totalContributions": 8313179,
-    "totalExpenditures": 7238761,
+    "totalExpenditures": 7238014,
     "coverageThrough": "2026-06-30",
     "source": "Federal Election Commission (OpenFEC), per-cycle filings"
   },
@@ -35000,13 +35000,13 @@
     "cycles": [
       {
         "year": "2026",
-        "contributions": 635249,
-        "expenditures": 484983,
-        "cashOnHand": 150266,
-        "fromIndividuals": 440723,
-        "individualItemized": 413932,
-        "individualUnitemized": 26791,
-        "fromPacs": 155983,
+        "contributions": 874398,
+        "expenditures": 641473,
+        "cashOnHand": 232925,
+        "fromIndividuals": 650933,
+        "individualItemized": 554051,
+        "individualUnitemized": 96882,
+        "fromPacs": 183983,
         "fromParty": 0
       },
       {
@@ -35021,9 +35021,9 @@
         "fromParty": 0
       }
     ],
-    "totalContributions": 704365,
-    "totalExpenditures": 554099,
-    "coverageThrough": "2026-07-29",
+    "totalContributions": 943514,
+    "totalExpenditures": 710589,
+    "coverageThrough": "2026-09-07",
     "source": "Federal Election Commission (OpenFEC), per-cycle filings"
   }
 }
