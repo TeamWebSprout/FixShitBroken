@@ -34522,8 +34522,8 @@
       {
         "year": "2026",
         "contributions": 971393,
-        "expenditures": 705038,
-        "cashOnHand": 391557,
+        "expenditures": 710038,
+        "cashOnHand": 386557,
         "fromIndividuals": 430498,
         "individualItemized": 426579,
         "individualUnitemized": 3919,
@@ -34543,7 +34543,7 @@
       }
     ],
     "totalContributions": 2004055,
-    "totalExpenditures": 1612498,
+    "totalExpenditures": 1617498,
     "coverageThrough": "2026-06-30",
     "source": "Federal Election Commission (OpenFEC), per-cycle filings"
   },
