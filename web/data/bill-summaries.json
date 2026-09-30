@@ -1981,5 +1981,25 @@
     "hasSummary": true,
     "congressUrl": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/89",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S.RES. 852": {
+    "shortTitle": "A resolution requesting information on Israel's human rights practices pursuant to section 502B(c) of the Foreign Assistance Act of 1961.",
+    "policyArea": "International Affairs",
+    "sponsor": "Sen. Van Hollen, Chris [D-MD]",
+    "summaryBullets": [],
+    "cboCost": null,
+    "hasSummary": false,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-resolution/852",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S.J.RES. 197": {
+    "shortTitle": "A joint resolution providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Centers for Medicare & Medicaid Services of the Department of Health and Human Services relating to \"Patient Protection and Affordable Care Act, HHS Notice of Benefit and Payment Parameters for 2027; and Basic Health Program\".",
+    "policyArea": "Health",
+    "sponsor": "Sen. Baldwin, Tammy [D-WI]",
+    "summaryBullets": [],
+    "cboCost": null,
+    "hasSummary": false,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/197",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
   }
 }
