@@ -2001,5 +2001,49 @@
     "hasSummary": false,
     "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/197",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.R. 9340": {
+    "shortTitle": "Ratepayer Protection Act",
+    "policyArea": "Energy",
+    "sponsor": "Rep. Evans, Gabe [R-CO-8]",
+    "summaryBullets": [
+      "Ratepayer Protection Act",
+      "The bill requires state utility regulators and nonregulated utilities to consider implementing a standard to hold certain large-load customers responsible for the costs associated with any generation, transmission, or distribution upgrade of electric service necessary to serve such customers.",
+      "A large-load customer means a non-residential electric consumer that enters, or requests to enter, an agreement concerning the sale of electric energy primarily to operate information technology infrastructure and related systems pertaining to data storage and computational applications and services (e.",
+      "g., data centers) that have a peak electric demand of 100 megawatts or more at a single site or campus.",
+      "Specifically, the bill requires states to consider implementing a federal standard for large-load customers.",
+      "The standard must require rates charged by electric utilities for providing electric service to a large-load customer to be designed to recover from the large-load customer the full, incremental cost of any generation, transmission, or distribution upgrade necessary to serve such customer.",
+      "This rate must include the costs that would be incurred if the large-load customer terminates an agreement with the electric utility pertaining to the sale of electric energy or otherwise ceases the purchase of energy from the electric utility.",
+      "Under the standard, an electric utility must require the large-load customer to provide to the utility financial assurances or contributions to cover the cost of any generation, transmission, or distribution upgrade that is necessary to serve the load of a large-load customer before the utility makes any generation, transmission, or distribution upgrade."
+    ],
+    "cboCost": {
+      "title": "H.R. 9340, Ratepayer Protection Act",
+      "url": "https://www.cbo.gov/publication/62762"
+    },
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-bill/9340",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.R. 7008": {
+    "shortTitle": "Stop Insider Trading Act",
+    "policyArea": "Congress",
+    "sponsor": "Rep. Steil, Bryan [R-WI-1]",
+    "summaryBullets": [
+      "Stop Insider Trading Act",
+      "This bill generally prohibits Members of Congress and their spouses and dependent children from purchasing stocks and requires public notice before these individuals may sell stocks.",
+      "Specifically, Members of Congress and the spouses and dependent children of Members of Congress may not purchase covered investments.",
+      "Between 7 and 14 days before a Member or a covered spouse or dependent sells a covered investment, the relevant Member must file public notice of the intent to sell with the Clerk of the House of Representatives or the Secretary of the Senate, as appropriate.",
+      "The Clerk or Secretary must publish this notice online. If the individual decides not to sell the covered investment, the notice must be withdrawn.",
+      "Under the bill, a covered investment is a security issued by a publicly traded company or a comparable economic interest.",
+      "Some investments are exempt, including interest in a widely held investment fund and certain investments held in a trust.",
+      "Violations of these provisions are subject to a fee and, in the case of a purchase, a requirement to sell the covered investment."
+    ],
+    "cboCost": {
+      "title": "H.R. 7008, Stop Insider Trading Act",
+      "url": "https://www.cbo.gov/publication/62243"
+    },
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-bill/7008",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
   }
 }
