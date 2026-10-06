@@ -1986,9 +1986,14 @@
     "shortTitle": "A resolution requesting information on Israel's human rights practices pursuant to section 502B(c) of the Foreign Assistance Act of 1961.",
     "policyArea": "International Affairs",
     "sponsor": "Sen. Van Hollen, Chris [D-MD]",
-    "summaryBullets": [],
+    "summaryBullets": [
+      "This resolution requests that the Department of State provide Congress with an unclassified statement regarding Israel's human rights practices.",
+      "The resolution specifies that the statement should include certain elements, including (1) all credible information concerning the alleged killing of nine specified U.S. citizens and any other U.S.",
+      "citizens by the Israeli Defense Forces, Israeli security forces, or Israeli settlers in 2022 or later; (2) all credible information concerning the identities of potential suspects in the killings; and (3) details on any steps taken by Israeli authorities to investigate the killings and hold accountable those responsible.",
+      "The statement should also include other elements, such as assessments of U.S. citizens currently held in Israeli prisons and the human rights situation of Palestinian children in Israeli military detention in the West Bank."
+    ],
     "cboCost": null,
-    "hasSummary": false,
+    "hasSummary": true,
     "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-resolution/852",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
   },
