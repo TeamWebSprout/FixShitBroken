@@ -5234,13 +5234,13 @@
     "cycles": [
       {
         "year": "2026",
-        "contributions": 1662604,
-        "expenditures": 1204804,
-        "cashOnHand": 3369069,
-        "fromIndividuals": 1111524,
-        "individualItemized": 1086439,
-        "individualUnitemized": 25085,
-        "fromPacs": 419516,
+        "contributions": 2093456,
+        "expenditures": 1531062,
+        "cashOnHand": 3473663,
+        "fromIndividuals": 1406876,
+        "individualItemized": 1377756,
+        "individualUnitemized": 29120,
+        "fromPacs": 555016,
         "fromParty": 0
       },
       {
@@ -5321,9 +5321,9 @@
         "fromParty": 300
       }
     ],
-    "totalContributions": 14307901,
-    "totalExpenditures": 12158763,
-    "coverageThrough": "2026-06-30",
+    "totalContributions": 14738753,
+    "totalExpenditures": 12485021,
+    "coverageThrough": "2026-09-30",
     "source": "Federal Election Commission (OpenFEC), per-cycle filings"
   },
   "G000559": {
@@ -10315,13 +10315,13 @@
     "cycles": [
       {
         "year": "2026",
-        "contributions": 1777414,
-        "expenditures": 1682292,
-        "cashOnHand": 1023354,
-        "fromIndividuals": 385746,
-        "individualItemized": 382116,
-        "individualUnitemized": 3630,
-        "fromPacs": 1299250,
+        "contributions": 2178113,
+        "expenditures": 2022234,
+        "cashOnHand": 1084112,
+        "fromIndividuals": 433167,
+        "individualItemized": 429295,
+        "individualUnitemized": 3873,
+        "fromPacs": 1559500,
         "fromParty": 0
       },
       {
@@ -10413,9 +10413,9 @@
         "fromParty": 1580
       }
     ],
-    "totalContributions": 12525996,
-    "totalExpenditures": 11701395,
-    "coverageThrough": "2026-06-30",
+    "totalContributions": 12926695,
+    "totalExpenditures": 12041337,
+    "coverageThrough": "2026-09-30",
     "source": "Federal Election Commission (OpenFEC), per-cycle filings"
   },
   "S001156": {
@@ -18315,13 +18315,13 @@
     "cycles": [
       {
         "year": "2026",
-        "contributions": 39216,
-        "expenditures": 36604,
-        "cashOnHand": 4269,
-        "fromIndividuals": 20400,
-        "individualItemized": 20300,
+        "contributions": 59716,
+        "expenditures": 44414,
+        "cashOnHand": 16959,
+        "fromIndividuals": 26400,
+        "individualItemized": 26300,
         "individualUnitemized": 100,
-        "fromPacs": 17500,
+        "fromPacs": 32000,
         "fromParty": 0
       },
       {
@@ -18358,9 +18358,9 @@
         "fromParty": 400
       }
     ],
-    "totalContributions": 237393,
-    "totalExpenditures": 234042,
-    "coverageThrough": "2026-06-30",
+    "totalContributions": 257893,
+    "totalExpenditures": 241852,
+    "coverageThrough": "2026-09-30",
     "source": "Federal Election Commission (OpenFEC), per-cycle filings"
   },
   "S001198": {
@@ -18866,13 +18866,13 @@
     "cycles": [
       {
         "year": "2026",
-        "contributions": 661353,
-        "expenditures": 526145,
-        "cashOnHand": 529910,
-        "fromIndividuals": 166376,
-        "individualItemized": 159779,
-        "individualUnitemized": 6597,
-        "fromPacs": 273950,
+        "contributions": 751313,
+        "expenditures": 713886,
+        "cashOnHand": 432128,
+        "fromIndividuals": 175497,
+        "individualItemized": 168029,
+        "individualUnitemized": 7468,
+        "fromPacs": 342450,
         "fromParty": 0
       },
       {
@@ -18931,9 +18931,9 @@
         "fromParty": 0
       }
     ],
-    "totalContributions": 5578372,
-    "totalExpenditures": 5047964,
-    "coverageThrough": "2026-06-30",
+    "totalContributions": 5668332,
+    "totalExpenditures": 5235705,
+    "coverageThrough": "2026-09-30",
     "source": "Federal Election Commission (OpenFEC), per-cycle filings"
   },
   "C001108": {
@@ -22134,7 +22134,7 @@
     ],
     "totalContributions": 11266488,
     "totalExpenditures": 11256759,
-    "coverageThrough": "2026-06-30",
+    "coverageThrough": "2026-09-30",
     "source": "Federal Election Commission (OpenFEC), per-cycle filings"
   },
   "M001206": {
@@ -24360,13 +24360,13 @@
     "cycles": [
       {
         "year": "2026",
-        "contributions": 1903078,
-        "expenditures": 1765991,
-        "cashOnHand": 170733,
-        "fromIndividuals": 890907,
-        "individualItemized": 884252,
-        "individualUnitemized": 6655,
-        "fromPacs": 792000,
+        "contributions": 2122719,
+        "expenditures": 2019462,
+        "cashOnHand": 136904,
+        "fromIndividuals": 962160,
+        "individualItemized": 954762,
+        "individualUnitemized": 7397,
+        "fromPacs": 932500,
         "fromParty": 0
       },
       {
@@ -24425,9 +24425,9 @@
         "fromParty": 0
       }
     ],
-    "totalContributions": 10624426,
-    "totalExpenditures": 12163692,
-    "coverageThrough": "2026-06-30",
+    "totalContributions": 10844067,
+    "totalExpenditures": 12417163,
+    "coverageThrough": "2026-09-30",
     "source": "Federal Election Commission (OpenFEC), per-cycle filings"
   },
   "J000302": {
@@ -31167,13 +31167,13 @@
     "cycles": [
       {
         "year": "2026",
-        "contributions": 2326405,
-        "expenditures": 942715,
-        "cashOnHand": 2477498,
-        "fromIndividuals": 893795,
-        "individualItemized": 835244,
-        "individualUnitemized": 58551,
-        "fromPacs": 1025680,
+        "contributions": 2622573,
+        "expenditures": 1152639,
+        "cashOnHand": 2563742,
+        "fromIndividuals": 991852,
+        "individualItemized": 924329,
+        "individualUnitemized": 67523,
+        "fromPacs": 1201227,
         "fromParty": 6462
       },
       {
@@ -31199,9 +31199,9 @@
         "fromParty": 7949
       }
     ],
-    "totalContributions": 5021188,
-    "totalExpenditures": 2543690,
-    "coverageThrough": "2026-06-30",
+    "totalContributions": 5317356,
+    "totalExpenditures": 2753614,
+    "coverageThrough": "2026-09-30",
     "source": "Federal Election Commission (OpenFEC), per-cycle filings"
   },
   "L000601": {
@@ -31618,13 +31618,13 @@
     "cycles": [
       {
         "year": "2026",
-        "contributions": 613135,
-        "expenditures": 617407,
-        "cashOnHand": 57649,
-        "fromIndividuals": 459935,
-        "individualItemized": 344201,
-        "individualUnitemized": 115734,
-        "fromPacs": 135000,
+        "contributions": 790546,
+        "expenditures": 836748,
+        "cashOnHand": 15719,
+        "fromIndividuals": 561324,
+        "individualItemized": 440164,
+        "individualUnitemized": 121160,
+        "fromPacs": 210500,
         "fromParty": 0
       },
       {
@@ -31650,9 +31650,9 @@
         "fromParty": 0
       }
     ],
-    "totalContributions": 2612832,
-    "totalExpenditures": 2555182,
-    "coverageThrough": "2026-07-17",
+    "totalContributions": 2790243,
+    "totalExpenditures": 2774523,
+    "coverageThrough": "2026-09-30",
     "source": "Federal Election Commission (OpenFEC), per-cycle filings"
   },
   "L000603": {
@@ -32386,13 +32386,13 @@
     "cycles": [
       {
         "year": "2026",
-        "contributions": 2136938,
-        "expenditures": 1486031,
-        "cashOnHand": 814120,
-        "fromIndividuals": 1582475,
-        "individualItemized": 510365,
-        "individualUnitemized": 1072110,
-        "fromPacs": 553350,
+        "contributions": 2473124,
+        "expenditures": 1728188,
+        "cashOnHand": 908149,
+        "fromIndividuals": 1847667,
+        "individualItemized": 620171,
+        "individualUnitemized": 1227496,
+        "fromPacs": 622200,
         "fromParty": 33
       },
       {
@@ -32407,9 +32407,9 @@
         "fromParty": 0
       }
     ],
-    "totalContributions": 2784801,
-    "totalExpenditures": 1970682,
-    "coverageThrough": "2026-06-30",
+    "totalContributions": 3120987,
+    "totalExpenditures": 2212839,
+    "coverageThrough": "2026-09-30",
     "source": "Federal Election Commission (OpenFEC), per-cycle filings"
   },
   "W000829": {
@@ -34906,8 +34906,8 @@
         "expenditures": 1776374,
         "cashOnHand": 70518,
         "fromIndividuals": 1080792,
-        "individualItemized": 907641,
-        "individualUnitemized": 173151,
+        "individualItemized": 907662,
+        "individualUnitemized": 173130,
         "fromPacs": 305481,
         "fromParty": 0
       },
