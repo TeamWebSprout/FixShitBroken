@@ -6803,13 +6803,13 @@
     "cycles": [
       {
         "year": "2026",
-        "contributions": 5538295,
-        "expenditures": 8411837,
-        "cashOnHand": 4613338,
-        "fromIndividuals": 3835986,
-        "individualItemized": 1617955,
-        "individualUnitemized": 2218031,
-        "fromPacs": 628315,
+        "contributions": 5563811,
+        "expenditures": 8581377,
+        "cashOnHand": 4469315,
+        "fromIndividuals": 3854002,
+        "individualItemized": 1621140,
+        "individualUnitemized": 2232863,
+        "fromPacs": 635815,
         "fromParty": 0
       },
       {
@@ -6901,8 +6901,8 @@
         "fromParty": 3600
       }
     ],
-    "totalContributions": 56736716,
-    "totalExpenditures": 52697258,
+    "totalContributions": 56762232,
+    "totalExpenditures": 52866798,
     "coverageThrough": "2026-09-30",
     "source": "Federal Election Commission (OpenFEC), per-cycle filings"
   },
