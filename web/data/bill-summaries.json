@@ -2090,5 +2090,18 @@
     "hasSummary": false,
     "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1655",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "H.Res. 1247": {
+    "shortTitle": "Providing for consideration of the bill (H.R. 2102) to amend title 10, United States Code, to provide for concurrent receipt of veterans' disability compensation and retired pay for disability retirees with combat-related disabilities, and for other purposes.",
+    "policyArea": "Congress",
+    "sponsor": "Rep. Takano, Mark [D-CA-39]",
+    "summaryBullets": [
+      "This resolution provides for the consideration of the bill (H.R.",
+      "2102) to amend title 10, United States Code, to provide for concurrent receipt of veterans' disability compensation and retired pay for disability retirees with combat-related disabilities, and for other purposes."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/house-resolution/1247",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
   }
 }
