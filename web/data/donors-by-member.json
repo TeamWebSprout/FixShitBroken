@@ -24101,8 +24101,8 @@
         "expenditures": 5477793,
         "cashOnHand": 931294,
         "fromIndividuals": 3666382,
-        "individualItemized": 3365829,
-        "individualUnitemized": 300554,
+        "individualItemized": 3366029,
+        "individualUnitemized": 300354,
         "fromPacs": 1614075,
         "fromParty": 6663
       },
@@ -27738,8 +27738,8 @@
         "expenditures": 1872944,
         "cashOnHand": 2788340,
         "fromIndividuals": 1368959,
-        "individualItemized": 1096063,
-        "individualUnitemized": 272896,
+        "individualItemized": 1096141,
+        "individualUnitemized": 272818,
         "fromPacs": 1328300,
         "fromParty": 0
       },
