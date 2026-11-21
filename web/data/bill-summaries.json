@@ -2051,7 +2051,7 @@
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
   },
   "H.R. 2347": {
-    "shortTitle": "Survivor Justice Tax Prevention Act",
+    "shortTitle": "Bipartisan American Affordability and Jobs Act of 2026",
     "policyArea": "Taxation",
     "sponsor": "Rep. Smucker, Lloyd [R-PA-11]",
     "summaryBullets": [
@@ -2119,6 +2119,31 @@
     "cboCost": null,
     "hasSummary": true,
     "congressUrl": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/93",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S.J.RES. 138": {
+    "shortTitle": "A joint resolution providing for congressional disapproval of the proposed foreign military sale to the Government of Israel of certain defense articles and services.",
+    "policyArea": "International Affairs",
+    "sponsor": "Sen. Sanders, Bernard [I-VT]",
+    "summaryBullets": [
+      "This joint resolution prohibits a proposed foreign military sale of certain defense articles and services to Israel."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/138",
+    "source": "Congressional Research Service, Library of Congress (GovInfo)"
+  },
+  "S.J.RES. 123": {
+    "shortTitle": "A joint resolution to direct the removal of United States Armed Forces from hostilities within or against the Islamic Republic of Iran that have not been authorized by Congress.",
+    "policyArea": "International Affairs",
+    "sponsor": "Sen. Duckworth, Tammy [D-IL]",
+    "summaryBullets": [
+      "This joint resolution directs the President to remove U.S. Armed Forces from hostilities within or against Iran unless a declaration of war or authorization to use military force for such purpose has been enacted.",
+      "The resolution specifies that it shall not be construed to prevent the United States from defending against an attack on the United States or its personnel or facilities in other nations."
+    ],
+    "cboCost": null,
+    "hasSummary": true,
+    "congressUrl": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/123",
     "source": "Congressional Research Service, Library of Congress (GovInfo)"
   }
 }
